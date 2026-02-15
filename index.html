@@ -12,6 +12,20 @@
     <link rel="icon" type="image/png" href="image/Avatar.png"/>
 
     <link rel="stylesheet" href="style.css">
+    <!-- SVG DEFINITIONS (invisível) -->
+<svg style="display: none;">
+    <defs>
+        <!-- Estrela -->
+        <symbol id="icon-star" viewBox="0 0 24 24">
+            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+        </symbol>
+        
+        <!-- Check (✓) -->
+        <symbol id="icon-check" viewBox="0 0 24 24">
+            <path d="M20 6 9 17l-5-5"/>
+        </symbol>
+    </defs>
+</svg>
 </head>
 <body>
     <!-- NAVBAR / HEADER -->
@@ -309,7 +323,7 @@
 
             <div class="planos-grid">
                 <!-- Plano 1: Mensal Básico -->
-                <div class="card card-plan">
+                <div class="card card-plan" style="border: 1px solid var(--primary);">
                     <div class="card-content-plan">
                         <h3 class="card-title">Mensal Básico</h3>
                         <p class="card-subtitle">4 aulas por mês</p>
@@ -352,7 +366,7 @@
                 </div>
 
                 <!-- Plano 2: Mensal Completo -->
-                <div class="card card-plan">
+                <div class="card card-plan" style="background-color: #e8d4f888; border: 2px solid var(--primary);">
                     <div class="card-content-plan">
                         <div class="badge badge-featured">O mais vendido</div>
                         <h3 class="card-title">Mensal Completo</h3>
@@ -451,19 +465,30 @@
     </section>
 
     <!-- Seção DEPOIMENTOS -->
-    <section id="depoimentos" class="depoimentos">
-        <div class="container">
-            <div class="section-header">
-                <div class="badge">Depoimentos</div>
-                <h2 class="section-title">
-                    O Que Nossos Clientes 
-                    <span class="text-highlight">Dizem</span>
-                </h2>
-                <p class="section-description">
-                    Histórias reais de transformação e bem-estar.
-                </p>
-            </div>
+<section id="depoimentos" class="depoimentos">
+    <div class="container">
+        <div class="section-header">
+            <div class="badge">Depoimentos</div>
+            <h2 class="section-title">
+                O Que Nossos Clientes 
+                <span class="text-highlight">Dizem</span>
+            </h2>
+            <p class="section-description">
+                Histórias reais de transformação e bem-estar.
+            </p>
+        </div>
 
+        <!-- WRAPPER DO CARROSSEL -->
+        <div class="testimonials-carousel">
+            
+            <!-- SETA ANTERIOR -->
+            <button class="carousel-arrow carousel-arrow-prev" aria-label="Depoimento anterior">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+
+            <!-- GRID DE DEPOIMENTOS -->
             <div class="depoimentos-grid">
                 <!-- Card 1 -->
                 <div class="card card-testimonial">
@@ -471,21 +496,7 @@
                         <div class="testimonial-quote">"</div>
                         <div class="testimonial-inner">
                             <div class="stars">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
+                                <svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg>
                             </div>
                             <p class="testimonial-text">
                                 Ambiente super agradável, equipamentos novos e instrutora muito atenciosa.
@@ -501,21 +512,7 @@
                         <div class="testimonial-quote">"</div>
                         <div class="testimonial-inner">
                             <div class="stars">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
+                                <svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg>
                             </div>
                             <p class="testimonial-text">
                                 Sinto melhora real na postura, disposição e força. Recomendo de olhos fechados!
@@ -531,21 +528,7 @@
                         <div class="testimonial-quote">"</div>
                         <div class="testimonial-inner">
                             <div class="stars">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
+                                <svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg>
                             </div>
                             <p class="testimonial-text">
                                 Ótimo lugar para tirar dores do corpo e ficar de bem com a vida.
@@ -561,21 +544,7 @@
                         <div class="testimonial-quote">"</div>
                         <div class="testimonial-inner">
                             <div class="stars">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
-                                </svg>
+                                <svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg>
                             </div>
                             <p class="testimonial-text">
                                 Atendimento com muita atenção e carinho!
@@ -584,9 +553,116 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Card 5 -->
+                <div class="card card-testimonial">
+                    <div class="card-content-testimonial">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-inner">
+                            <div class="stars">
+                                <svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg>
+                            </div>
+                            <p class="testimonial-text">
+                                Profissional excepcional! Faz toda diferença no meu dia a dia.
+                            </p>
+                            <p class="testimonial-author">— Maria Silva</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card card-testimonial">
+                    <div class="card-content-testimonial">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-inner">
+                            <div class="stars">
+                                <svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg>
+                            </div>
+                            <p class="testimonial-text">
+                                Melhor decisão que tomei! Minha qualidade de vida mudou completamente.
+                            </p>
+                            <p class="testimonial-author">— João Santos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="card card-testimonial">
+                    <div class="card-content-testimonial">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-inner">
+                            <div class="stars">
+                                <svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg>
+                            </div>
+                            <p class="testimonial-text">
+                                Espaço impecável e atendimento personalizado. Super recomendo!
+                            </p>
+                            <p class="testimonial-author">— Ana Paula</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="card card-testimonial">
+                    <div class="card-content-testimonial">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-inner">
+                            <div class="stars">
+                                <svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg>
+                            </div>
+                            <p class="testimonial-text">
+                                Resultados incríveis! Sinto muito mais disposição no dia a dia.
+                            </p>
+                            <p class="testimonial-author">— Carlos Mendes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="card card-testimonial">
+                    <div class="card-content-testimonial">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-inner">
+                            <div class="stars">
+                                <svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg>
+                            </div>
+                            <p class="testimonial-text">
+                                Ambiente acolhedor e profissional super atenciosa. Nota 10!
+                            </p>
+                            <p class="testimonial-author">— Fernanda Costa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="card card-testimonial">
+                    <div class="card-content-testimonial">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-inner">
+                            <div class="stars">
+                                <svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg><svg width="24" height="24" fill="currentColor"><use href="#icon-star"/></svg>
+                            </div>
+                            <p class="testimonial-text">
+                                Excelente clínica! Superou todas as minhas expectativas.
+                            </p>
+                            <p class="testimonial-author">— Roberto Lima</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- SETA PRÓXIMA -->
+            <button class="carousel-arrow carousel-arrow-next" aria-label="Próximo depoimento">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
         </div>
-    </section>
+
+        <!-- DOTS DE NAVEGAÇÃO -->
+        <div class="carousel-dots"></div>
+    </div>
+</section>
 
     <!-- Seção FOOTER/CONTATO -->
     <footer id="contato" class="footer">
@@ -678,11 +754,207 @@
     </footer>
 
     <script>
-        // Menu mobile simples (opcional)
-        document.querySelector('.navbar-mobile-menu-button').addEventListener('click', function() {
-            const nav = document.querySelector('.navbar-desktop-nav');
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+// ========================================
+// SCROLL SUAVE PARA LINKS ÂNCORA
+// ========================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        
+        // Ignora se for apenas "#" 
+        if (targetId === '#') return;
+        
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            // Calcula a posição desejada
+            const navbarHeight = 80;
+            const extraSpace = 20;
+            const targetPosition = targetSection.offsetTop - navbarHeight - extraSpace;
+            
+            // Scroll suave
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+            
+            // Fecha o menu mobile se estiver aberto
+            const mobileNav = document.querySelector('.navbar-desktop-nav');
+            if (window.innerWidth < 768) {
+                mobileNav.style.display = 'none';
+            }
+        }
+    });
+});
+
+// ========================================
+// MENU MOBILE
+// ========================================
+const mobileMenuButton = document.querySelector('.navbar-mobile-menu-button');
+const mobileNav = document.querySelector('.navbar-desktop-nav');
+
+if (mobileMenuButton && mobileNav) {
+    mobileMenuButton.addEventListener('click', function() {
+        if (mobileNav.style.display === 'flex') {
+            mobileNav.style.display = 'none';
+        } else {
+            mobileNav.style.display = 'flex';
+        }
+    });
+}
+
+// ========================================
+// CARROSSEL DE DEPOIMENTOS
+// ========================================
+
+class TestimonialsCarousel {
+    constructor() {
+        this.cards = document.querySelectorAll('.card-testimonial');
+        this.dotsContainer = document.querySelector('.carousel-dots');
+        this.prevBtn = document.querySelector('.carousel-arrow-prev');
+        this.nextBtn = document.querySelector('.carousel-arrow-next');
+        
+        this.currentPage = 0;
+        this.cardsPerPage = this.getCardsPerPage();
+        this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+        
+        this.init();
+    }
+    
+    // Detecta quantos cards mostrar por página
+    getCardsPerPage() {
+        return window.innerWidth >= 768 ? 2 : 1;
+    }
+    
+    // Inicializa o carrossel
+    init() {
+        this.createDots();
+        this.updateCarousel();
+        this.addEventListeners();
+    }
+    
+    // Cria os dots dinamicamente
+    createDots() {
+        this.dotsContainer.innerHTML = '';
+        
+        for (let i = 0; i < this.totalPages; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            dot.setAttribute('aria-label', `Ir para página ${i + 1}`);
+            dot.addEventListener('click', () => this.goToPage(i));
+            this.dotsContainer.appendChild(dot);
+        }
+    }
+    
+    // Atualiza a visualização do carrossel
+    updateCarousel() {
+        // Esconde todos os cards
+        this.cards.forEach(card => card.classList.remove('active'));
+        
+        // Mostra os cards da página atual
+        const startIndex = this.currentPage * this.cardsPerPage;
+        const endIndex = startIndex + this.cardsPerPage;
+        
+        for (let i = startIndex; i < endIndex && i < this.cards.length; i++) {
+            this.cards[i].classList.add('active');
+        }
+        
+        // Atualiza os dots
+        this.updateDots();
+        
+        // Atualiza as setas
+        this.updateArrows();
+    }
+    
+    // Atualiza os dots ativos
+    updateDots() {
+        const dots = this.dotsContainer.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, index) => {
+            if (index === this.currentPage) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
         });
-    </script>
+    }
+    
+    // Atualiza visibilidade das setas
+    updateArrows() {
+        // Seta anterior
+        if (this.currentPage === 0) {
+            this.prevBtn.classList.add('disabled');
+        } else {
+            this.prevBtn.classList.remove('disabled');
+        }
+        
+        // Seta próxima
+        if (this.currentPage === this.totalPages - 1) {
+            this.nextBtn.classList.add('disabled');
+        } else {
+            this.nextBtn.classList.remove('disabled');
+        }
+    }
+    
+    // Navega para página anterior
+    prevPage() {
+        if (this.currentPage > 0) {
+            this.currentPage--;
+            this.updateCarousel();
+        }
+    }
+    
+    // Navega para próxima página
+    nextPage() {
+        if (this.currentPage < this.totalPages - 1) {
+            this.currentPage++;
+            this.updateCarousel();
+        }
+    }
+    
+    // Vai para uma página específica
+    goToPage(pageIndex) {
+        this.currentPage = pageIndex;
+        this.updateCarousel();
+    }
+    
+    // Adiciona event listeners
+    addEventListeners() {
+        this.prevBtn.addEventListener('click', () => this.prevPage());
+        this.nextBtn.addEventListener('click', () => this.nextPage());
+        
+        // Suporte para teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.prevPage();
+            if (e.key === 'ArrowRight') this.nextPage();
+        });
+        
+        // Reage ao resize da janela
+        window.addEventListener('resize', () => {
+            const newCardsPerPage = this.getCardsPerPage();
+            
+            // Se mudou de mobile para desktop ou vice-versa
+            if (newCardsPerPage !== this.cardsPerPage) {
+                this.cardsPerPage = newCardsPerPage;
+                this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+                this.currentPage = 0; // Volta para o início
+                this.createDots();
+                this.updateCarousel();
+            }
+        });
+    }
+}
+
+// Inicializa o carrossel quando o DOM estiver pronto
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        new TestimonialsCarousel();
+    });
+} else {
+    new TestimonialsCarousel();
+}
+
+</script>
 </body>
 </html>

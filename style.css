@@ -190,7 +190,41 @@ section {
 .btn-whatsapp:hover {
     background-color: rgba(37, 211, 102, 0.9);
 }
+/*Hover dos botões*/
 
+/* === EFEITO GLOW NOS BOTÕES === */
+.btn-primary,
+.btn-whatsapp {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 
+                0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Glow roxo nos botões primários */
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(112, 50, 147, 0.4),
+                0 0 40px rgba(112, 50, 147, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Glow verde no WhatsApp */
+.btn-whatsapp:hover {
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4),
+                0 0 40px rgba(37, 211, 102, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Glow nos botões outline */
+.btn-outline:hover {
+    box-shadow: 0 0 20px rgba(112, 50, 147, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Glow nos ícones de navegação (Maps, Waze, Uber) */
+.navigation-icon:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15),
+                0 0 30px rgba(112, 50, 147, 0.2);
+}
 /* TÍTULOS E TEXTOS */
 .section-title {
     font-family: 'Marginal', serif;
@@ -308,7 +342,7 @@ section {
 }
 
 .card-featured {
-    border: 2px solid var(--primary);
+    border: 1px solid var(--primary);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
@@ -509,7 +543,7 @@ section {
     color: currentColor;
 }
 
-/* === HERO === */
+/* === HERO ================================================================== */
 .hero {
     position: relative;
     min-height: calc(100vh - 80px);
@@ -687,7 +721,7 @@ section {
 
 /* === SOBRE === */
 .sobre {
-    padding: 6rem 0;
+    padding: 5rem 0;
     background-color: var(--bg-white);
 }
 
@@ -901,6 +935,161 @@ section {
     font-weight: 500;
     color: var(--text-dark);
     margin: 0;
+}
+
+/* === CARROSSEL DE DEPOIMENTOS === */
+
+/* Wrapper principal */
+.testimonials-carousel {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+/* SETAS */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-arrow:hover {
+    background-color: var(--primary);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(112, 50, 147, 0.3);
+}
+
+.carousel-arrow:hover svg {
+    color: white;
+}
+
+.carousel-arrow svg {
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+
+.carousel-arrow-prev {
+    left: -24px;
+}
+
+.carousel-arrow-next {
+    right: -24px;
+}
+
+/* Seta desabilitada */
+.carousel-arrow.disabled {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+/* DOTS */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #d6d3d1;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background-color: var(--primary-lighter);
+    transform: scale(1.2);
+}
+
+.carousel-dot.active {
+    background-color: var(--primary);
+    width: 32px;
+    border-radius: 6px;
+}
+
+/* RESPONSIVO */
+
+/* Mobile: esconde setas, ajusta posição */
+@media (max-width: 767px) {
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-arrow-prev {
+        left: -10px;
+    }
+    
+    .carousel-arrow-next {
+        right: -10px;
+    }
+    
+    /* Grid mobile: 1 depoimento por vez */
+    .depoimentos-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        overflow: hidden;
+    }
+    
+    .card-testimonial {
+        display: none;
+    }
+    
+    .card-testimonial.active {
+        display: block;
+    }
+}
+
+/* Desktop: 2 depoimentos lado a lado */
+@media (min-width: 768px) {
+    .depoimentos-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        overflow: hidden;
+    }
+    
+    .card-testimonial {
+        display: none;
+    }
+    
+    .card-testimonial.active {
+        display: block;
+    }
+}
+
+/* Animação de entrada */
+.card-testimonial {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* === FOOTER === */
