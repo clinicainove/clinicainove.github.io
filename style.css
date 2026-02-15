@@ -846,7 +846,7 @@ section {
 
 /* === SERVIÇOS === */
 .servicos {
-    padding: 6rem 0;
+    padding: 5rem 0;
     background-color: var(--bg-light);
 }
 
@@ -876,7 +876,7 @@ section {
 
 /* === PLANOS === */
 .planos {
-    padding: 6rem 0;
+    padding: 5rem 0;
     background-color: var(--bg-white);
 }
 
@@ -893,7 +893,7 @@ section {
 
 /* === DEPOIMENTOS === */
 .depoimentos {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background-color: var(--bg-light);
 }
 
@@ -925,7 +925,7 @@ section {
 
 .testimonial-text {
     color: #443c3c;
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.625;
     font-style: italic;
     margin-bottom: 1.5rem;
@@ -954,8 +954,8 @@ section {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background-color: white;
-    border: 2px solid var(--primary);
+    background-color: var(--primary);
+    border: 2px solid var(--bg-white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -965,9 +965,7 @@ section {
 }
 
 .carousel-arrow:hover {
-    background-color: var(--primary);
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 20px rgba(112, 50, 147, 0.3);
 }
 
 .carousel-arrow:hover svg {
@@ -975,7 +973,7 @@ section {
 }
 
 .carousel-arrow svg {
-    color: var(--primary);
+    color: var(--bg-light);
     transition: color 0.3s ease;
 }
 
