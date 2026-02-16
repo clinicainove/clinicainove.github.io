@@ -270,6 +270,7 @@ section {
     background-color: var(--bg-white);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .card-image {
@@ -309,6 +310,7 @@ section {
             rgba(28, 25, 23, 0.9),
             rgba(28, 25, 23, 0.4),
             transparent);
+            
 }
 
 .card-content {
@@ -383,7 +385,8 @@ section {
 }
 
 .card-testimonial:hover {
-    transform: scale(1.02);
+    
+    border: 1px solid var(--primary) !important;
 }
 
 .card-content-testimonial {
@@ -521,13 +524,28 @@ section {
 }
 
 .navbar-nav-link {
-    color: var(--text-muted);
+color: var(--text-muted);
     font-weight: 500;
     transition: color 0.2s ease;
+    position: relative; /* <-- adicione esta linha */
+
 }
 
 .navbar-nav-link:hover {
     color: var(--primary);
+}
+.navbar-nav-link::after {
+     content: "";
+     position: absolute;
+     bottom: -4px;
+     left: 0px;
+     width: 0px;
+     height: 2px;
+     background: rgb(117, 47, 146);
+     transition: width 0.3s;
+}
+.navbar-nav-link:hover::after {
+     width: 100%;
 }
 
 .navbar-mobile-menu-button {
@@ -757,6 +775,8 @@ section {
     border-radius: 1.5rem;
     overflow: hidden;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--primary);
+    box-shadow: 0 25px 50px -12px var(--primary);
 }
 
 .sobre-image {
@@ -1116,10 +1136,14 @@ section {
 /* ==========================================================================*/
 
 .sobre-mim {
-    background: url("image/33_1.jpg") no-repeat center center; 
-    padding: 30px 40px;
     background-size: cover;
     align-items: center;
+    height: 100%;
+}
+
+.sobre-mim-container {
+    background: url("image/33_1.jpg");
+    background-size: cover;
     height: 100%;
 }
 
@@ -1130,6 +1154,8 @@ section {
     gap: 124px;
     /* diminui o espaço entre img e texto */
     align-items: center;
+    padding: 30px 40px;
+    
 }
 
 .sobre-mim-img img {
@@ -1137,8 +1163,9 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 16px;
+    border-radius: 6px;
     width: 390px;
+    
     
 }
 
