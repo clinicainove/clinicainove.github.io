@@ -19,3 +19,5 @@ Ampliar descições dos serviços
 Minificar o código, retirar comentários e códigos não utilizados, otimizar imagens, 
 usar CDN para bibliotecas externas, implementar lazy loading para imagens, reduzir requisições HTTP, 
 usar cache para recursos estáticos, e otimizar o tempo de resposta do servidor.
+
+Redes sociais
