@@ -9,9 +9,13 @@ Adicionar hover de efeito nos cards de serviço e planos, bordas
 
 Adicionar efeito do nav bar encolher,
 
-Efeito de hver nos navlinks 
+<!--Efeito de hver nos navlinks--> 
 
-Trocar fotos
-Sobre nós FEITO <!---->
+- Trocar fotos e reduzir tamanho
+  Sobre nós FEITO <!---->
 
-ampliar descições dos serviços
+Ampliar descições dos serviços
+
+Minificar o código, retirar comentários e códigos não utilizados, otimizar imagens, 
+usar CDN para bibliotecas externas, implementar lazy loading para imagens, reduzir requisições HTTP, 
+usar cache para recursos estáticos, e otimizar o tempo de resposta do servidor.
