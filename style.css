@@ -910,6 +910,11 @@ color: var(--text-muted);
     margin-bottom: 0.5rem;
 }
 
+/* Classe para card expandido */
+.card-large {
+    grid-column: span 2; /* Ocupa duas colunas */
+}
+
 /* === PLANOS === */
 .planos {
     padding: 5rem 0;
