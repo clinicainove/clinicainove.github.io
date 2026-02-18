@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 :root {
     --primary: #703293;
     --primary-hover: #5a2675;
@@ -75,7 +76,7 @@ section {
     padding: 0 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* === Mobile === */{
     .container {
         padding: 0 3rem;
     }
@@ -116,11 +117,11 @@ section {
 
 .badge-featured {
     position: absolute;
-    top: 1rem;
+    top: 0.5rem;
     right: 1rem;
     background-color: var(--primary);
     color: white;
-    margin-bottom: 0;
+    margin-bottom: 0rem;
 }
 
 /* BOTÕES */
@@ -476,8 +477,7 @@ section {
 
 /* === NAVBAR === */
 .navbar {
-    height: 80px;
-    height: 80px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -508,7 +508,7 @@ section {
     font-weight: 300;
     color: var(--primary);
     align-items: center;
-    margin-left: -180px;
+    margin-left: 1rem;
 }
 
 .navbar-desktop-nav {
@@ -517,7 +517,7 @@ section {
     gap: 32px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* === Mobile === */{
     .navbar-desktop-nav {
         display: flex;
     }
@@ -561,7 +561,7 @@ color: var(--text-muted);
     cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* === Mobile === */{
     .navbar-mobile-menu-button {
         display: none;
     }
@@ -588,7 +588,7 @@ color: var(--text-muted);
     padding: 0 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* === Mobile === */{
     .hero-container {
         padding: 0 3rem;
     }
@@ -602,7 +602,7 @@ color: var(--text-muted);
     padding: 3rem 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) /* === Notebook === */{
     .hero-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 0;
@@ -614,7 +614,7 @@ color: var(--text-muted);
     padding: 3rem 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) /* === Notebook === */{
     .hero-content {
         padding: 0;
     }
@@ -635,7 +635,7 @@ color: var(--text-muted);
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) /* === Notebook === */{
     .hero-title {
         font-size: 3.75rem;
     }
@@ -649,7 +649,7 @@ color: var(--text-muted);
     margin-bottom: 2rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* === Mobile === */{
     .hero-subtitle {
         font-size: 1.125rem;
     }
@@ -700,7 +700,7 @@ color: var(--text-muted);
     height: 570px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) /* === Notebook === */{
     .hero-image-container {
         display: block;
     }
@@ -761,7 +761,7 @@ color: var(--text-muted);
     align-items: center;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) /* === Notebook === */{
     .sobre-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -889,7 +889,7 @@ color: var(--text-muted);
     gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* === Mobile === */{
     .servicos-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -920,15 +920,21 @@ color: var(--text-muted);
     padding: 5rem 0;
     background-color: var(--bg-white);
 }
+.planos-container {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
 .planos-grid {
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) /* === Notebook === */{
     .planos-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -945,7 +951,7 @@ color: var(--text-muted);
     
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* === Mobile === */{
     .depoimentos-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1099,8 +1105,8 @@ color: var(--text-muted);
     }
 }
 
-/* Desktop: 2 depoimentos lado a lado */
-@media (min-width: 768px) {
+/* === Notebook === : 2 depoimentos lado a lado */
+@media (min-width: 768px) /* === Mobile === */{
     .depoimentos-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1239,7 +1245,7 @@ color: var(--text-muted);
     padding: 4rem 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* === Mobile === */{
     .footer .container {
         padding: 4rem 3rem;
     }
@@ -1251,13 +1257,13 @@ color: var(--text-muted);
     margin-bottom: 3rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* === Mobile === */{
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) /* === Notebook === */{
     .footer-grid {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -1267,7 +1273,7 @@ color: var(--text-muted);
     grid-column: span 2;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) /* === Notebook === */{
     .footer-col-about {
         grid-column: span 2;
     }
@@ -1393,7 +1399,7 @@ color: var(--text-muted);
     gap: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* === Mobile === */{
     .footer-bottom {
         flex-direction: row;
     }
@@ -1413,7 +1419,7 @@ color: var(--text-muted);
     font-weight: bold;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) /* === Mobile === */{
 
     .footer-copyright,
     .footer-dev {

@@ -1,7 +1,7 @@
 Cor geral roxo ##703293
 
-<!--arrumar links ancora das seções. efeito puxar ou ir FEITO-->
-<!--Adicionar Hover nos botões do hero FEITO-->
+Arrumar links ancora das seções. efeito puxar ou ir---------FEITO
+Adicionar Hover nos botões do hero----------------------FEITO
 Melhorar Cor de fundo da area de serviços ??
 
 Adicionar hover de efeito na imagem, bordas, respirador, 
@@ -9,10 +9,10 @@ Adicionar hover de efeito nos cards de serviço e planos, bordas
 
 Adicionar efeito do nav bar encolher,
 
-<!--Efeito de hver nos navlinks--> 
+Efeito de hver nos navlinks------ FEITO
 
 - Trocar fotos e reduzir tamanho
-  Sobre nós FEITO <!---->
+  Sobre nós FEITO-----------------FEITO
 
 Ampliar descições dos serviços
 
@@ -20,4 +20,4 @@ Minificar o código, retirar comentários e códigos não utilizados, otimizar i
 usar CDN para bibliotecas externas, implementar lazy loading para imagens, reduzir requisições HTTP, 
 usar cache para recursos estáticos, e otimizar o tempo de resposta do servidor.
 
-<!--Redes sociais-->
+<!--Redes sociais--> FEITO
