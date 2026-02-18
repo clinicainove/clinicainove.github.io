@@ -1296,6 +1296,14 @@ color: var(--text-muted);
     margin-bottom: 1.5rem;
 }
 
+.btn-instagram{ 
+    
+    color: white;
+    height: auto;
+    
+    height: 86px;
+    width: 86px;
+}
 
 .footer-contact-list {
     list-style: none;
