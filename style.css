@@ -37,9 +37,11 @@ body {
     line-height: 1.6;
     background-color: var(--bg-light);
     min-height: 100vh;
-    overflow-x: hidden;
+    width: 100%;
 }
-
+html{
+    overflow-x: hidden; /* Bloqueia scroll horizontal */
+}
 h1,
 h2,
 h3,
@@ -264,6 +266,7 @@ section {
     font-style: italic;
     font-weight: 400 !important;
 }
+
 
 /* CARDS */
 .card {
@@ -498,18 +501,30 @@ section {
     justify-content: space-between;
 }
 
-.logo img {
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Espaço entre logo e texto */
+}
+
+.navbar-brand img {
     width: 50px;
+    height: 50px;
 }
 
 .logo-text {
-    position: absolute;
     font-family: 'Cormorant SC', serif;
-    font-size: 30px;
+    font-size: 1.875rem; /* 30px */
     font-weight: 300;
     color: var(--primary);
-    align-items: center;
-    margin-left: 4rem;
+    white-space: nowrap; /* Não quebra linha */
+}
+
+/* Mobile: esconde texto, mostra só logo */
+@media (max-width: 767px) {
+    .logo-text {
+        display: none;
+    }
 }
 
 .navbar-desktop-nav {
@@ -1156,26 +1171,31 @@ color: var(--text-muted);
 /* ==========================================================================*/
 
 .sobre-mim {
-    background-size: cover;
     align-items: center;
-    height: 100%;
 }
 
-.sobre-mim-container {
-    background: url("image/33_1.jpg");
-    background-size: cover;
+.sobre-mim-container {  
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.sobre-mim-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    background-color: var(--text-dark);
+    z-index: -1;
 }
 
 .sobre-mim-content {
     display: grid;
-    grid-template-columns: 390px 1fr;
-    /* fixo para imagem, flexível para texto */
-    gap: 124px;
-    /* diminui o espaço entre img e texto */
+    grid-template-columns: 390px 1fr; /* fixo para imagem, flexível para texto */
+    gap: 124px; /* diminui o espaço entre img e texto */
     align-items: center;
     padding: 30px 40px;
-    
 }
 
 .sobre-mim-img img {
@@ -1185,25 +1205,16 @@ color: var(--text-muted);
     justify-content: center;
     border-radius: 6px;
     width: 390px;
-    
-    
 }
-
-/*.card-img-2 {
-        
-        }
-        .card-img-2 img {*/
 
 .sobre-mim-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 0;
-    /* remove margem extra */
+    margin-left: 0; /* remove margem extra */
     max-width: 100%;
     gap: 16px;
     padding-right: 40px;
-
 }
 
 .sobre-mim-text h2 {
