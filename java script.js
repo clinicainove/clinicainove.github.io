@@ -198,3 +198,43 @@ if (document.readyState === 'loading') {
 } else {
     new TestimonialsCarousel();
 }
+
+// Registro do Service Worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then(registration => {
+                console.log('✅ Service Worker registrado:', registration.scope);
+                
+                // Verifica atualizações
+                registration.addEventListener('updatefound', () => {
+                    const newWorker = registration.installing;
+                    
+                    newWorker.addEventListener('statechange', () => {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            console.log('🔄 Nova versão disponível! Recarregue a página.');
+                            
+                            // Opcional: Notificar usuário
+                            if (confirm('Nova versão disponível! Deseja atualizar?')) {
+                                newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                window.location.reload();
+                            }
+                        }
+                    });
+                });
+            })
+            .catch(error => {
+                console.error('❌ Erro ao registrar Service Worker:', error);
+            });
+    });
+    
+    // Recarrega quando novo SW assume controle
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshing) {
+            refreshing = true;
+            window.location.reload();
+        }
+    });
+}

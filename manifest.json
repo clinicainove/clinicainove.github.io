@@ -1,0 +1,27 @@
+{
+  "name": "Clínica Inove - Pilates e Bem-Estar",
+  "short_name": "Clínica Inove",
+  "description": "Pilates personalizado e tratamentos de bem-estar em Ribeirão Preto",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#703293",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/image/Logo-clinica-inove.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/image/Logo-clinica-inove.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "fitness", "medical"],
+  "lang": "pt-BR",
+  "dir": "ltr"
+}
