@@ -199,7 +199,7 @@ if (document.readyState === 'loading') {
     new TestimonialsCarousel();
 }
 
-// Registro do Service Worker
+/*/ Registro do Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker
@@ -227,9 +227,9 @@ if ('serviceWorker' in navigator) {
             .catch(error => {
                 console.error('❌ Erro ao registrar Service Worker:', error);
             });
-    });
+    });*/
     
-    // Recarrega quando novo SW assume controle
+    /*/ Recarrega quando novo SW assume controle
     let refreshing = false;
     navigator.serviceWorker.addEventListener('controllerchange', () => {
         if (!refreshing) {
@@ -237,4 +237,4 @@ if ('serviceWorker' in navigator) {
             window.location.reload();
         }
     });
-}
+}*/
