@@ -282,7 +282,7 @@
 
     <!-- Seção SERVIÇOS -->
     <section id="servicos" class="servicos">
-        <div class="container">
+        <div class="servicos-container">
             <div class="section-header">
                 <div class="badge">Nossos Serviços</div>
                 <h2 class="servicos-section-title">
@@ -388,7 +388,7 @@
                     <span class="text-highlight">Pilates</span>
                 </h2>
                 <p class="section-description">
-                    Entre em contato para conhecer os valores e condições especiais.
+                    Entre em contato para agendar consultas e serviços.
                 </p>
             </div>
 
@@ -437,12 +437,12 @@
                 </div>
 
                 <!-- Plano 2:  -->
-                <div class="card card-plan" style="background-color: #e8d4f8; border: 2px solid var(--primary);">
+                <div class="card card-plan" style="background-color: #c48bf1; border: 2px solid var(--primary);">
                     <div class="card-content-plan">
                         <div class="badge badge-featured">O mais vendido</div>
-                        <h3 class="card-title">Plano Equilíbrio</h3>
-                        <p class="card-subtitle">8 aulas por mês</p>
-                        <p class="card-description">Perfeito para rotina consistente.</p>
+                        <h3 class="card-title" style="color: #000000;">Plano Equilíbrio</h3>
+                        <p class="card-subtitle"style="color: #000000;">8 aulas por mês</p>
+                        <p class="card-description"style="color: #000000;">Perfeito para rotina consistente.</p>
                         
                         <ul class="plan-features">
                             <li class="feature-item">
@@ -469,13 +469,30 @@
                                 </div>
                                 <span class="feature-text">Ajuste individual prioritário</span>
                             </li>
+                            
                             <li class="feature-item" >
                                 <div class="feature-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text">Bônus: 1 sessão de Massagem Relaxante + 1 sessão de Analgesia</span>
+                                <span class="feature-text">Bônus:</span>
+                            </li>
+                            <li class="feature-item" >
+                                <div class="feature-icon"style="visibility:hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                </div>
+                                <span class="feature-text"> 1 sessão de Massagem Relaxante</span>
+                            </li>
+                            <li class="feature-item" >
+                                <div class="feature-icon"style="visibility:hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                </div>
+                                <span class="feature-text" style="text-align:right"> + 1 sessão de Analgesia</span>
                             </li>
                         </ul>
                         
@@ -490,7 +507,7 @@
 
                 <!-- Plano 3: Premium -->
                 <div class="card card-plan card-featured" style="background-color: var(--primary);border: 2px #fff;">
-                    <div class="badge badge-featured"style="background-color: white;"><span style="color: black;">Recomendado</span></div>
+                    <div class="badge badge-featured"style="background-color: white;"><span style="color: var(--primary);">Recomendado</span></div>
                     <div class="card-content-plan">
                         <h3 class="card-title" style="color: white;">Pacote Premium</h3>
                         <p class="card-subtitle"style="color: white;">12 aulas por mês</p>
@@ -527,7 +544,23 @@
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text" style="color: white;">Bônus: 1 sessão de Massagem Relaxante ou<br>Liberação Miofascial</span>
+                                <span class="feature-text" style="color: white;">Bônus:</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"style="visibility:hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                </div>
+                                <span class="feature-text" style="color: white;">1 sessão de Massagem Relaxante</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"style="visibility:hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                </div>
+                                <span class="feature-text" style="color: white;">ou 1 sessão de Liberação Miofascial</span>
                             </li>
                         </ul>
                         
@@ -558,14 +591,14 @@
                                 </div>
                                 <span class="feature-text">Melhor custo-benefício</span>
                             </li>
-                            <li class="feature-item">
+                            <!--li class="feature-item">
                                 <div class="feature-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
                                 <span class="feature-text">Vaga garantida</span>
-                            </li>
+                            </li-->
                             <li class="feature-item">
                                 <div class="feature-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -580,7 +613,23 @@
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text">Bônus: 5 sessões de Massagem Relaxante ou Liberação Miofascial</span>
+                                <span class="feature-text">Bônus:</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"style="visibility:hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                </div>
+                                <span class="feature-text">4 sessões de Massagem Relaxante</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"style="visibility:hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                </div>
+                                <span class="feature-text">ou 4 sessões de Liberação Miofascial</span>
                             </li>
                         </ul>
                         
@@ -651,7 +700,7 @@
                     <div class="card-content-plan">
                         <h3 class="card-title">Consulta de Fisioterapia</h3>
                         <p class="card-subtitle">Atendimento na Clínica ou Home care.</p>
-                        <p class="card-description">Com profissional qualificado e experiente.</p>
+                        <p class="card-description">Com profissional qualificada e experiente.</p>
                         
                         <ul class="plan-features">
                             <li class="feature-item">
@@ -684,7 +733,7 @@
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text"> </span>
+                                <span class="feature-text">Movimento é vida !</span>
                             </li>
                         </ul>
                         
@@ -910,11 +959,11 @@
                 </div>
                 <div class="sobre-mim-text">
                     <h2>Dra Emlyn L. S. Rosa - Fisioterapeuta</h2>
-                    <span style="font-family: 'Comfortaa', sans-serif; font-size: 12px; color: #fff; margin-top: -50px; display: block; margin-bottom: 20px;;;">crefito: 3.000.000-0</span>
+                    <span style="font-family: 'Comfortaa', sans-serif; font-size: 15px; color: #fff; margin-top: -50px; display: block; margin-bottom: 20px;;;">crefito: 3.000.000-0</span>
                     
                     <p>Sou Fisioterapeuta por formação, mas principalmente por escolha de vida!</p>
                     <p>Fui acompanhar uma amiga em uma aula na faculdade e saí apaixonada sobre a forma como eles falavam sobre movimento, dor e cuidado.</p>
-                    <a>Eu lembro de pensar: "É isso — eu quero ajudar pessoas a se sentirem bem com o próprio corpo."</a>
+                    <p>Eu lembro de pensar: "É isso — eu quero ajudar pessoas a se sentirem bem com o próprio corpo."</p>
                     <p>Hoje sou pós-graduada em Estética e em Fisioterapia Neurofuncional, com formações em Pilates, Liberação Miofascial, Bandagem Funcional e outros cursos que me ajudam a olhar cada paciente como um todo — físico, emocional e humano.</p>
                     <p>Meu propósito?<br>
                     Ajudar pessoas a viverem com menos dor, mais qualidade de vida e mais conexão com o próprio corpo.<br>
@@ -971,21 +1020,58 @@
                         rel="noopener noreferrer" 
                         class="btn-social-media"style="fill: white; background-color: red; color: #fff; border-radius:50%; padding: 10px 10px; align-items: center; display: flex; justify-content: center;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" id="google-my-business">
-                            <path d="M10.496 1.998a.5.5 0 0 0-.074.006h-4.42c-.554 0-1.037.252-1.361.611-.324.36-.515.808-.625 1.272l-2 8.4a.5.5 0 0 0-.012.172.5.5 0 0 0-.002.045c0 1.445.759 2.784 1.996 3.51.001 0 .003 0 .004.002v13.488a.5.5 0 0 0 .5.5h24a.5.5 0 0 0 .5-.5V16.016l.002-.002a4.067 4.067 0 0 0 1.998-3.51.5.5 0 0 0-.002-.04.5.5 0 0 0 0-.003.5.5 0 0 0 0-.008.5.5 0 0 0-.012-.166l-2-8.4c-.11-.464-.3-.913-.625-1.272a1.836 1.836 0 0 0-1.361-.611h-4.42a.5.5 0 0 0-.09-.006.5.5 0 0 0-.07.006h-5.84a.5.5 0 0 0-.088-.006.5.5 0 0 0-.076.006H10.58a.5.5 0 0 0-.084-.006zM6.002 3.004h3.947l-.91 9H3.112l1.876-7.885c.082-.345.225-.645.395-.834a.754.754 0 0 1 .619-.281zm4.953 0h5.047v9h-5.955l.908-9zm6.047 0h5.047l.908 9h-5.955v-9zm6.053 0h3.947c.277 0 .447.093.617.281.17.189.314.49.397.834l1.877 7.885h-5.928l-.91-9zm-19.922 10H8.869c-.152.884-.594 1.693-1.371 2.148a2.948 2.948 0 0 1-2.994 0c-.777-.455-1.219-1.264-1.371-2.148zm7 0H15.869c-.152.884-.594 1.693-1.371 2.148a2.948 2.948 0 0 1-2.994 0c-.777-.455-1.219-1.264-1.371-2.148zm7 0H22.869c-.152.884-.594 1.693-1.371 2.148a2.948 2.948 0 0 1-2.994 0c-.777-.455-1.219-1.264-1.371-2.148zm7 0H29.869c-.152.884-.594 1.693-1.371 2.148a2.948 2.948 0 0 1-2.994 0c-.777-.455-1.219-1.264-1.371-2.148zM9.5 14.457c.345.636.856 1.18 1.498 1.557a3.957 3.957 0 0 0 4.006 0 4.028 4.028 0 0 0 1.496-1.557c.345.636.856 1.18 1.498 1.557a3.957 3.957 0 0 0 4.006 0 4.028 4.028 0 0 0 1.496-1.557c.345.636.856 1.18 1.498 1.557.92.54 2 .676 3.004.414v12.576h-23V16.428a3.954 3.954 0 0 0 3.002-.414A4.028 4.028 0 0 0 9.5 14.457zm13.592 6.547a3.018 3.018 0 0 0-2.213.877 3.006 3.006 0 0 0-.477 3.623 3.004 3.004 0 0 0 3.375 1.396 3.003 3.003 0 0 0 2.225-2.896.5.5 0 0 0-.5-.5h-2.5a.5.5 0 1 0 0 1h1.83c-.187.668-.616 1.245-1.312 1.432a1.996 1.996 0 0 1-2.25-.932 1.998 1.998 0 0 1 .316-2.416 1.998 1.998 0 0 1 2.416-.317.5.5 0 0 0 .5-.867 2.994 2.994 0 0 0-1.41-.4z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;white-space:normal;isolation:auto;mix-blend-mode:normal;solid-color:#000;solid-opacity:1"></path>
+                            <path d="M10.496 1.998a.5.5 0 0 0-.074.006h-4.42c-.554 0-1.037.252-1.361.611-.324.36-.515.808-.625 1.272l-2 8.4a.5.5 0 0 0-.012.172.5.5 0 0 0-.002.045c0 1.445.759 2.784 1.996 3.51.001 0 .003 0 .004.002v13.488a.5.5 0 0 0 .5.5h24a.5.5 0 0 0 .5-.5V16.016l.002-.002a4.067 4.067 0 0 0 1.998-3.51.5.5 0 0 0-.002-.04.5.5 0 0 0 0-.003.5.5 0 0 0 0-.008.5.5 0 0 0-.012-.166l-2-8.4c-.11-.464-.3-.913-.625-1.272a1.836 1.836 0 0 0-1.361-.611h-4.42a.5.5 0 0 0-.09-.006.5.5 0 0 0-.07.006h-5.84a.5.5 0 0 0-.088-.006.5.5 0 0 0-.076.006H10.58a.5.5 0 0 0-.084-.006zM6.002 3.004h3.947l-.91 9H3.112l1.876-7.885c.082-.345.225-.645.395-.834a.754.754 0 0 1 .619-.281zm4.953 0h5.047v9h-5.955l.908-9zm6.047 0h5.047l.908 9h-5.955v-9zm6.053 0h3.947c.277 0 .447.093.617.281.17.189.314.49.397.834l1.877 7.885h-5.928l-.91-9zm-19.922 10H8.869c-.152.884-.594 1.693-1.371 2.148a2.948 2.948 0 0 1-2.994 0c-.777-.455-1.219-1.264-1.371-2.148zm7 0H15.869c-.152.884-.594 1.693-1.371 2.148a2.948 2.948 0 0 1-2.994 0c-.777-.455-1.219-1.264-1.371-2.148zm7 0H22.869c-.152.884-.594 1.693-1.371 2.148a2.948 2.948 0 0 1-2.994 0c-.777-.455-1.219-1.264-1.371-2.148zm7 0H29.869c-.152.884-.594 1.693-1.371 2.148a2.948 2.948 0 0 1-2.994 0c-.777-.455-1.219-1.264-1.371-2.148zM9.5 14.457c.345.636.856 1.18 1.498 1.557a3.957 3.957 0 0 0 4.006 0 4.028 4.028 0 0 0 1.496-1.557c.345.636.856 1.18 1.498 1.557a3.957 3.957 0 0 0 4.006 0 4.028 4.028 0 0 0 1.496-1.557c.345.636.856 1.18 1.498 1.557.92.54 2 .676 3.004.414v12.576h-23V16.428a3.954 3.954 0 0 0 3.002-.414A4.028 4.028 0 0 0 9.5 14.457zm13.592 6.547a3.018 3.018 0 0 0-2.213.877 3.006 3.006 0 0 0-.477 3.623 3.004 3.004 0 0 0 3.375 1.396 3.003 3.003 0 0 0 2.225-2.896.5.5 0 0 0-.5-.5h-2.5a.5.5 0 1 0 0 1h1.83c-.187.668-.616 1.245-1.312 1.432a1.996 1.996 0 0 1-2.25-.932 1.998 1.998 0 0 1 .316-2.416 1.998 1.998 0 0 1 2.416-.317.5.5 0 0 0 .5-.867 2.994 2.994 0 0 0-1.41-.4z" 
+                            color="#000" font-family="sans-serif" font-weight="400" overflow="visible" style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;white-space:normal;isolation:auto;mix-blend-mode:normal;solid-color:#000;solid-opacity:1"></path>
                         </svg>
                 
                     </a>
                     <!--MAPS-->
-                    <a href="https://share.google/Ft9GHBw2wBk3o4ldS" 
+                    <a href="https://www.google.com/maps/dir//Cl%C3%ADnica+Inove+-+Rua+Marechal+Deodoro,+1499,+Sala+2,+Boulevard+-+Jardim+Sumare,+Ribeir%C3%A3o+Preto+-+SP,+14025-386/@-21.1889243,-47.8127255,17z/data=!4m17!1m7!3m6!1s0x94b9bf1d2b4e6807:0x99a03bebe749e631!2sCl%C3%ADnica+Inove!8m2!3d-21.1889243!4d-47.8101506!16s%2Fg%2F11rt7swm59!4m8!1m0!1m5!1m1!1s0x94b9bf1d2b4e6807:0x99a03bebe749e631!2m2!1d-47.8102067!2d-21.1888832!3e0?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="btn-social-media"style="fill: black; background-color: yellow; color: #fff; border-radius:50%; padding: 10px 10px; align-items: center; display: flex; justify-content: center;">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 640 640">
-                            <path fill="var(--primary)" d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/></svg>
+                        class="btn-social-media"style="fill: black; background-color: white; color: #fff; border-radius:50%; padding: 10px 10px; align-items: center; display: flex; justify-content: center;">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <!-- License: MIT. Made by Google Cloud: https://cloud.google.com/icons -->
+                        <svg width="32" height="32" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <style>.cls-1{fill:#1a73e8;}.cls-2{fill:#ea4335;}.cls-3{fill:#4285f4;}.cls-4{fill:#fbbc04;}.cls-5{fill:#34a853;}</style>
+                            </defs>
+                            <g transform="scale(1.03, 1.03), translate(3.5, 0)">
+                                <path class="cls-1" d="M14.45.78A8.09,8.09,0,0,0,5.8,3.29L9.63,6.51Z" transform="translate(-3.91 -0.4)"/>
+                                <path class="cls-2" d="M5.8,3.29a8.07,8.07,0,0,0-1.89,5.2,9.06,9.06,0,0,0,.8,3.86L9.63,6.51Z" transform="translate(-3.91 -0.4)"/>
+                                <path class="cls-3" d="M12,5.4a3.09,3.09,0,0,1,3.1,3.09,3.06,3.06,0,0,1-.74,2l4.82-5.73a8.12,8.12,0,0,0-4.73-4L9.63,6.51A3.07,3.07,0,0,1,12,5.4Z" transform="translate(-3.91 -0.4)"/>
+                                <path class="cls-4" d="M12,11.59a3.1,3.1,0,0,1-3.1-3.1,3.07,3.07,0,0,1,.73-2L4.71,12.35A28.67,28.67,0,0,0,8.38,17.6l6-7.11A3.07,3.07,0,0,1,12,11.59Z" transform="translate(-3.91 -0.4)"/>
+                                <path class="cls-5" d="M14.25,19.54c2.7-4.22,5.84-6.14,5.84-11a8.1,8.1,0,0,0-.91-3.73L8.38,17.6c.46.6.92,1.24,1.37,1.94C11.4,22.08,10.94,23.6,12,23.6S12.6,22.08,14.25,19.54Z" transform="translate(-3.91 -0.4)"/>
+                            </g>
+                        </svg>
                 
                     </a>
+                    <!--UBER-->
+                    <a href="https://m.uber.com/go/drop?drop%5B0%5D=%7B%22addressLine1%22%3A%22Cl%C3%ADnica%20Inove%22%2C%22addressLine2%22%3A%22rua%20marechal%20deodoro%2C%201499%20sala%202%20-%20Jardim%20Sumar%C3%A9%20-%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014025-386%22%2C%22id%22%3A%22788e2867-1ade-a6bd-8fc7-4c2f9da7b253%22%2C%22source%22%3A%22SEARCH%22%2C%22latitude%22%3A-21.188865%2C%22longitude%22%3A-47.810279%2C%22provider%22%3A%22uber_places%22%7D&effect=&marketing_vistor_id=82459f09-ac6c-46b2-80cc-04b41534b291&uclick_id=baf3f537-dd0c-48f7-abdb-b0c485ebed12" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="btn-social-media"style="fill: black; background-color: black; color: #fff; border-radius:50%; padding: auto; align-items: center; display: flex; justify-content: center;">
+                        <?xml version="1.0" encoding="utf-8"?>
+                            <svg width="52px" height="52px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="512" cy="512" r="512"/>
+                            <path d="M303.9 584.8c26.9 0 47.8-20.8 47.8-51.7v-120h29.2v194.4H352v-18.1c-13.1 13.6-31.1 21.4-51.4 21.4-41.7 0-73.6-30.3-73.6-76.1V413.1h29.2v120c0 31.4 20.5 51.7 47.7 51.7m98.7-171.7h28.1v70.8c13.2-13.5 31.4-21.2 50.3-21.1 41.7 0 74.4 33.1 74.4 74.2 0 40.8-32.8 73.9-74.4 73.9-19 .1-37.2-7.6-50.6-21.1v17.8h-27.8V413.1zm76.3 173.1c26.7 0 48.6-21.9 48.6-49.2 0-27.5-21.9-49.2-48.6-49.2-26.9 0-48.9 21.7-48.9 49.2.1 27.2 21.7 49.2 48.9 49.2m160.3-123.1c40.8 0 70.8 31.4 70.8 73.6v9.2H594.8c3.9 23.1 23.1 40.3 46.9 40.3 16.4 0 30.3-6.7 40.8-20.8l20.3 15c-14.2 18.9-35.3 30.3-61.1 30.3-42.5 0-75.3-31.7-75.3-73.9 0-40.1 31.4-73.7 72.8-73.7m-43.9 60.6h86.4c-4.7-21.7-22.2-36.1-43.1-36.1s-38.3 14.4-43.3 36.1m190-32.8c-18.3 0-31.7 14.2-31.7 36.1v80.6h-28.1V465.9h27.8v17.5c6.9-11.4 18.3-18.6 33.9-18.6h9.7v26.1h-11.6z" style="fill:#fff"/>
+                            </svg>
+                        </a>
+                        <!--WAZE-->
+                    <a href="https://m.uber.com/go/drop?drop%5B0%5D=%7B%22addressLine1%22%3A%22Cl%C3%ADnica%20Inove%22%2C%22addressLine2%22%3A%22rua%20marechal%20deodoro%2C%201499%20sala%202%20-%20Jardim%20Sumar%C3%A9%20-%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014025-386%22%2C%22id%22%3A%22788e2867-1ade-a6bd-8fc7-4c2f9da7b253%22%2C%22source%22%3A%22SEARCH%22%2C%22latitude%22%3A-21.188865%2C%22longitude%22%3A-47.810279%2C%22provider%22%3A%22uber_places%22%7D&effect=&marketing_vistor_id=82459f09-ac6c-46b2-80cc-04b41534b291&uclick_id=baf3f537-dd0c-48f7-abdb-b0c485ebed12" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="btn-social-media"style="fill: black; background-color: white; color: #fff; border-radius:50%; padding: 10px 10px; align-items: center; display: flex; justify-content: center;">
+                        <?xml version="1.0" encoding="utf-8"?>
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <svg fill="#000000" width="32px" height="32px" viewBox="0 0 24 24" id="waze" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path id="primary" d="M13.38,2C7.19,2,5,6.57,5,10.49v.12a1.43,1.43,0,0,1-.41,1.05A1.47,1.47,0,0,1,3.27,12a1,1,0,0,0-.87.16A1,1,0,0,0,2,13a7.86,7.86,0,0,0,4.16,5.4,11.23,11.23,0,0,0,1.69.78c.7.22,1.85.48,1.93.5A18.49,18.49,0,0,0,13.3,20c.24,0,.46,0,.69,0a9.49,9.49,0,0,0,2.15-.38,6.5,6.5,0,0,0,2.1-1.19A9.06,9.06,0,0,0,22,11C22,5.78,18.37,2,13.38,2Z" style="fill: rgb(0, 0, 0);"></path><path id="secondary" d="M19,19a3,3,0,1,1-3-3A3,3,0,0,1,19,19ZM8,16a3,3,0,1,0,3,3A3,3,0,0,0,8,16Zm8-8.5A1.5,1.5,0,1,0,17.5,9,1.5,1.5,0,0,0,16,7.5Zm-5,0A1.5,1.5,0,1,0,12.5,9,1.5,1.5,0,0,0,11,7.5Z" style="fill: rgb(44, 169, 188);"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
+
+                        
+
 
                 <!-- Coluna 2: Contato -->
                 <div class="footer-col">

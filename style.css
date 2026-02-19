@@ -491,7 +491,7 @@ section {
 
 .navbar-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -503,18 +503,19 @@ section {
 }
 
 .logo-text {
+    position: absolute;
     font-family: 'Cormorant SC', serif;
     font-size: 30px;
     font-weight: 300;
     color: var(--primary);
     align-items: center;
-    margin-left: 1rem;
+    margin-left: 4rem;
 }
 
 .navbar-desktop-nav {
     display: none;
     align-items: center;
-    gap: 32px;
+    gap: 42px;
 }
 
 @media (min-width: 768px) /* === Mobile === */{
@@ -583,7 +584,7 @@ color: var(--text-muted);
 }
 
 .hero-container {
-    max-width: 80rem;
+    max-width: 100rem;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -622,7 +623,7 @@ color: var(--text-muted);
 
 .hero-title {
     font-family: "Marginal", serif;
-    font-size: 55px !important;
+    font-size: 70px !important;
     font-weight: 300;
     line-height: 1.01;
     color: var(--text-dark);
@@ -879,6 +880,13 @@ color: var(--text-muted);
 }
 
 /* === SERVIÇOS === */
+.servicos-container {
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    
+}
 .servicos {
     padding: 5rem 0;
     background-color: var(--bg-light);
@@ -930,7 +938,7 @@ color: var(--text-muted);
 
 .planos-grid {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 @media (min-width: 1024px) /* === Notebook === */{
@@ -1194,6 +1202,7 @@ color: var(--text-muted);
     /* remove margem extra */
     max-width: 100%;
     gap: 16px;
+    padding-right: 40px;
 
 }
 
@@ -1207,17 +1216,10 @@ color: var(--text-muted);
 
 .sobre-mim-text p {
     font-family: 'comfortaa', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
     line-height: 1.4;
     font-weight: 200;
-}
-
-.sobre-mim-text a {
-    color: #fff;
-    line-height: 1.8;
-    font-size: 19px;
-    font-family: 'comfortaa', sans-serif;
 }
 
 @media (max-width: 900px) {
