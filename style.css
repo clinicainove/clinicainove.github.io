@@ -19,7 +19,7 @@
     --border-light: #f5f5f4;
     --border-gray: #e7e5e4;
     --yellow-star: #facc15;
-    --whatsapp: #25D366;
+    --whatsapp: #25D366;   
 }
 
 /* === TIPOGRAFIA === */
@@ -915,6 +915,7 @@ color: var(--text-muted);
     grid-column: span 2; /* Ocupa duas colunas */
 }
 
+
 /* === PLANOS === */
 .planos {
     padding: 5rem 0;
@@ -934,7 +935,7 @@ color: var(--text-muted);
 
 @media (min-width: 1024px) /* === Notebook === */{
     .planos-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
