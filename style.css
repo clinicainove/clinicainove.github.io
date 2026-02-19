@@ -39,9 +39,7 @@ body {
     min-height: 100vh;
     width: 100%;
 }
-html{
-    overflow-x: hidden; /* Bloqueia scroll horizontal */
-}
+
 h1,
 h2,
 h3,
@@ -264,7 +262,10 @@ section {
 .text-highlight {
     color: var(--primary);
     font-style: italic;
-    font-weight: 400 !important;
+    
+}
+.hero-destaque { /*Importante*/
+    font-weight: 800;
 }
 
 
@@ -378,8 +379,8 @@ section {
 }
 
 .card-testimonial {
-    border: 1px solid var(--primary-light)!important;
-    border-radius: 5px!important;
+    
+    
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     height: 280px; /* ajuste conforme necessário */
@@ -387,11 +388,16 @@ section {
     flex-direction: column;
     
 }
-
-.card-testimonial:hover {
-    
-    border: 1px solid var(--primary) !important;
+.testimonials-destaque {
+    border: 1px solid var(--primary-light); /*Importante*/
+    border-radius: 5px;
 }
+
+
+.card-testimonials-destaque:hover {
+    border: 1px solid var(--primary);
+}
+
 
 .card-content-testimonial {
     padding: 1rem;
@@ -505,6 +511,7 @@ section {
     display: flex;
     align-items: center;
     gap: 1rem; /* Espaço entre logo e texto */
+    background-color: rgba(255,0,0,0.1); /* Apenas para visualização, remova depois */
 }
 
 .navbar-brand img {
