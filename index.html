@@ -29,7 +29,6 @@
 
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css?v=1">
 
 
     <!-- SVG DEFINITIONS (invisível) -->
@@ -414,7 +413,7 @@
 
             <div class="planos-grid">
                 <!-- Plano 1: -->
-                <div class="card card-plan" style="border: 1px solid var(--primary);">
+                <div class="card card-plan-essencial">
                     <div class="card-content-plan">
                         <h3 class="card-title">Plano Cuidado Essencial</h3>
                         <p class="card-subtitle">4 aulas por mês</p>
@@ -457,12 +456,12 @@
                 </div>
 
                 <!-- Plano 2:  -->
-                <div class="card card-plan" style="background-color: #c48bf1; border: 2px solid var(--primary);">
+                <div class="card card-plan-equilibrio">
                     <div class="card-content-plan">
                         <div class="badge badge-featured">O mais vendido</div>
-                        <h3 class="card-title" style="color: #000000;">Plano Equilíbrio</h3>
-                        <p class="card-subtitle"style="color: #000000;">8 aulas por mês</p>
-                        <p class="card-description"style="color: #000000;">Perfeito para rotina consistente.</p>
+                        <h3 class="card-title card-plan-title-p2">Plano Equilíbrio</h3>
+                        <p class="card-plan-subtitle-p2">8 aulas por mês</p>
+                        <p class="card-plan-description-p2">Perfeito para rotina consistente.</p>
                         
                         <ul class="plan-features">
                             <li class="feature-item">
@@ -471,7 +470,7 @@
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text">2x na semana</span>
+                                <span class="feature-text-p2">2x na semana</span>
                             </li>
                             <li class="feature-item">
                                 <div class="feature-icon">
@@ -479,7 +478,7 @@
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text">Prioridade de agenda</span>
+                                <span class="feature-text-p2">Prioridade de agenda</span>
                             </li>
                             <li class="feature-item">
                                 <div class="feature-icon">
@@ -487,7 +486,7 @@
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text">Ajuste individual prioritário</span>
+                                <span class="feature-text-p2">Ajuste individual prioritário</span>
                             </li>
                             
                             <li class="feature-item" >
@@ -496,23 +495,23 @@
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text">Bônus:</span>
+                                <span class="feature-text-p2">Bônus:</span>
                             </li>
                             <li class="feature-item" >
-                                <div class="feature-icon"style="visibility:hidden">
+                                <div class="feature-icon feature-icon-hidden">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text"> 1 sessão de Massagem Relaxante</span>
+                                <span class="feature-text-p2"> 1 sessão de Massagem Relaxante</span>
                             </li>
                             <li class="feature-item" >
-                                <div class="feature-icon"style="visibility:hidden">
+                                <div class="feature-icon feature-icon-hidden">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text" style="text-align:right"> + 1 sessão de Analgesia</span>
+                                <span class="feature-text-p2 feature-text-right"> + 1 sessão de Analgesia</span>
                             </li>
                         </ul>
                         
@@ -526,12 +525,12 @@
                 </div>
 
                 <!-- Plano 3: Premium -->
-                <div class="card card-plan card-featured" style="background-color: var(--primary);border: 2px #fff;">
-                    <div class="badge badge-featured"style="background-color: white;"><span style="color: var(--primary);">Recomendado</span></div>
+                <div class="card-plan-p3">
+                    <div class="badge-plan-3 badge-featured-plan-3">Recomendado</div>
                     <div class="card-content-plan">
-                        <h3 class="card-title" style="color: white;">Pacote Premium</h3>
-                        <p class="card-subtitle"style="color: white;">12 aulas por mês</p>
-                        <p class="card-description" style="color: white;">Resultados mais rápidos.</p>
+                        <h3 class="card-title-plan-3">Pacote Premium</h3>
+                        <p class="card-subtitle-plan-3">12 aulas por mês</p>
+                        <p class="card-description-plan-3">Resultados mais rápidos.</p>
                         
                         <ul class="plan-features">
                             <li class="feature-item">
@@ -540,7 +539,7 @@
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text" style="color: white;">3x na semana</span>
+                                <span class="feature-text feature-text-white">3x na semana</span>
                             </li>
                             <li class="feature-item">
                                 <div class="feature-icon">
@@ -548,7 +547,7 @@
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text" style="color: white;">Vaga garantida</span>
+                                <span class="feature-text feature-text-white">Vaga garantida</span>
                             </li>
                             <li class="feature-item">
                                 <div class="feature-icon">
@@ -556,7 +555,7 @@
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text" style="color: white;">Horário fixo</span>
+                                <span class="feature-text feature-text-white">Horário fixo</span>
                             </li>
                             <li class="feature-item">
                                 <div class="feature-icon">
@@ -564,31 +563,31 @@
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text" style="color: white;">Bônus:</span>
+                                <span class="feature-text feature-text-white">Bônus:</span>
                             </li>
                             <li class="feature-item">
-                                <div class="feature-icon"style="visibility:hidden">
+                                <div class="feature-icon feature-icon-hidden">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text" style="color: white;">1 sessão de Massagem Relaxante</span>
+                                <span class="feature-text feature-text-white">1 sessão de Massagem Relaxante</span>
                             </li>
                             <li class="feature-item">
-                                <div class="feature-icon"style="visibility:hidden">
+                                <div class="feature-icon feature-icon-hidden">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
                                 </div>
-                                <span class="feature-text" style="color: white;">ou 1 sessão de Liberação Miofascial</span>
+                                <span class="feature-text feature-text-white">ou 1 sessão de Liberação Miofascial</span>
                             </li>
                         </ul>
                         
                         <a href="https://wa.me/5516991778083?text=Olá Emlyn, tudo bem, gostaria de saber mais sobre o Pacote Premium 12 aulas, por favor, como funciona ?"
                            target="_blank" 
                            rel="noopener noreferrer" 
-                           class="btn btn-primary btn-full"style="background-color: white;">
-                           <span style="color: black;">Quero Este Plano</span>
+                           class="btn btn-primary btn-full btn-white">
+                           <span class="text-black">Quero Este Plano</span>
                             
                         </a>
                     </div>
@@ -636,7 +635,7 @@
                                 <span class="feature-text">Bônus:</span>
                             </li>
                             <li class="feature-item">
-                                <div class="feature-icon"style="visibility:hidden">
+                                <div class="feature-icon feature-icon-hidden">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
@@ -644,7 +643,7 @@
                                 <span class="feature-text">4 sessões de Massagem Relaxante</span>
                             </li>
                             <li class="feature-item">
-                                <div class="feature-icon"style="visibility:hidden">
+                                <div class="feature-icon feature-icon-hidden">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"></path>
                                     </svg>
