@@ -14,3 +14,35 @@
         display: none;
     }
 }
+/* Mobile: esconde setas, ajusta posição */
+@media (max-width: 767px) {
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-arrow-prev {
+        left: -10px;
+    }
+
+    .carousel-arrow-next {
+        right: -10px;
+    }
+
+    /* Grid mobile: 1 depoimento por vez */
+    .depoimentos-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        overflow: hidden;
+    }
+
+    .card-testimonial {
+        display: none;
+        animation: fadeIn 0.5s ease;
+    }
+
+    .card-testimonial.active {
+        display: block;
+    }
+}
