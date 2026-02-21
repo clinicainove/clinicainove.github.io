@@ -235,16 +235,10 @@ section {
 /* TÍTULOS E TEXTOS */
 .section-title {
     font-family: 'Marginal', serif;
-    font-size: 1.875rem;
+    font-size: 2.25rem;
     font-weight: 700;
     color: var(--primary);
     margin-bottom: 1rem;
-}
-
-@media (min-width: 640px) {
-    .section-title {
-        font-size: 2.25rem;
-    }
 }
 
 .section-header {
@@ -745,51 +739,22 @@ section {
     align-items: center;
     gap: 3rem;
     padding: 3rem 0;
-}
-
-@media (min-width: 1024px)
-/* === Notebook === */
-    {
-    .hero-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0;
-    }
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
 }
 
 .hero-content {
     z-index: 10;
-    padding: 3rem 0;
-}
-
-@media (min-width: 1024px)
-/* === Notebook === */
-    {
-    .hero-content {
-        padding: 0;
-    }
+    padding: 0;
 }
 
 .hero-title {
     font-family: "Marginal", serif;
-    font-size: 70px;
+    font-size: 3.75rem;
     font-weight: 300;
     line-height: 1.01;
     color: var(--text-dark);
     margin-bottom: 2rem;
-}
-
-@media (min-width: 640px) {
-    .hero-title {
-        font-size: 3rem;
-    }
-}
-
-@media (min-width: 1024px)
-/* === Notebook === */
-    {
-    .hero-title {
-        font-size: 3.75rem;
-    }
 }
 
 .hero-subtitle {
@@ -802,15 +767,9 @@ section {
 
 .hero-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     margin-bottom: 2.5rem;
-}
-
-@media (min-width: 640px) {
-    .hero-buttons {
-        flex-direction: row;
-    }
 }
 
 .hero-reviews {
@@ -899,14 +858,7 @@ section {
     display: grid;
     gap: 4rem;
     align-items: center;
-}
-
-@media (min-width: 1024px)
-/* === Notebook === */
-    {
-    .sobre-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .sobre-image-column {
@@ -979,12 +931,7 @@ section {
     display: grid;
     gap: 1rem;
     margin-bottom: 2rem;
-}
-
-@media (min-width: 640px) {
-    .sobre-features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .sobre-accessibility-info {
@@ -1078,16 +1025,8 @@ section {
 .planos-grid {
     display: grid;
     gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
 }
-
-@media (min-width: 1024px)
-/* === Notebook === */
-    {
-    .planos-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 
 /* === DEPOIMENTOS === */
 .depoimentos {
