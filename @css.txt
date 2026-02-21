@@ -1,0 +1,16 @@
+/* Mobile: 0-767px (sem media query, é o padrão) */
+
+@media (min-width: 481px) and (max-width: 767px) Mobile
+@media (min-width: 768px)  and (max-width: 1023px)/* Tablet */
+@media (min-width: 1024px)/* Notebook */
+@media (min-width: 1441px) /* Desktop grande */
+
+
+
+@media (min-width: 468px)
+/* === Mobile === */
+    {
+    .navbar-mobile-menu-button {
+        display: none;
+    }
+}

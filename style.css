@@ -78,15 +78,7 @@ section {
     width: 100%;
     max-width: 1380px;
     margin: 0 auto;
-    padding: 0 1rem;
-}
-
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-    .container {
-        padding: 0 3rem;
-    }
+    padding: 0 3rem;
 }
 
 /* === CLASSES UTILITÁRIAS === */
@@ -524,7 +516,7 @@ section {
     transition: transform 0.3s ease;
     height: 280px;
     /* ajuste conforme necessário */
-    display: flex;
+    display: none;
     flex-direction: column;
 
 }
@@ -532,6 +524,10 @@ section {
 .card-testimonial:hover {
     border: 2px solid var(--primary);
 }
+
+.card-testimonial.active {
+        display: block;
+    }
 
 
 .card-content-testimonial {
@@ -675,18 +671,11 @@ section {
 
 
 .navbar-desktop-nav {
-    display: none;
+    display: flex;
     align-items: center;
     gap: 42px;
 }
 
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-    .navbar-desktop-nav {
-        display: flex;
-    }
-}
 
 .navbar-nav-link {
     color: var(--text-muted);
@@ -717,7 +706,7 @@ section {
 }
 
 .navbar-mobile-menu-button {
-    display: inline-flex;
+    display: none;
     align-items: center;
     justify-content: center;
     gap: 8px;
@@ -727,14 +716,6 @@ section {
     background: none;
     border: none;
     cursor: pointer;
-}
-
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-    .navbar-mobile-menu-button {
-        display: none;
-    }
 }
 
 .navbar-mobile-menu-button svg {
@@ -755,15 +736,7 @@ section {
 .hero-container {
     max-width: 100rem;
     margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-    .hero-container {
-        padding: 0 3rem;
-    }
+    padding: 0 3rem;
 }
 
 .hero-grid {
@@ -821,18 +794,10 @@ section {
 
 .hero-subtitle {
     max-width: 36rem;
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 1.625;
     color: var(--text-muted);
     margin-bottom: 2rem;
-}
-
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-    .hero-subtitle {
-        font-size: 1.125rem;
-    }
 }
 
 .hero-buttons {
@@ -877,16 +842,8 @@ section {
 
 .hero-image-container {
     position: relative;
-    display: none;
+    display: block;
     height: 570px;
-}
-
-@media (min-width: 768px)
-/* === Notebook === */
-    {
-    .hero-image-container {
-        display: block;
-    }
 }
 
 .hero-image {
@@ -1080,14 +1037,7 @@ section {
 .servicos-grid {
     display: grid;
     gap: 1.5rem;
-}
-
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-    .servicos-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .servicos-section-title {
@@ -1148,15 +1098,9 @@ section {
 .depoimentos-grid {
     display: grid;
     gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
 
-}
-
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-    .depoimentos-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 .testimonial-quote {
@@ -1300,36 +1244,12 @@ section {
 
     .card-testimonial {
         display: none;
+        animation: fadeIn 0.5s ease;
     }
 
     .card-testimonial.active {
         display: block;
     }
-}
-
-/* === Notebook === : 2 depoimentos lado a lado */
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-    .depoimentos-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        overflow: hidden;
-    }
-
-    .card-testimonial {
-        display: none;
-    }
-
-    .card-testimonial.active {
-        display: block;
-    }
-}
-
-/* Animação de entrada */
-.card-testimonial {
-    animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
@@ -1445,37 +1365,14 @@ section {
 .footer .container {
     max-width: 80rem;
     margin: 0 auto;
-    padding: 4rem 1.5rem;
-}
-
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-    .footer .container {
-        padding: 4rem 3rem;
-    }
+    padding: 4rem 3rem;
 }
 
 .footer-grid {
     display: grid;
     gap: 3rem;
     margin-bottom: 3rem;
-}
-
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px)
-/* === Notebook === */
-    {
-    .footer-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .footer-col-about {
@@ -1653,18 +1550,10 @@ section {
     padding-top: 2rem;
     border-top: 1px solid #292524;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-}
-
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-    .footer-bottom {
-        flex-direction: row;
-    }
 }
 
 .footer-copyright,
@@ -1672,7 +1561,7 @@ section {
     color: #a8a29e;
     font-size: 0.875rem;
     margin: 0;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
     font-weight: 600;
 }
@@ -1682,17 +1571,96 @@ section {
     font-weight: bold;
 }
 
-@media (min-width: 768px)
-/* === Mobile === */
-    {
-
-    .footer-copyright,
-    .footer-dev {
-        text-align: left;
-    }
-}
-
 /* === UTILITÁRIOS === */
 .hidden {
     display: none;
 }
+
+
+/*========================Tablet======================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+    .hero {
+        min-height: auto;
+        padding: 1.5rem 0;
+    }
+    
+    .hero-container {
+        padding: 0 1.5rem;
+    }
+    
+    /* Grid: conteúdo | wrapper(imagem+reviews) */
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 2rem;
+        align-items: start;
+    }
+    
+    /* Coluna esquerda */
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-top: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.1;
+        margin: 0;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin: 0;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin: 0;
+    }
+    
+    /* Wrapper coluna direita */
+    .hero-right-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .hero-image-container {
+        display: block;
+        height: 450px;
+    }
+    
+    .hero-image {
+        height: 100%;
+    }
+    
+    .hero-reviews {
+        display: flex;
+    flex-wrap: wrap; /* ← ADICIONE */
+    gap: 0.75rem; /* ← Ajuste o gap */
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-gray);
+    margin: 0;
+        
+    }
+    .hero-reviews .stars,
+    .hero-reviews-text {
+        flex: 1 1 100%; /* Ocupa linha inteira */
+    }
+    .hero-reviews-separator {
+        display: none; /* ← Esconde no tablet */
+    }
+    .hero-reviews-logos {
+        flex: 1 1 100%; /* Ocupa linha inteira */
+    }
+        
+    .hero-shape {
+            display: none;
+        }
+    }
+
