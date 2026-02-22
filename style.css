@@ -1527,11 +1527,11 @@ section {
     }
     .hero-right-wrapper, .hero-image-container {
         display: block;
-        order: 1;                                  /* imagem primeiro (esquerda) */
+        order: 2;                                  /* imagem primeiro (esquerda) */
     }
 
     .hero-content {
-        order: 2;                                  /* textos depois (direita) */
+        order: 1;                                  /* textos depois (direita) */
         padding: 0.5rem 0;
         display: flex;
         flex-direction: column;
