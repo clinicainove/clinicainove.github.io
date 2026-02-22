@@ -1301,7 +1301,7 @@ section {
     justify-content: center;
 }
 .whatsapp {
-    fill: #fff;
+    fill: #000000;
     background-color: #25D366;
     border-radius: 50%;
     padding: 10px 10px;
@@ -1343,6 +1343,27 @@ section {
     padding: 10px 10px;
 }
 /*-----------------------------*/
+
+.footer-col-about {
+        display: flex;
+        flex-direction: column;          /* ou row se quiser horizontal */
+        justify-content: center;         /* centraliza verticalmente */
+        align-items: center;             /* centraliza horizontalmente */
+        height: 100%;                    /* faz ocupar toda a altura da coluna */
+        text-align: center;              /* garante que qualquer texto residual fique no centro */
+    }
+
+    .footer-col-about img {
+        height: 120px;                   /* ajuste o tamanho maior no desktop */
+        border-radius: 2px;
+        padding: 1rem 8rem;                   /* um pouco mais de padding no desktop */
+        background-color: #fff;
+        margin: 0 auto;                  /* backup horizontal */
+    }
+.footer-col-about .footer-title {
+    display: none;
+}
+
 .footer-contact-list {
     list-style: none;
     margin: 0;
@@ -1452,90 +1473,391 @@ section {
 }
 
 
-/*========================Tablet======================== */
+/* ====================== TABLET (768px - 1023px) ====================== */
 @media (min-width: 768px) and (max-width: 1023px) {
-    
-    .hero {
-        min-height: auto;
-        padding: 1.5rem 0;
-    }
-    
-    .hero-container {
-        padding: 0 1.5rem;
-    }
-    
-    /* Grid: conteúdo | wrapper(imagem+reviews) */
-    .hero-grid {
-        display: grid;
-        grid-template-columns: 1fr 400px;
-        gap: 2rem;
-        align-items: start;
-    }
-    
-    /* Coluna esquerda */
-    .hero-content {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        padding-top: 1rem;
-    }
-    
-    .hero-title {
-        font-size: 2.5rem;
-        line-height: 1.1;
-        margin: 0;
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-        margin: 0;
-    }
-    
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        margin: 0;
-    }
-    
-    /* Wrapper coluna direita */
-    .hero-right-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .hero-image-container {
-        display: block;
-        height: 450px;
-    }
-    
-    .hero-image {
-        height: 100%;
-    }
-    
-    .hero-reviews {
-        display: flex;
-    flex-wrap: wrap; /* ← ADICIONE */
-    gap: 0.75rem; /* ← Ajuste o gap */
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-gray);
-    margin: 0;
-        
-    }
-    .hero-reviews .stars,
-    .hero-reviews-text {
-        flex: 1 1 100%; /* Ocupa linha inteira */
-    }
-    .hero-reviews-separator {
-        display: none; /* ← Esconde no tablet */
-    }
-    .hero-reviews-logos {
-        flex: 1 1 100%; /* Ocupa linha inteira */
-    }
-        
-    .hero-shape {
-            display: none;
-        }
+    /* === BASE === */
+    body {
+        overflow-x: hidden;
     }
 
+    /* === CONTAINERS === */
+    .container,
+    .hero-container,
+    .servicos-container,
+    .planos-container,
+    .sobre-mim-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    /* === NAVBAR === */
+    .navbar-desktop-nav {
+        display: none; /* Oculta os links de navegação, incluindo 'Serviços' e 'Contato' */
+    }
+
+    .navbar-mobile-menu-button {
+        display: flex; /* Exibe o botão de menu mobile/hamburguer */
+    }
+
+    .navbar {
+        padding: 0 1.5rem; /* Ajusta o padding da navbar */
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .btn-large {
+        font-size: 1rem;
+        padding: 0.5rem 1.25rem;
+    }
+
+    /* === HERO === */
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr; /* Muda para uma única coluna */
+        gap: 2rem;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 2; /* Coloca o conteúdo abaixo da imagem */
+    }
+
+    .hero-right-wrapper {
+        order: 1; /* Coloca a imagem acima do conteúdo */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.15;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .hero-buttons {
+        flex-direction: row; /* Mantém os botões lado a lado se houver espaço */
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero-image-container {
+        height: 350px; /* Ajusta a altura da imagem */
+        width: 100%;
+        max-width: 500px; /* Limita a largura da imagem para não esticar demais */
+        margin: 0 auto;
+    }
+
+    .hero-reviews {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding-top: 1rem;
+    }
+
+    .hero-reviews .stars {
+        flex: none;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-reviews-text {
+        flex: none;
+        text-align: center;
+        font-size: 0.875rem;
+    }
+
+    .hero-reviews-logos {
+        flex: none;
+        font-size: 0.875rem;
+    }
+
+    .hero-shape {
+        display: none;
+    }
+
+    /* === SOBRE NÓS - Imagem à esquerda + Textos à direita (coluna vertical) === */
+    .sobre {
+        padding: 3rem 0;                           /* reduzido para caber melhor */
+    }
+
+    .sobre-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;            /* imagem esquerda | textos direita */
+        gap: 1.5rem;                               /* espaço mínimo entre imagem e textos */
+        align-items: start;                        /* alinha tudo no topo */
+    }
+
+    .sobre-image-column {
+        position: relative;
+    }
+
+    .sobre-image-container {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        border: 1px solid var(--primary-light);
+        Margin-top: 10rem ;
+    }
+
+    .sobre-image {
+        content: url('estudio.jpeg');
+        width: 100%;
+        height: 100%;                             /* altura controlada para não esticar demais */
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Textos em coluna vertical à direita */
+    .sobre-content {                               /* assumindo que os textos estão dentro de uma div com essa classe; se não tiver, crie ou ajuste para o container certo */
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;                              /* espaçamento entre título, descrição, lista e badge */
+    }
+
+    .sobre-section-title {
+        font-size: 2.125rem;                       /* um pouco menor que desktop para caber */
+        margin-bottom: 1rem;
+        color: var(--primary);
+    }
+
+    .sobre-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 1.25rem;
+    }
+
+    .sobre-features-grid {
+        display: grid;
+        grid-template-columns: 1fr;                /* tudo em coluna única, como você pediu */
+        gap: 0.875rem;
+        margin-left: 20px;
+    }
+
+    .feature-item {
+        font-size: 0.95rem;
+        gap: 0.75rem;
+    }
+
+    /* Badge +5 anos - posicionado no topo da coluna de textos ou sobre a imagem se preferir */
+    .badge-featured {                              /*  ou a classe do +5 anos */
+        margin-bottom: 1rem;
+        font-size: 10rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Badge de acessibilidade no final */
+    .sobre-accessibility-info {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    /* === SERVIÇOS === */
+    .servicos {
+        padding: 4rem 0;
+    }
+
+    .servicos-grid {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas para serviços */
+        grid-template-rows: auto;
+        gap: 1.5rem;
+    }
+
+    .servicos-grid .card-image:nth-child(1) {grid-column: 1 / -1; grid-row: 1; }
+    .servicos-grid .card-image:nth-child(2),
+    .servicos-grid .card-image:nth-child(3),
+    .servicos-grid .card-image:nth-child(4),
+    .servicos-grid .card-image:nth-child(5) {
+        grid-column: span 1; /* Todos os cards ocupam 1 coluna */
+        grid-row: auto; /* Reseta o grid-row */
+    }
+    .card-large { 
+        grid-row: span 1;
+     }
+
+    .card-image-container {
+        height: 250px;
+    }
+
+    .servicos-card-title {
+        font-size: 1.25rem;
+    }
+
+    /* === PLANOS === */
+    .planos {
+        padding: 4rem 0;
+    }
+
+    .planos-grid {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas para planos */
+        gap: 1.5rem;
+    }
+
+    /* === DEPOIMENTOS === */
+    .depoimentos {
+        padding: 4rem 0;
+    }
+
+    .depoimentos-grid {
+        grid-template-columns: 1fr; /* Uma coluna para depoimentos */
+        gap: 2rem;
+    }
+
+    .card-testimonial {
+        height: 250px; /* Altura automática para se ajustar ao conteúdo */
+    }
+
+    .testimonial-quote {
+        font-size: 4rem;
+    }
+
+    .carousel-arrow {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel-arrow-prev {
+        left: 0;
+    }
+
+    .carousel-arrow-next {
+        right: 0;
+    }
+
+    /* === SOBRE MIM === */
+    .sobre-mim-content {
+        grid-template-columns: 1fr; /* Uma coluna para tablet */
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+        text-align: left;
+    }
+
+    .sobre-mim-img img {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .sobre-mim-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .sobre-mim-text p {
+        font-size: 0.9375rem;
+    }
+
+        /* === FOOTER - VERSÃO CORRIGIDA TABLET === */
+    .footer {
+        padding: 3rem 0 2rem;
+    }
+
+    .footer .container {
+        padding: 0 1.5rem;
+        max-width: 100%;
+    }
+
+    
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Força 2 colunas lado a lado */
+        grid-template-rows: auto auto;
+        gap: 2rem 2.5rem;
+        margin-bottom: 2.5rem;
+        align-items: center;
+    }
+    
+    .footer-col-about {
+        display: flex;
+        flex-direction: column;          /* ou row, dependendo do layout */
+        justify-content: center;         /* centraliza verticalmente */
+        align-items: center;             /* centraliza horizontalmente */
+        height: 100%;                    /* ou uma altura fixa, ex: 200px, se quiser ocupar espaço */
+    }
+
+    .footer-col-about img {
+        height: auto;
+        border-radius: 2px;
+        padding: 0.9rem 15rem;
+        background-color: #fff;
+        /* não precisa de margin aqui mais */
+    }
+
+    /* Título + descrição + sociais: ocupa TODA a primeira linha */
+    .footer-col-about {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        text-align: center;
+        gap: 1rem;
+        margin: 0 2rem;
+    }
+    .footer-col-about .footer-title { display: none; }
+
+    /* Contatos: esquerda da segunda linha */
+    .footer-contact-list {
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    /* Links Rápidos: direita da segunda linha */
+    .footer-links-list {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .footer-subtitle {
+        margin-bottom: 1rem;
+        font-size: 1.125rem;
+    }
+
+    /* Mapa: FORA do grid, largura total e altura garantida */
+    .footer-map {
+        margin: 2.5rem auto 2rem;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 1rem;
+        overflow: hidden;
+        display: block !important;
+    }
+
+    .footer-map iframe {
+        width: 100% !important;
+        height: 300px !important; /* Altura garantida para não cortar */
+        border: 0;
+        display: block !important;
+    }
+
+    /* Copy + Dev: abaixo do mapa, em linha horizontal */
+    .footer-bottom {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #292524;
+        margin-top: 0;
+    }
+
+    .footer-copyright,
+    .footer-dev {
+        font-size: 0.875rem;
+        margin: 0;
+        display: block !important;
+    }
