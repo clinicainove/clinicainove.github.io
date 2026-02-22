@@ -50,16 +50,18 @@ if (mobileMenuButton && mobileNav) {
 }
 
 // ========================================
-// CARROSSEL DE DEPOIMENTOS
+// CARROSSEL DE DEPOIMENTOS ADAPTADO (MOBILE + DESKTOP)
 // ========================================
 
 class TestimonialsCarousel {
     constructor() {
+        this.grid = document.querySelector('.depoimentos-grid');
         this.cards = document.querySelectorAll('.card-testimonial');
         this.dotsContainer = document.querySelector('.carousel-dots');
         this.prevBtn = document.querySelector('.carousel-arrow-prev');
         this.nextBtn = document.querySelector('.carousel-arrow-next');
         
+        this.isMobile = window.innerWidth < 768;
         this.currentPage = 0;
         this.cardsPerPage = this.getCardsPerPage();
         this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
@@ -67,122 +69,121 @@ class TestimonialsCarousel {
         this.init();
     }
     
-    // Detecta quantos cards mostrar por página
     getCardsPerPage() {
         return window.innerWidth >= 768 ? 2 : 1;
     }
     
-    // Inicializa o carrossel
     init() {
         this.createDots();
         this.updateCarousel();
         this.addEventListeners();
+        
+        // Se for mobile, adiciona a mensagem de arraste se não existir
+        if (this.isMobile && !document.querySelector('.drag-hint')) {
+            const hint = document.createElement('p');
+            hint.className = 'drag-hint';
+            hint.innerText = 'Arraste para o lado para ver mais depoimentos';
+            this.grid.parentNode.insertBefore(hint, this.dotsContainer);
+        }
     }
     
-    // Cria os dots dinamicamente
     createDots() {
+        if (!this.dotsContainer) return;
         this.dotsContainer.innerHTML = '';
         
-        for (let i = 0; i < this.totalPages; i++) {
+        // No mobile, 1 dot por card. No desktop, 1 dot por página (2 cards).
+        const numDots = this.isMobile ? this.cards.length : this.totalPages;
+        
+        for (let i = 0; i < numDots; i++) {
             const dot = document.createElement('button');
             dot.classList.add('carousel-dot');
-            dot.setAttribute('aria-label', `Ir para página ${i + 1}`);
+            dot.setAttribute('aria-label', `Ir para depoimento ${i + 1}`);
             dot.addEventListener('click', () => this.goToPage(i));
             this.dotsContainer.appendChild(dot);
         }
-    }
-    
-    // Atualiza a visualização do carrossel
-    updateCarousel() {
-        // Esconde todos os cards
-        this.cards.forEach(card => card.classList.remove('active'));
-        
-        // Mostra os cards da página atual
-        const startIndex = this.currentPage * this.cardsPerPage;
-        const endIndex = startIndex + this.cardsPerPage;
-        
-        for (let i = startIndex; i < endIndex && i < this.cards.length; i++) {
-            this.cards[i].classList.add('active');
-        }
-        
-        // Atualiza os dots
         this.updateDots();
-        
-        // Atualiza as setas
-        this.updateArrows();
     }
     
-    // Atualiza os dots ativos
+    updateCarousel() {
+        if (this.isMobile) {
+            // No mobile usamos Scroll Snap do CSS, apenas sincronizamos os dots
+            this.syncDotsWithScroll();
+        } else {
+            // No desktop usamos a lógica de classes active
+            this.cards.forEach(card => card.classList.remove('active'));
+            const startIndex = this.currentPage * this.cardsPerPage;
+            const endIndex = startIndex + this.cardsPerPage;
+            
+            for (let i = startIndex; i < endIndex && i < this.cards.length; i++) {
+                this.cards[i].classList.add('active');
+            }
+            this.updateDots();
+            this.updateArrows();
+        }
+    }
+    
     updateDots() {
+        if (!this.dotsContainer) return;
         const dots = this.dotsContainer.querySelectorAll('.carousel-dot');
         dots.forEach((dot, index) => {
-            if (index === this.currentPage) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
+            dot.classList.toggle('active', index === this.currentPage);
+        });
+    }
+    
+    updateArrows() {
+        if (!this.prevBtn || !this.nextBtn) return;
+        this.prevBtn.classList.toggle('disabled', this.currentPage === 0);
+        this.nextBtn.classList.toggle('disabled', this.currentPage === this.totalPages - 1);
+    }
+    
+    goToPage(index) {
+        this.currentPage = index;
+        if (this.isMobile) {
+            const cardWidth = this.cards[0].offsetWidth;
+            this.grid.scrollTo({
+                left: index * cardWidth,
+                behavior: 'smooth'
+            });
+        } else {
+            this.updateCarousel();
+        }
+    }
+
+    syncDotsWithScroll() {
+        if (!this.isMobile || !this.grid) return;
+        
+        this.grid.addEventListener('scroll', () => {
+            const scrollLeft = this.grid.scrollLeft;
+            const cardWidth = this.cards[0].offsetWidth;
+            const newIndex = Math.round(scrollLeft / cardWidth);
+            
+            if (newIndex !== this.currentPage) {
+                this.currentPage = newIndex;
+                this.updateDots();
+            }
+        }, { passive: true });
+    }
+    
+    addEventListeners() {
+        if (this.prevBtn) this.prevBtn.addEventListener('click', () => {
+            if (this.currentPage > 0) this.goToPage(this.currentPage - 1);
+        });
+        
+        if (this.nextBtn) this.nextBtn.addEventListener('click', () => {
+            if (this.currentPage < (this.isMobile ? this.cards.length - 1 : this.totalPages - 1)) {
+                this.goToPage(this.currentPage + 1);
             }
         });
-    }
-    
-    // Atualiza visibilidade das setas
-    updateArrows() {
-        // Seta anterior
-        if (this.currentPage === 0) {
-            this.prevBtn.classList.add('disabled');
-        } else {
-            this.prevBtn.classList.remove('disabled');
-        }
         
-        // Seta próxima
-        if (this.currentPage === this.totalPages - 1) {
-            this.nextBtn.classList.add('disabled');
-        } else {
-            this.nextBtn.classList.remove('disabled');
-        }
-    }
-    
-    // Navega para página anterior
-    prevPage() {
-        if (this.currentPage > 0) {
-            this.currentPage--;
-            this.updateCarousel();
-        }
-    }
-    
-    // Navega para próxima página
-    nextPage() {
-        if (this.currentPage < this.totalPages - 1) {
-            this.currentPage++;
-            this.updateCarousel();
-        }
-    }
-    
-    // Vai para uma página específica
-    goToPage(pageIndex) {
-        this.currentPage = pageIndex;
-        this.updateCarousel();
-    }
-    
-    // Adiciona event listeners
-    addEventListeners() {
-        this.prevBtn.addEventListener('click', () => this.prevPage());
-        this.nextBtn.addEventListener('click', () => this.nextPage());
-        
-        // Suporte para teclado
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') this.prevPage();
-            if (e.key === 'ArrowRight') this.nextPage();
-        });
-        
-        // Reage ao resize da janela
         window.addEventListener('resize', () => {
+            const wasMobile = this.isMobile;
+            this.isMobile = window.innerWidth < 768;
             const newCardsPerPage = this.getCardsPerPage();
             
-            // Se mudou de mobile para desktop ou vice-versa
-            if (newCardsPerPage !== this.cardsPerPage) {
+            if (newCardsPerPage !== this.cardsPerPage || wasMobile !== this.isMobile) {
                 this.cardsPerPage = newCardsPerPage;
                 this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
-                this.currentPage = 0; // Volta para o início
+                this.currentPage = 0;
                 this.createDots();
                 this.updateCarousel();
             }
@@ -190,14 +191,11 @@ class TestimonialsCarousel {
     }
 }
 
-// Inicializa o carrossel quando o DOM estiver pronto
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        new TestimonialsCarousel();
-    });
-} else {
+// Inicialização
+document.addEventListener('DOMContentLoaded', () => {
     new TestimonialsCarousel();
-}
+});
+
 
 /*/ Registro do Service Worker
 if ('serviceWorker' in navigator) {
