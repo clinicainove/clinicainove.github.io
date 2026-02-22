@@ -1321,7 +1321,7 @@ section {
 }
 .GMN{
     fill: #fff;
-    background-color: red;
+    background-color: whitesmoke;
     border-radius: 50%;
     padding: 10px 10px;
 }
@@ -2358,11 +2358,9 @@ section {
     
     .social-media {
         flex-wrap: wrap;
-        margin:  0 0.9rem;
-        justify-content:  space-between 10px;
-        gap: 0;
+        gap: 10px;
     }
-
+    .Waze { display: none; }
 
     /* Esconde links rápidos */
     .footer-col:has(.footer-links-list) {
