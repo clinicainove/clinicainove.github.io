@@ -6,10 +6,14 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
-  '/java script.js',
+  '/script.js', // ← CORRIGIDO
   '/image/Logo-clinica-inove.png',
   '/image/Pilates-hero.jpg',
   '/image/Emlyn.webp',
+  '/image/clinica-inove-estudio.jpeg',
+  '/image/background.jpg',
+  '/image/Estudio.jpeg',
+  '/image/Logotipo-Inove-Adendo.jpg',
   '/fonts/Marginal.woff2',
   'https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap'
 ];
@@ -29,7 +33,6 @@ self.addEventListener('install', event => {
       })
   );
   
-  // Força o novo SW a assumir imediatamente
   self.skipWaiting();
 });
 
@@ -41,7 +44,6 @@ self.addEventListener('activate', event => {
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          // Remove caches antigos
           if (cacheName !== CACHE_NAME) {
             console.log('[SW] Removendo cache antigo:', cacheName);
             return caches.delete(cacheName);
@@ -51,7 +53,6 @@ self.addEventListener('activate', event => {
     })
   );
   
-  // Assume controle imediatamente
   return self.clients.claim();
 });
 
@@ -60,24 +61,18 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        // Retorna do cache se existir
         if (response) {
-          console.log('[SW] Servindo do cache:', event.request.url);
           return response;
         }
         
-        // Se não, busca da rede
         return fetch(event.request)
           .then(response => {
-            // Verifica se é uma resposta válida
             if (!response || response.status !== 200 || response.type !== 'basic') {
               return response;
             }
             
-            // Clona a resposta
             const responseToCache = response.clone();
             
-            // Adiciona ao cache
             caches.open(CACHE_NAME)
               .then(cache => {
                 cache.put(event.request, responseToCache);
@@ -88,7 +83,6 @@ self.addEventListener('fetch', event => {
           .catch(err => {
             console.error('[SW] Erro ao buscar:', err);
             
-            // Página offline de fallback (opcional)
             if (event.request.destination === 'document') {
               return caches.match('/');
             }
@@ -97,7 +91,6 @@ self.addEventListener('fetch', event => {
   );
 });
 
-// Listener para mensagens
 self.addEventListener('message', event => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();

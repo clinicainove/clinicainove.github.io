@@ -18,9 +18,11 @@ Redes sociais---------------> FEITO
 
 Arrumar os Important---------------> FEITO
 
-Incluir totalpass
+Incluir totalpass 
 
 Revisasr nomes no SW, Robots, Sitemap, Manifest no final
+
+comprimir imagens
 
 Minificar o código, retirar comentários e códigos não utilizados, otimizar imagens, 
 usar CDN para bibliotecas externas, implementar lazy loading para imagens, reduzir requisições HTTP, 

@@ -7,7 +7,7 @@
     <!-- Página Principal -->
     <url>
         <loc>https://clinicainove.github.io/</loc>
-        <lastmod>2025-02-19</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,7 +15,7 @@
     <!-- Seção Sobre -->
     <url>
         <loc>https://clinicainove.github.io/#sobre</loc>
-        <lastmod>2025-02-19</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -23,7 +23,7 @@
     <!-- Seção Serviços -->
     <url>
         <loc>https://clinicainove.github.io/#servicos</loc>
-        <lastmod>2025-02-19</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -31,7 +31,7 @@
     <!-- Seção Planos -->
     <url>
         <loc>https://clinicainove.github.io/#planos</loc>
-        <lastmod>2025-02-19</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -39,7 +39,15 @@
     <!-- Seção Depoimentos -->
     <url>
         <loc>https://clinicainove.github.io/#depoimentos</loc>
-        <lastmod>2025-02-19</lastmod>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Seção Sobre Mim -->
+    <url>
+        <loc>https://clinicainove.github.io/#sobre-mim</loc>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -47,7 +55,7 @@
     <!-- Seção Contato -->
     <url>
         <loc>https://clinicainove.github.io/#contato</loc>
-        <lastmod>2025-02-19</lastmod>
+        <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
