@@ -1492,11 +1492,18 @@ section {
 
     /* === NAVBAR === */
     .navbar-desktop-nav {
-        display: none; /* Oculta os links de navegação, incluindo 'Serviços' e 'Contato' */
+        display: flex; /* Oculta os links de navegação, incluindo 'Serviços' e 'Contato' */
+        align-items: center;
+        gap: 1.5rem;
     }
 
     .navbar-mobile-menu-button {
-        display: flex; /* Exibe o botão de menu mobile/hamburguer */
+        display: none; /* Exibe o botão de menu mobile/hamburguer */
+    }
+
+    .navbar-desktop-nav a:nth-child(3),
+    .navbar-desktop-nav a:nth-child(6) {
+        display: none;
     }
 
     .navbar {
@@ -1554,13 +1561,13 @@ section {
     }
 
     .hero-title {
-        font-size: 2.75rem;
+        font-size: 2rem; /* 2.75*/
         line-height: 1.1;
         margin-bottom: 1rem;
     }
 
     .hero-subtitle {
-        font-size: 1.05rem;
+        font-size: 1rem;
         line-height: 1.5;
         margin-bottom: 1.5rem;
     }
@@ -1574,15 +1581,15 @@ section {
     }
 
     .hero-image-container {
-        height: 400px;                             /* altura controlada para imagem caber bem */
+        height: 500px;                             /* altura controlada para imagem caber bem */
         width: 100%;
         border-radius: 1rem;
         overflow: hidden;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        
     }
     .hero-image {
         width: 100%;
-        height: 100%;
+        height: 110%;
         object-fit: cover;
         display: block;
     }
@@ -1590,7 +1597,7 @@ section {
     .hero-reviews {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         flex-wrap: wrap;
     }
 
@@ -1604,6 +1611,7 @@ section {
     }
 
     .hero-reviews-logos {
+        display: none;
         font-size: 0.875rem;
     }
 
@@ -1630,7 +1638,7 @@ section {
     .sobre-image-container {
         border-radius: 1rem;
         overflow: hidden;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 25px 50px -12px var(--primary);
         border: 1px solid var(--primary-light);
         Margin-top: 5rem ;
     }
@@ -1641,6 +1649,7 @@ section {
         height: 100%;                             /* altura controlada para não esticar demais */
         object-fit: cover;
         display: block;
+        box-shadow: ;
     }
 
     /* Textos em coluna vertical à direita */
