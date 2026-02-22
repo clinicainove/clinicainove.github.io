@@ -1515,18 +1515,34 @@ section {
     /* === HERO === */
     .hero {
         min-height: auto;
-        padding: 2rem 0;
+        padding: 2rem 0 3rem;
     }
 
     .hero-grid {
-        grid-template-columns: 1fr; /* Muda para uma única coluna */
-        gap: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;            /* imagem esquerda | textos direita */
+        gap: 1.5rem;                               /* espaço mínimo entre imagem e textos */
+        align-items: start;                        /* alinha tudo no topo */
         min-height: auto;
-        text-align: center;
+    }
+    .hero-right-wrapper, .hero-image-container {
+        display: block;
+        order: 1;                                  /* imagem primeiro (esquerda) */
     }
 
     .hero-content {
-        order: 2; /* Coloca o conteúdo abaixo da imagem */
+        order: 2;                                  /* textos depois (direita) */
+        padding: 0.5rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        justify-content: flex-start;
+    }
+    .hero .badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+        width: fit-content;
     }
 
     .hero-right-wrapper {
@@ -1538,34 +1554,44 @@ section {
     }
 
     .hero-title {
-        font-size: 2.5rem;
-        line-height: 1.15;
-        margin-bottom: 0.5rem;
+        font-size: 2.75rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.05rem;
         line-height: 1.5;
+        margin-bottom: 1.5rem;
     }
 
     .hero-buttons {
-        flex-direction: row; /* Mantém os botões lado a lado se houver espaço */
-        justify-content: center;
+        display: flex;
+        flex-direction: row;
         gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.25rem;
     }
 
     .hero-image-container {
-        height: 350px; /* Ajusta a altura da imagem */
+        height: 400px;                             /* altura controlada para imagem caber bem */
         width: 100%;
-        max-width: 500px; /* Limita a largura da imagem para não esticar demais */
-        margin: 0 auto;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
     .hero-reviews {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
-        padding-top: 1rem;
     }
 
     .hero-reviews .stars {
@@ -1574,13 +1600,10 @@ section {
     }
 
     .hero-reviews-text {
-        flex: none;
-        text-align: center;
         font-size: 0.875rem;
     }
 
     .hero-reviews-logos {
-        flex: none;
         font-size: 0.875rem;
     }
 
@@ -1588,7 +1611,7 @@ section {
         display: none;
     }
 
-    /* === SOBRE NÓS - Imagem à esquerda + Textos à direita (coluna vertical) === */
+/* === SOBRE NÓS - Imagem à esquerda + Textos à direita (coluna vertical) === */
     .sobre {
         padding: 3rem 0;                           /* reduzido para caber melhor */
     }
@@ -1609,7 +1632,7 @@ section {
         overflow: hidden;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         border: 1px solid var(--primary-light);
-        Margin-top: 10rem ;
+        Margin-top: 5rem ;
     }
 
     .sobre-image {
@@ -1643,7 +1666,7 @@ section {
     .sobre-features-grid {
         display: grid;
         grid-template-columns: 1fr;                /* tudo em coluna única, como você pediu */
-        gap: 0.875rem;
+        gap: 0.675rem;
         margin-left: 20px;
     }
 
@@ -1655,12 +1678,13 @@ section {
     /* Badge +5 anos - posicionado no topo da coluna de textos ou sobre a imagem se preferir */
     .badge-featured {                              /*  ou a classe do +5 anos */
         margin-bottom: 1rem;
-        font-size: 10rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.775rem;
+        padding: 0.125rem 0.625rem;
     }
 
     /* Badge de acessibilidade no final */
     .sobre-accessibility-info {
+        display: none;
         margin-top: 1.5rem;
         padding: 1rem;
         font-size: 0.95rem;
