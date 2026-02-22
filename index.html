@@ -91,7 +91,7 @@
     <header class="navbar">
         <div class="navbar-container">
             <div class="navbar-brand"> 
-                <img src="image/Logo-clinica-inove.png" alt="Inove Logo">
+                <img src="image/clinica-inove-logotipo-hero.webp" alt="Inove Logo"loading="lazy" decoding="async" width="500" height="500">
                 <span class="logo-text">CLÍNICA INOVE</span>
             </div>
                 
@@ -193,8 +193,8 @@
                 <!-- Imagem da direita -->
                 <div class="hero-image-container">
                     <div class="hero-image">
-                        <img src="image/Pilates-hero.jpg" alt="Clínica Inove - Ambiente acolhedor">
-                        <div class="hero-image-overlay"></div>
+                        <img src="image/Pilates-hero.webp" alt="Clínica Inove - Ambiente acolhedor" loading="lazy" decoding="async" width="600" height="400">
+                <div class="hero-image-overlay"></div>
                     </div>
                     <div class="hero-shape hero-shape-1"></div>
                     <div class="hero-shape hero-shape-2"></div>
@@ -210,9 +210,27 @@
                 <!-- Coluna da imagem --  https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800-->
                 <div class="sobre-image-column">
                     <div class="sobre-image-container">
-                        <img src="image/clinica-inove-estudio.jpeg" 
-                             alt="Interior moderno do estúdio" loading="lazy" decoding="async"
-                             class="sobre-image">
+                        <picture>
+                            <!-- Versão TABLET (vertical, 769px até 1023px) -->
+                            <source 
+                                media="(min-width: 769px) and (max-width: 1023px)" 
+                                srcset="image/clinica-inove-estudio-tablet.webp">
+
+                            <!-- Versão DESKTOP (padrão, a partir de 1024px) -->
+                            <source 
+                                media="(min-width: 1024px)" 
+                                srcset="image/clinica-inove-estudio.webp">
+
+                            <!-- Fallback: mobile (<768px) ou qualquer navegador antigo usa a versão desktop comprimida -->
+                            <img 
+                                src="image/clinica-inove-estudio.webp" 
+                                alt="Interior moderno do estúdio da Clínica Inove" 
+                                loading="lazy" 
+                                decoding="async" 
+                                width="1200" 
+                                height="900"
+                                class="sobre-image">
+                        </picture>
                     </div>
                     <div class="sobre-floating-card">
                         <div class="sobre-card-content">
@@ -968,7 +986,7 @@
     <div class="sobre-mim-container">
         <div class="sobre-mim-content"> 
             <div class="sobre-mim-img">
-                <img src="image/Emlyn.webp" alt="Dra Emlyn - Fisioterapeuta" loading="lazy" decoding="async">
+                <img src="image/dra-emlyn-fisioterapeuta-e-instrutora-de-pilates.webp" alt="Dra Emlyn - Fisioterapeuta" width="1066" height="1332" loading="lazy" decoding="async">
             </div>
             
             <div class="sobre-mim-text">
@@ -997,7 +1015,7 @@
             <div class="footer-grid">
                 <!-- Coluna 1: Sobre -->
                 <div class="footer-col footer-col-about">
-                    <img src="image/Logotipo-Inove-Adendo.jpg" alt="Logo">
+                    <img src="image/logotipo-footer.webp" alt="Logo" width="1800" height="683" loading="lazy" decoding="async">
                     <h3 class="footer-title">Clínica Inove</h3>
                     <p class="footer-description">
                         Transformando vidas através do Pilates personalizado e tratamentos de bem-estar em Ribeirão Preto.
