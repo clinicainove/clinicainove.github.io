@@ -1,63 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-    <!-- Página Principal -->
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <!-- Página Principal (única URL raiz) -->
     <url>
         <loc>https://clinicainove.github.io/</loc>
         <lastmod>2026-02-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+
+        <!-- Imagens da página principal / hero -->
+        <image:image>
+            <image:loc>https://clinicainove.github.io/image/image/Pilates-hero.webp</image:loc>
+            <image:title>Hero Pilates Personalizado - Clínica Inove</image:title>
+            <image:caption>Aula de Pilates personalizada em Ribeirão Preto</image:caption>
+            <image:geo_location>Ribeirão Preto, SP, Brasil</image:geo_location>
+        </image:image>
+
+        <!-- Logo do site -->
+        <image:image>
+            <image:loc>https://clinicainove.github.io/image/clinica-inove-logotipo-hero.webp</image:loc>
+            <image:title>Logo Clínica Inove</image:title>
+            <image:caption>Logotipo oficial da Clínica Inove Pilates e Bem-Estar</image:caption>
+        </image:image>
     </url>
 
-    <!-- Seção Sobre -->
+    <!-- Imagens de Sobre Nós (desktop e tablet) -->
     <url>
         <loc>https://clinicainove.github.io/#sobre</loc>
         <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+
+        <image:image>
+            <image:loc>https://clinicainove.github.io/image/clinica-inove-estudio-tablet.webp</image:loc>
+            <image:title>Estúdio vertical Clínica Inove</image:title>
+            <image:caption>Ambiente acolhedor e moderno para Pilates em Ribeirão Preto</image:caption>
+        </image:image>
+
+        <image:image>
+            <image:loc>https://clinicainove.github.io/image/clinica-inove-estudio.webp</image:loc>
+            <image:title>Interior do estúdio Clínica Inove</image:title>
+            <image:caption>Visão detalhada do espaço de atendimento personalizado</image:caption>
+        </image:image>
     </url>
 
-    <!-- Seção Serviços -->
-    <url>
-        <loc>https://clinicainove.github.io/#servicos</loc>
-        <lastmod>2026-02-22</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Seção Planos -->
-    <url>
-        <loc>https://clinicainove.github.io/#planos</loc>
-        <lastmod>2026-02-22</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Seção Depoimentos -->
-    <url>
-        <loc>https://clinicainove.github.io/#depoimentos</loc>
-        <lastmod>2026-02-22</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Seção Sobre Mim -->
+    <!-- Imagens de Sobre Mim -->
     <url>
         <loc>https://clinicainove.github.io/#sobre-mim</loc>
         <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+
+        <image:image>
+            <image:loc>https://clinicainove.github.io/image/dra-emlyn-fisioterapeuta-e-instrutora-de-pilates.webp</image:loc>
+            <image:title>Instrutora Emlyn - Clínica Inove</image:title>
+            <image:caption>Profissional dedicada ao Pilates personalizado</image:caption>
+        </image:image>
+
+        <image:image>
+            <image:loc>https://clinicainove.github.io/image/background.webp</image:loc>
+            <image:title>Fundo abstrato de bem-estar</image:title>
+            <image:caption>Background da seção Sobre Mim</image:caption>
+        </image:image>
     </url>
 
-    <!-- Seção Contato -->
+    <!-- Imagens dos cards de Serviços (exemplo para os 5) -->
     <url>
-        <loc>https://clinicainove.github.io/#contato</loc>
+        <loc>https://clinicainove.github.io/#servicos</loc>
         <lastmod>2026-02-22</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
+
+        <!-- Card 1: Pilates -->
+        <image:image>
+            <image:loc>https://img.freepik.com/fotos-gratis/mulher-praticando-pilates-em-um-reformador-de-pilates_1303-14748.jpg</image:loc>
+            <image:title>Pilates Personalizado</image:title>
+            <image:caption>Aula de Pilates em reformador</image:caption>
+        </image:image>
+        
+        <!-- Card 2: Liberação -->
+        <image:image>
+            <image:loc>"https://images.unsplash.com/photo-1519824145371-296894a0daa9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA=="</image:loc>
+            <image:title>Liberação Miogascial</image:title>
+            <image:caption>Aula de Pilates em reformador</image:caption>
+        </image:image>
+        
+        <!-- Card 3: Drenagem -->
+        <image:image>
+            <image:loc>https://img.freepik.com/fotos-gratis/maos-massageando-o-abdomen-feminino-therapista-aplicando-pressao-sobre-a-barriga_1139-1124.jpg?t=st=1771297639~exp=1771301239~hmac=23d4c05f12d35a2799ee04c460f673532ada33775c758c840ece62371c825c8f&w=740</image:loc>
+            <image:title>Drenagem Linfática</image:title>
+            <image:caption>Aula de Pilates em reformador</image:caption>
+        </image:image>
+        
+        <!-- Card 4: Massagem -->
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600</image:loc>
+            <image:title>Massagem Relaxante</image:title>
+            <image:caption>Aula de Pilates em reformador</image:caption>
+        </image:image>
+        
+        <!-- Card 5: fisioterapia -->
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==</image:loc>
+            <image:title>Fisioterapia</image:title>
+            <image:caption>Aula de Pilates em reformador</image:caption>
+        </image:image>
+        
+        <!-- Card 5: Pilates -->
+        <image:image>
+            <image:loc>https://img.freepik.com/fotos-gratis/mulher-praticando-pilates-em-um-reformador-de-pilates_1303-14748.jpg</image:loc>
+            <image:title>Pilates Personalizado</image:title>
+            <image:caption>Aula de Pilates em reformador</image:caption>
+        </image:image>
+
+        <!-- Adicione os outros 4 cards aqui se quiser indexar as imagens deles -->
     </url>
 
+    <!-- Logo Footer -->
+    <url>
+        <loc>https://clinicainove.github.io/</loc>
+        <lastmod>2026-02-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+
+        <image:image>
+            <image:loc>https://clinicainove.github.io/image/logotipo-footer.webp</image:loc>
+            <image:title>Logo Clínica Inove no footer</image:title>
+            <image:caption>Logotipo no rodapé do site</image:caption>
+        </image:image>
+    </url>
 </urlset>

@@ -1,23 +1,26 @@
-# Clínica Inove - Robots.txt
-# https://clinicainove.github.io
+# Robots.txt para Clínica Inove - https://clinicainove.github.io
+# Última atualização: 2026
 
 User-agent: *
 Allow: /
 
-# Bloquear pastas administrativas (se houver)
+# Bloqueia pastas administrativas/sensíveis
 Disallow: /admin/
 Disallow: /private/
 Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /404.html
+Disallow: /CNAME
 
-# Permitir crawlers importantes
-User-agent: Googlebot
-Allow: /
-
+# Permite indexação de imagens
 User-agent: Googlebot-Image
 Allow: /image/
 
-# Sitemap
-Sitemap: https://clinicainove.github.io/sitemap.xml
+# Reforço para Google (opcional, mas claro)
+User-agent: Googlebot
+Allow: /
 
-# Crawl-delay (opcional, se o servidor estiver sobrecarregado)
-# Crawl-delay: 10
+# Sitemap (relativo para evitar problemas de domínio)
+Sitemap: /sitemap.xml
