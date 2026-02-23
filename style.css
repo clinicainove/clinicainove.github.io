@@ -777,14 +777,14 @@ section {
     padding-top: 1rem;
     display: flex;
     gap: 1.5rem;
-    align-items: top;
+    align-items: flex-start;
 }
 
 .hero-reviews-text {
     font-weight: 400;
     text-align: center;
     margin-left: -20px;
-    align-items: top;
+    align-items: flex-start;
 }
 
 .hero-reviews-separator {
@@ -796,7 +796,7 @@ section {
 .hero-reviews-logos {
     display: flex;
     gap: 0.5rem;
-    align-items: top;
+    align-items: flex-start;
 }
 
 .hero-image-container {
