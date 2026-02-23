@@ -8,21 +8,19 @@ Adicionar hover de efeito nos cards de serviço e planos, bordas ---------------
 
 Efeito de hver nos navlinks------ ----------FEITO
 
-- Trocar fotos e reduzir tamanho
-  Hero
-  Sobre nós FEITO-----------------FEITO
-  Serviços
-  Sobre mim
-
+- Trocar fotos e reduzir tamanho-----------------FEITO
+  
 Redes sociais---------------> FEITO
 
 Arrumar os Important---------------> FEITO
 
 Incluir totalpass 
 
-Revisasr nomes no SW, Robots, Sitemap, Manifest no final
+comprimir imagens FEITO
 
-comprimir imagens
+Revisasr nomes no SW, Robots, Sitemap, Manifest no final  FEITO
+
+
 
 Minificar o código, retirar comentários e códigos não utilizados, otimizar imagens, 
 usar CDN para bibliotecas externas, implementar lazy loading para imagens, reduzir requisições HTTP, 

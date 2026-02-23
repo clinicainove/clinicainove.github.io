@@ -7,13 +7,13 @@ const urlsToCache = [
   '/index.html',
   '/style.css',
   '/script.js', // ← CORRIGIDO
-  '/image/Logo-clinica-inove.png',
-  '/image/Pilates-hero.jpg',
-  '/image/Emlyn.webp',
-  '/image/clinica-inove-estudio.jpeg',
-  '/image/background.jpg',
-  '/image/Estudio.jpeg',
-  '/image/Logotipo-Inove-Adendo.jpg',
+  '/image/clinica-inove-logotipo-hero.webp',
+  '/image/image/Pilates-hero.webp',
+  '/image/image/dra-emlyn-fisioterapeuta-e-instrutora-de-pilates.webp',
+  '/image/image/clinica-inove-estudio-tablet.webp',
+  '/image/image/clinica-inove-estudio.webp',
+  '/image/image/background.webp',
+  '/image/image/logotipo-footer.webp',
   '/fonts/Marginal.woff2',
   'https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap'
 ];
