@@ -46,7 +46,6 @@ if (mobileMenuButton && mobileNav) {
     });
 }
 
-/* CARROSSEL DE DEPOIMENTOS ADAPTADO (MOBILE + DESKTOP) */
 class TestimonialsCarousel {
     constructor() {
         this.grid = document.querySelector('.depoimentos-grid');
@@ -59,6 +58,9 @@ class TestimonialsCarousel {
         this.currentPage = 0;
         this.cardsPerPage = this.getCardsPerPage();
         this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+        
+        // ← ADICIONE AQUI: Cacheia o cardWidth
+        this.cardWidth = this.cards.length > 0 ? this.cards[0].offsetWidth : 0;
 
         this.init();
     }
@@ -72,7 +74,6 @@ class TestimonialsCarousel {
         this.updateCarousel();
         this.addEventListeners();
 
-        /* Se for mobile, adiciona a mensagem de arraste se não existir */
         if (this.isMobile && !document.querySelector('.drag-hint')) {
             const hint = document.createElement('p');
             hint.className = 'drag-hint';
@@ -85,7 +86,6 @@ class TestimonialsCarousel {
         if (!this.dotsContainer) return;
         this.dotsContainer.innerHTML = '';
 
-        /* No mobile, 1 dot por card. No desktop, 1 dot por página (2 cards). */
         const numDots = this.isMobile ? this.cards.length : this.totalPages;
 
         for (let i = 0; i < numDots; i++) {
@@ -100,10 +100,8 @@ class TestimonialsCarousel {
 
     updateCarousel() {
         if (this.isMobile) {
-            /* No mobile usamos Scroll Snap do CSS, apenas sincronizamos os dots */
             this.syncDotsWithScroll();
         } else {
-            /* No desktop usamos a lógica de classes active */
             this.cards.forEach(card => card.classList.remove('active'));
             const startIndex = this.currentPage * this.cardsPerPage;
             const endIndex = startIndex + this.cardsPerPage;
@@ -133,9 +131,9 @@ class TestimonialsCarousel {
     goToPage(index) {
         this.currentPage = index;
         if (this.isMobile) {
-            const cardWidth = this.cards[0].offsetWidth;
+            // ✅ USA O CACHE em vez de ler offsetWidth
             this.grid.scrollTo({
-                left: index * cardWidth,
+                left: index * this.cardWidth,
                 behavior: 'smooth'
             });
         } else {
@@ -148,8 +146,8 @@ class TestimonialsCarousel {
 
         this.grid.addEventListener('scroll', () => {
             const scrollLeft = this.grid.scrollLeft;
-            const cardWidth = this.cards[0].offsetWidth;
-            const newIndex = Math.round(scrollLeft / cardWidth);
+            // ✅ USA O CACHE em vez de ler offsetWidth
+            const newIndex = Math.round(scrollLeft / this.cardWidth);
 
             if (newIndex !== this.currentPage) {
                 this.currentPage = newIndex;
@@ -178,6 +176,10 @@ class TestimonialsCarousel {
                 this.cardsPerPage = newCardsPerPage;
                 this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
                 this.currentPage = 0;
+                
+                // ✅ RECALCULA cardWidth no resize
+                this.cardWidth = this.cards.length > 0 ? this.cards[0].offsetWidth : 0;
+                
                 this.createDots();
                 this.updateCarousel();
             }
@@ -198,7 +200,6 @@ if ('serviceWorker' in navigator) {
             .then(registration => {
                 console.log('✅ Service Worker registrado:', registration.scope);
 
-                /* Verifica atualizações */
                 registration.addEventListener('updatefound', () => {
                     const newWorker = registration.installing;
 
@@ -206,7 +207,6 @@ if ('serviceWorker' in navigator) {
                         if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                             console.log('🔄 Nova versão disponível! Recarregue a página.');
 
-                            /* Opcional: Notificar usuário */
                             if (confirm('Nova versão disponível! Deseja atualizar?')) {
                                 newWorker.postMessage({ type: 'SKIP_WAITING' });
                                 window.location.reload();
@@ -220,7 +220,6 @@ if ('serviceWorker' in navigator) {
             });
     });
 
-    /* Recarrega quando novo SW assume controle */
     let refreshing = false;
     navigator.serviceWorker.addEventListener('controllerchange', () => {
         if (!refreshing) {
