@@ -4,58 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Inove - Estúdio de Pilates</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload Recursos Críticos -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="fonts/Marginal.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Depois do preload da fonte -->
+    <link rel="preload" href="image/Pilates-hero.webp" as="image" fetchpriority="high">
     
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts (Lazy Load) -->
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-
-    <link rel="manifest" href="/manifest.json">
     
+    <!-- Fallback sem JavaScript -->
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap">
+    </noscript>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" sizes="180x180" href="/image/icon-180.webp">
     <link rel="icon" type="image/webp" href="image/clinica-inove-logotipo-hero.webp">
 
+    <!-- Theme -->
     <meta name="theme-color" content="#703293">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Clínica Inove">
 
+    <!-- SEO -->
     <meta name="description" content="Clínica Inove - Estúdio de Pilates e Fisioterapia em Ribeirão Preto. Oferecemos aulas personalizadas de Pilates, liberação miofascial, drenagem linfática e massagem relaxante. Cuide do seu bem-estar com a gente!">
     <meta name="keywords" content="pilates ribeirão preto, fisioterapia, massagem relaxante, liberação miofascial, drenagem linfática, bem-estar">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://clinicainove.github.io/">
     
+    <!-- Open Graph -->
     <meta property="og:title" content="Clínica Inove - Pilates em Ribeirão Preto">
-    <meta property="og:description" content="...">
+    <meta property="og:description" content="Estúdio de Pilates e Fisioterapia em Ribeirão Preto. Aulas personalizadas, massagem, fisioterapia e bem-estar.">
     <meta property="og:image" content="https://clinicainove.github.io/image/clinica-inove-estudio-tablet.webp">
     <meta property="og:image:width" content="900">
     <meta property="og:image:height" content="1200">
     <meta property="og:url" content="https://clinicainove.github.io/">
     <meta property="og:type" content="website">
     
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="author" content="William BMS - Clínica Inove">
 
+    
+
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "HealthAndBeautyBusiness",
-            "name": "Clínica Inove",
-            "description": "Estúdio de Pilates e Fisioterapia em Ribeirão Preto",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Rua Marechal Deodoro, 1499 sala 2",
-                "addressLocality": "Ribeirão Preto",
-                "addressRegion": "SP",
-                "postalCode": "14025-386",
-                "addressCountry": "BR"
-            },
-            "telephone": "+55 16 99177-8083",
-            "email": "clinicainoveribeirao@gmail.com",
-            "url": "https://clinicainove.github.io/",
-            "image": "https://www.clinicainove.com.br/image/image/clinica-inove-estudio.webp",
-            "priceRange": "$$",
-            "openingHoursSpecification": [
+    {
+        "@context": "https://schema.org",
+        "@type": "HealthAndBeautyBusiness",
+        "name": "Clínica Inove",
+        "description": "Estúdio de Pilates e Fisioterapia em Ribeirão Preto",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Marechal Deodoro, 1499 sala 2",
+            "addressLocality": "Ribeirão Preto",
+            "addressRegion": "SP",
+            "postalCode": "14025-386",
+            "addressCountry": "BR"
+        },
+        "telephone": "+55 16 99177-8083",
+        "email": "clinicainoveribeirao@gmail.com",
+        "url": "https://clinicainove.github.io/",
+        "image": "https://clinicainove.github.io/image/clinica-inove-estudio.webp",
+        "priceRange": "$$",
+        "openingHoursSpecification": [
             {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -68,18 +98,25 @@
                 "opens": "09:00",
                 "closes": "13:00"
             }
-            ],
-            "sameAs": [
+        ],
+        "sameAs": [
             "https://www.instagram.com/clinicainoveribeirao/",
             "https://www.facebook.com/profile.php?id=61576090292160"
-            ]
-        }
+        ]
+    }
     </script>
     
-    <!-- SVG DEFINITIONS (invisível) -->
-    <svg style="display: none;"> <defs> <!-- Estrela --> <symbol id="icon-star" viewBox="0 0 24 24"> <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/> </symbol> <!-- Check (✓) --> <symbol id="icon-check" viewBox="0 0 24 24"> <path d="M20 6 9 17l-5-5"/> </symbol> </defs> </svg>
-
-<link rel="stylesheet" href="style.css">
+    <!-- SVG Sprites -->
+    <svg style="display: none;">
+        <defs>
+            <symbol id="icon-star" viewBox="0 0 24 24">
+                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+            </symbol>
+            <symbol id="icon-check" viewBox="0 0 24 24">
+                <path d="M20 6 9 17l-5-5"/>
+            </symbol>
+        </defs>
+    </svg>
 </head>
 <body>
     <!-- NAVBAR / HEADER -->
@@ -114,7 +151,8 @@
             </button>
         </div>
     </header>
-
+    
+<main>
     <!-- Seção HERO -->
     <section id="hero" class="hero">
         <div class="hero-container">
@@ -188,8 +226,8 @@
                 <!-- Imagem da direita -->
                 <div class="hero-image-container">
                     <div class="hero-image">
-                        <img src="image/Pilates-hero.webp" alt="Clínica Inove - Ambiente acolhedor" loading="lazy" decoding="async" width="600" height="400">
-                <div class="hero-image-overlay"></div>
+                        <img src="image/Pilates-hero.webp" alt="Clínica Inove - Ambiente acolhedor" decoding="async" width="600" height="400" fetchpriority="high">
+                        <div class="hero-image-overlay"></div>
                     </div>
                     <div class="hero-shape hero-shape-1"></div>
                     <div class="hero-shape hero-shape-2"></div>
@@ -1002,6 +1040,7 @@
         </div>
     </div>
 </section>
+</main>
 
     <!-- Seção FOOTER/CONTATO -->
     <footer id="contato" class="footer">
@@ -1018,9 +1057,7 @@
                         <div class="btn-social-media-content"></div>
                     <!--Whatsapp-->
                     <a href="https://api.whatsapp.com/send/?phone=5516991778083&text=Ola%21+Gostaria+de+agendar.&type=phone_number&app_absent=0" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            class="whatsapp">
+                            class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
                             <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 640 640">
                                 <path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/>
                             </svg>                 
@@ -1028,9 +1065,7 @@
                     <!--instagram-->
                     
                     <a href="https://www.instagram.com/clinicainoveribeirao/" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        class="instagram">
+                        class="instagram" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                             <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.248.637.415 1.363.465 2.428.05 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.217 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.248-1.363.415-2.428.465-1.066.05-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.217-2.428-.465a4.897 4.897 0 0 1-1.772-1.153 4.908 4.908 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.01 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.637-.248 1.363-.415 2.428-.465C8.944 2.01 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 1 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
                         </svg>
@@ -1040,7 +1075,7 @@
                     <a href="https://www.facebook.com/profile.php?id=61576090292160" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="facebook">
+                        class="facebook" aria-label="Abrir Facebook">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
                             <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.99h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/>
                         </svg>
@@ -1050,7 +1085,7 @@
                     <a href="https://share.google/Ft9GHBw2wBk3o4ldS" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="GMN">
+                        class="GMN" aria-label="Abrir Google Meu Negócio">
                         <svg height="32" width="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0.43 1064 928.69"><linearGradient id="a" x1="0%" x2="99.999%" y1="49.999%" y2="49.999%"><stop offset=".03" stop-color="#4079d8"/><stop offset="1" stop-color="#4989f5"/></linearGradient><g fill="none" fill-rule="evenodd"><g fill-rule="nonzero"><rect fill="#4989f5" height="696.14" rx="36.88" width="931" x="53.45" y="232.98"/><path d="M936.81 227.75H100.06c-25.92 0-46.09 200.6-46.09 226.52L512.2 929.12h424.61c26-.071 47.059-21.13 47.13-47.13V274.87c-.077-25.996-21.134-47.049-47.13-47.12z" fill="url(#a)"/><path d="M266.03 349.56h266V.44H305.86z" fill="#3c4ba6"/><path d="M798.03 349.56h-266V.44H758.2zM984.45 66.62l.33 1.19c-.08-.42-.24-.81-.33-1.19z" fill="#7babf7"/><path d="M984.78 67.8l-.33-1.19C976.017 27.993 941.837.455 902.31.43H758.2L798 349.56h266z" fill="#3f51b5"/><path d="M79.61 66.62l-.33 1.19c.08-.42.24-.81.33-1.19z" fill="#7babf7"/><path d="M79.27 67.8l.33-1.19C88.033 27.993 122.213.455 161.74.43h144.12L266 349.56H0z" fill="#7babf7"/></g><path d="M266.48 349.47c0 73.412-59.513 132.925-132.925 132.925S.63 422.882.63 349.47z" fill="#709be0"/><path d="M532.33 349.47c0 73.412-59.513 132.925-132.925 132.925S266.48 422.882 266.48 349.47z" fill="#3c4ba6"/><path d="M798.18 349.47c0 73.412-59.513 132.925-132.925 132.925S532.33 422.882 532.33 349.47z" fill="#709be0"/><path d="M1064 349.47c0 73.412-59.513 132.925-132.925 132.925S798.15 422.882 798.15 349.47z" fill="#3c4ba6"/><path d="M931.08 709.6c-.47-6.33-1.25-12.11-2.36-19.49h-145c0 20.28 0 42.41-.08 62.7h84a73.05 73.05 0 0 1-30.75 46.89s0-.35-.06-.36a88 88 0 0 1-34 13.27 99.85 99.85 0 0 1-36.79-.16 91.9 91.9 0 0 1-34.31-14.87 95.72 95.72 0 0 1-33.73-43.1c-.52-1.35-1-2.71-1.49-4.09v-.15l.13-.1a93 93 0 0 1-.05-59.84A96.27 96.27 0 0 1 718.9 654c23.587-24.399 58.829-33.576 91.32-23.78a83 83 0 0 1 33.23 19.56l28.34-28.34c5-5.05 10.19-9.94 15-15.16a149.78 149.78 0 0 0-49.64-30.74 156.08 156.08 0 0 0-103.83-.91c-1.173.4-2.34.817-3.5 1.25A155.18 155.18 0 0 0 646 651a152.61 152.61 0 0 0-13.42 38.78c-16.052 79.772 32.623 158.294 111.21 179.4 25.69 6.88 53 6.71 78.89.83a139.88 139.88 0 0 0 63.14-32.81c18.64-17.15 32-40 39-64.27a179 179 0 0 0 6.26-63.33z" fill="#fff" fill-rule="nonzero"/></g>
                         </svg>
                 
@@ -1059,7 +1094,7 @@
                     <a href="https://www.google.com/maps/dir//Cl%C3%ADnica+Inove,+Rua+Marechal+Deodoro,+1499,+Sala+2,+Boulevard+-+Jardim+Sumare,+Ribeir%C3%A3o+Preto+-+SP,+14025-386/@-21.1872386,-47.8148816,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94b9bf1d2b4e6807:0x99a03bebe749e631!2m2!1d-47.8102067!2d-21.1888832!3e0?entry=ttu&g_ep=EgoyMDI2MDIxNi4wIKXMDSoASAFQAw%3D%3D" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="Maps">
+                        class="Maps" aria-label="Abrir no Google Maps">
                         <svg width="32" height="32" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <style>.cls-1{fill:#1a73e8;}.cls-2{fill:#ea4335;}.cls-3{fill:#4285f4;}.cls-4{fill:#fbbc04;}.cls-5{fill:#34a853;}</style>
@@ -1078,7 +1113,7 @@
                     <a href="https://m.uber.com/go/drop?drop%5B0%5D=%7B%22addressLine1%22%3A%22Cl%C3%ADnica%20Inove%22%2C%22addressLine2%22%3A%22rua%20marechal%20deodoro%2C%201499%20sala%202%20-%20Jardim%20Sumar%C3%A9%20-%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014025-386%22%2C%22id%22%3A%22788e2867-1ade-a6bd-8fc7-4c2f9da7b253%22%2C%22source%22%3A%22SEARCH%22%2C%22latitude%22%3A-21.188865%2C%22longitude%22%3A-47.810279%2C%22provider%22%3A%22uber_places%22%7D&effect=&marketing_vistor_id=82459f09-ac6c-46b2-80cc-04b41534b291&uclick_id=baf3f537-dd0c-48f7-abdb-b0c485ebed12" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="Uber">
+                        class="Uber" aria-label="Chamar Uber">
                         
                             <svg width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="512" cy="512" r="512"/>
@@ -1089,7 +1124,7 @@
                     <a href="https://www.waze.com/en/live-map/directions/br/sp/clinica-inove?place=ChIJB2hOKx2_uZQRMeZJ5-s7oJk" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        class="Waze">
+                        class="Waze" aria-label="Abrir no Waze">
                             <svg fill="#000000" width="32px" height="32px" viewBox="0 0 24 24" id="waze" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path id="primary" d="M13.38,2C7.19,2,5,6.57,5,10.49v.12a1.43,1.43,0,0,1-.41,1.05A1.47,1.47,0,0,1,3.27,12a1,1,0,0,0-.87.16A1,1,0,0,0,2,13a7.86,7.86,0,0,0,4.16,5.4,11.23,11.23,0,0,0,1.69.78c.7.22,1.85.48,1.93.5A18.49,18.49,0,0,0,13.3,20c.24,0,.46,0,.69,0a9.49,9.49,0,0,0,2.15-.38,6.5,6.5,0,0,0,2.1-1.19A9.06,9.06,0,0,0,22,11C22,5.78,18.37,2,13.38,2Z" style="fill: rgb(0, 0, 0);"></path><path id="secondary" d="M19,19a3,3,0,1,1-3-3A3,3,0,0,1,19,19ZM8,16a3,3,0,1,0,3,3A3,3,0,0,0,8,16Zm8-8.5A1.5,1.5,0,1,0,17.5,9,1.5,1.5,0,0,0,16,7.5Zm-5,0A1.5,1.5,0,1,0,12.5,9,1.5,1.5,0,0,0,11,7.5Z" style="fill: rgb(44, 169, 188);"></path>
                             </svg>
                         </a>
@@ -1098,7 +1133,7 @@
 
                 <!-- Coluna 2: Contato -->
                 <div class="footer-col">
-                    <h4 class="footer-subtitle">Contato</h4>
+                    <h2 class="footer-subtitle">Contato</h2>
                     <ul class="footer-contact-list">
                         <li class="footer-contact-item">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1134,7 +1169,7 @@
 
                 <!-- Coluna 3: Links Rápidos -->
                 <div class="footer-col">
-                    <h4 class="footer-subtitle">Links Rápidos</h4>
+                    <h3 class="footer-subtitle">Links Rápidos</h3>
                     <ul class="footer-links-list">
                         <li><a href="#hero" class="footer-link">Início</a></li>
                         <li><a href="#sobre" class="footer-link">Sobre</a></li>
@@ -1166,6 +1201,6 @@
             </div>
         </div>
     </footer>
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
 </body>
 </html>
