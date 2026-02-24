@@ -76,7 +76,7 @@
 
         <!-- Card 1: Pilates -->
         <image:image>
-            <image:loc>https://img.freepik.com/fotos-gratis/mulher-praticando-pilates-em-um-reformador-de-pilates_1303-14748.jpg</image:loc>
+            <image:loc>pilates-servicos.webp</image:loc>
             <image:title>Pilates Personalizado</image:title>
             <image:caption>Aula de Pilates em reformador</image:caption>
         </image:image>
