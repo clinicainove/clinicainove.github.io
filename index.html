@@ -225,8 +225,17 @@
                 <!-- Imagem da direita -->
                 <div class="hero-image-container">
                     <div class="hero-image">
-                        <img src="image/Pilates-hero.webp" alt="Clínica Inove - Ambiente acolhedor" decoding="async" width="600" height="400" fetchpriority="high">
-                        <div class="hero-image-overlay"></div>
+                    <picture>
+                        <!-- Mobile: até 767px -->
+                        <source media="(max-width: 767px)" srcset="image/Pilates-hero.webp" type="image/webp">
+
+                        <!-- Tablet e Desktop: a partir de 768px -->
+                        <source media="(min-width: 768px)" srcset="image/Pilates-hero-desktop.webp" type="image/webp">
+
+                        <!-- Fallback para navegadores sem suporte a WebP (ex.: Internet Explorer) -->
+                        <img src="image/Pilates-hero.webp" alt="Clínica Inove - Ambiente acolhedor" width="600" height="400" fetchpriority="high" decoding="async">
+                    </picture>                    
+                    <div class="hero-image-overlay"></div>
                     </div>
                     <div class="hero-shape hero-shape-1"></div>
                     <div class="hero-shape hero-shape-2"></div>
