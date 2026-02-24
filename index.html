@@ -34,7 +34,6 @@
     </noscript>
 
     <!-- PWA -->
-    <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" sizes="180x180" href="/image/icon-180.webp">
     <link rel="icon" type="image/webp" href="image/clinica-inove-logotipo-hero.webp">
 
@@ -1202,5 +1201,13 @@
         </div>
     </footer>
         <script src="script.js" defer></script>
+        <script>
+            window.addEventListener('load', function() {
+                const link = document.createElement('link');
+                link.rel = 'manifest';
+                link.href = '/manifest.json';
+                document.head.appendChild(link);
+            });
+        </script>
 </body>
 </html>
