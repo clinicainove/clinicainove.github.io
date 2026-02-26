@@ -1974,7 +1974,6 @@ section {
     }
     
     .hero-image-container {
-        display:none;  
         position: absolute;
         inset: 0;
         height: 100%;
@@ -2096,7 +2095,6 @@ section {
     }
     
     .sobre-image-container {
-        display:none;
         width: 100%;
         height: 100%;
         border-radius: 0;
