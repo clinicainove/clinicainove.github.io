@@ -83,14 +83,14 @@
         
         <!-- Card 2: Liberação -->
         <image:image>
-            <image:loc>"https://images.unsplash.com/photo-1519824145371-296894a0daa9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA=="</image:loc>
+            <image:loc>"https://images.unsplash.com/photo-1519824145371-296894a0daa9?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA=="</image:loc>
             <image:title>Liberação Miogascial</image:title>
             <image:caption>Aula de Pilates em reformador</image:caption>
         </image:image>
         
         <!-- Card 3: Drenagem -->
         <image:image>
-            <image:loc>https://img.freepik.com/fotos-gratis/maos-massageando-o-abdomen-feminino-therapista-aplicando-pressao-sobre-a-barriga_1139-1124.jpg?t=st=1771297639~exp=1771301239~hmac=23d4c05f12d35a2799ee04c460f673532ada33775c758c840ece62371c825c8f&w=740</image:loc>
+            <image:loc>https://img.freepik.com/fotos-gratis/maos-massageando-o-abdomen-feminino-therapista-aplicando-pressao-sobre-a-barriga_1139-1124.jpg?t=st=1771297639~exp=1771301239~hmac=23d4c05f12d35a2799ee04c460f673532ada33775c758c840ece62371c825c8f&amp;w=740</image:loc>
             <image:title>Drenagem Linfática</image:title>
             <image:caption>Aula de Pilates em reformador</image:caption>
         </image:image>
@@ -104,7 +104,7 @@
         
         <!-- Card 5: fisioterapia -->
         <image:image>
-            <image:loc>https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==</image:loc>
+            <image:loc>https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==</image:loc>
             <image:title>Fisioterapia</image:title>
             <image:caption>Aula de Pilates em reformador</image:caption>
         </image:image>
