@@ -611,6 +611,9 @@ section {
     width: 1.5rem;
     height: 1.5rem;
 }
+.svg-defs {
+    display: none;
+}
 
 /* ÍCONES */
 .icon-accessibility {
