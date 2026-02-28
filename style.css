@@ -1031,6 +1031,12 @@ section {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.feature-suggestion {
+    font-size: 0.795rem;
+    font-style: italic;
+    color: #703293;
+}
+
 /* === DEPOIMENTOS === */
 .depoimentos {
     padding: 4rem 0;
