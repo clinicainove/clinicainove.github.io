@@ -1375,6 +1375,15 @@ section {
     display: none;
 }
 
+
+.footer-address {
+    color: #a8a29e;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style:normal;
+}
+
 .footer-contact-list {
     list-style: none;
     margin: 0;
