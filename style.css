@@ -203,7 +203,8 @@ section {
 .btn-whatsapp {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
         0 1px 2px -1px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: transform 0.15s ease, box-shadow 0.3s ease;
+    will-change: transform;
 }
 
 /* Glow roxo nos botões primários */
@@ -271,7 +272,8 @@ section {
     border: 0;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
 .card-image:hover {
@@ -290,7 +292,8 @@ section {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 1.1s ease;
+    transition: transform 0.5s ease;
+    will-change: transform;
 }
 
 .card-image:hover .card-img {
@@ -333,8 +336,8 @@ section {
     border: 1px solid var(--border-light);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     position: relative;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
 /* ------cards novos essenciais---------*/
@@ -343,8 +346,8 @@ section {
     border: 1px solid var(--primary);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     position: relative;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
 .card-plan-essencial:hover {
@@ -357,8 +360,8 @@ section {
     border: 1px solid var(--primary);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     position: relative;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
 .card-plan-equilibrio:hover {
@@ -393,8 +396,8 @@ section {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
     border-radius: 0.75rem;
     position: relative;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
 .card-plan-p3:hover {
@@ -508,8 +511,8 @@ section {
 .card-testimonial {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    will-change: transform;
     height: 280px;
-    /* ajuste conforme necessário */
     display: none;
     flex-direction: column;
 
@@ -1103,7 +1106,7 @@ section {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -1151,7 +1154,7 @@ section {
     background-color: #d6d3d1;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
     padding: 0;
 }
 
@@ -1211,7 +1214,8 @@ section {
     max-width: 390px;
     border-radius: 0.5rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    transition: transform 1.0s ease;
+    transition: transform 0.5s ease;
+    will-change: transform;
 }
 .sobre-mim-img:hover img {
     transform: translate(10px, 10px);
