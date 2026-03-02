@@ -1,6 +1,22 @@
 /* global document, window, navigator, console, confirm */
 
 /* SCROLL SUAVE PARA LINKS ÂNCORA */
+// Cacheia altura da navbar (evita reflow repetido)
+let cachedNavbarHeight = null;
+
+function getNavbarHeight() {
+    if (cachedNavbarHeight === null) {
+        const navbar = document.querySelector('.navbar');
+        cachedNavbarHeight = navbar ? navbar.offsetHeight : 60;
+    }
+    return cachedNavbarHeight;
+}
+
+// Recalcula navbar height no resize
+window.addEventListener('resize', () => {
+    cachedNavbarHeight = null;
+});
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -14,8 +30,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         if (targetSection) {
             /* Calcula a posição desejada considerando a navbar fixa */
-            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 60;
-            const extraSpace = 20; // espaço extra para não ficar colado
+            const navbarHeight = getNavbarHeight();
+            const extraSpace = 20;
             const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - navbarHeight - extraSpace;
 
             window.scrollTo({
@@ -46,6 +62,7 @@ if (mobileMenuButton && mobileNav) {
     });
 }
 
+/* CARROSSEL DE DEPOIMENTOS - OTIMIZADO PARA PERFORMANCE */
 class TestimonialsCarousel {
     constructor() {
         this.grid = document.querySelector('.depoimentos-grid');
@@ -59,7 +76,7 @@ class TestimonialsCarousel {
         this.cardsPerPage = this.getCardsPerPage();
         this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
         
-        // ← ADICIONE AQUI: Cacheia o cardWidth
+        // Cacheia cardWidth para evitar forced reflow
         this.cardWidth = this.cards.length > 0 ? this.cards[0].offsetWidth : 0;
 
         this.init();
@@ -131,7 +148,7 @@ class TestimonialsCarousel {
     goToPage(index) {
         this.currentPage = index;
         if (this.isMobile) {
-            // ✅ USA O CACHE em vez de ler offsetWidth
+            // Usa cache para evitar reflow
             this.grid.scrollTo({
                 left: index * this.cardWidth,
                 behavior: 'smooth'
@@ -146,7 +163,7 @@ class TestimonialsCarousel {
 
         this.grid.addEventListener('scroll', () => {
             const scrollLeft = this.grid.scrollLeft;
-            // ✅ USA O CACHE em vez de ler offsetWidth
+            // Usa cache para evitar reflow no scroll
             const newIndex = Math.round(scrollLeft / this.cardWidth);
 
             if (newIndex !== this.currentPage) {
@@ -157,32 +174,44 @@ class TestimonialsCarousel {
     }
 
     addEventListeners() {
-        if (this.prevBtn) this.prevBtn.addEventListener('click', () => {
-            if (this.currentPage > 0) this.goToPage(this.currentPage - 1);
-        });
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => {
+                if (this.currentPage > 0) {
+                    this.goToPage(this.currentPage - 1);
+                }
+            });
+        }
 
-        if (this.nextBtn) this.nextBtn.addEventListener('click', () => {
-            if (this.currentPage < (this.isMobile ? this.cards.length - 1 : this.totalPages - 1)) {
-                this.goToPage(this.currentPage + 1);
-            }
-        });
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => {
+                const maxPage = this.isMobile ? this.cards.length - 1 : this.totalPages - 1;
+                if (this.currentPage < maxPage) {
+                    this.goToPage(this.currentPage + 1);
+                }
+            });
+        }
 
+        // Debounce do resize para melhor performance
+        let resizeTimer;
         window.addEventListener('resize', () => {
-            const wasMobile = this.isMobile;
-            this.isMobile = window.innerWidth < 768;
-            const newCardsPerPage = this.getCardsPerPage();
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                const wasMobile = this.isMobile;
+                this.isMobile = window.innerWidth < 768;
+                const newCardsPerPage = this.getCardsPerPage();
 
-            if (newCardsPerPage !== this.cardsPerPage || wasMobile !== this.isMobile) {
-                this.cardsPerPage = newCardsPerPage;
-                this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
-                this.currentPage = 0;
-                
-                // ✅ RECALCULA cardWidth no resize
-                this.cardWidth = this.cards.length > 0 ? this.cards[0].offsetWidth : 0;
-                
-                this.createDots();
-                this.updateCarousel();
-            }
+                if (newCardsPerPage !== this.cardsPerPage || wasMobile !== this.isMobile) {
+                    this.cardsPerPage = newCardsPerPage;
+                    this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+                    this.currentPage = 0;
+                    
+                    // Recalcula cardWidth no resize
+                    this.cardWidth = this.cards.length > 0 ? this.cards[0].offsetWidth : 0;
+                    
+                    this.createDots();
+                    this.updateCarousel();
+                }
+            }, 150); // Debounce de 150ms
         });
     }
 }
