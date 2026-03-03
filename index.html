@@ -17,25 +17,6 @@
     <link rel="preload" href="style.css?v=20260302" as="style">
     <link rel="preload" href="fonts/Marginal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="image/Pilates-hero.webp" as="image" fetchpriority="high">
-    
-    <style>
-        /* Reset mínimo */
-        *{margin:0;padding:0;box-sizing:border-box} /* Variáveis essenciais */ :root{ --primary:#703293; --text-dark:#1c1917; --text-muted:#57534e; --bg-white:#fff; --bg-light:#FAFAF9; --border-gray:#e7e5e4; }
-        /* Fonte crítica */
-        @font-face{ font-family:Marginal; src:url('fonts/Marginal.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap } body{ font-family:Comfortaa,sans-serif; color:#333; line-height:1.6; background-color:var(--bg-light); width:100%; overflow-x:hidden }
-        /* Navbar */
-        .navbar{ height:60px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; position:sticky; top:0; background-color:#fff; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,.1) } .navbar-container{ width:100%; display:flex; align-items:center; justify-content:space-between } .navbar-brand{ display:flex; align-items:center; gap:1rem } .navbar-brand img{ width:50px; height:50px } .logo-text{ font-family:'Cormorant SC',serif; font-size:1.875rem; font-weight:300; color:var(--primary); white-space:nowrap } .navbar-desktop-nav{ display:flex; align-items:center; gap:42px } .navbar-mobile-menu-button{ display:none }
-        /* Hero Section */
-        .hero{ position:relative; min-height:calc(100vh - 80px); padding-top:10px; background-color:var(--bg-light); overflow:hidden } .hero-container{ max-width:100rem; margin:0 auto; padding:0 3rem } .hero-grid{ display:grid; min-height:calc(100vh - 80px); align-items:center; gap:3rem; grid-template-columns:repeat(2,1fr); padding:0 } .hero-content{ z-index:10; padding:0 } .hero-title{ font-family:Marginal,serif; font-size:3.75rem; font-weight:300; line-height:1.01; color:var(--text-dark); margin-bottom:2rem } .hero-subtitle{ max-width:36rem; font-size:1.125rem; line-height:1.625; color:var(--text-muted); margin-bottom:2rem } .hero-buttons{ display:flex; flex-direction:row; gap:1rem; margin-bottom:2.5rem } .hero-image-container{ position:relative; display:block; height:570px } .hero-image{ width:100%; height:100%; border-radius:1.5rem; overflow:hidden; clip-path:polygon(15% 0%,100% 0%,100% 100%,0% 100%) } .hero-image img{ width:100%; height:100%; object-fit:cover }
-        /* Badge */
-        .badge{ display:inline-flex; align-items:center; border-radius:6px; background-color:#E8D4F8; color:var(--primary); padding:.125rem .625rem; font-size:.75rem; font-weight:600; margin-bottom:1rem } .hero .badge{ padding:.5rem 1rem; font-size:.875rem; font-weight:500; margin-bottom:1.5rem }
-        /* Botões básicos */
-        .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; white-space:nowrap; height:2.25rem; padding:0 1.5rem; border-radius:9999px; font-size:.875rem; font-weight:500; cursor:pointer; border:none; text-decoration:none; transition:transform .15s } .btn-primary{ background-color:var(--primary); color:#fff; box-shadow:0 10px 15px -3px rgba(0,0,0,.1) } .btn-outline{ background-color:#fff; border:2px solid rgba(112,50,147,.2); color:var(--primary) } .btn-large{ height:auto; padding:.5rem 1.5rem; font-size:1.125rem; border-radius:10px }
-        
-        /* Mobile critical */
-        @media (max-width:767px){
-            .navbar-desktop-nav{display:none} .navbar-mobile-menu-button{display:inline-flex} .logo-text{font-size:1.25rem} .navbar-brand img{width:40px;height:40px} .hero{min-height:90vh;padding-top:0} .hero-container{padding:0} .hero-grid{ display:flex; flex-direction:column; gap:0; min-height:auto } .hero-image-container{ position:absolute; inset:0; height:100%; width:100%; z-index:0; opacity:.15 } .hero-content{ position:relative; z-index:1; padding:3rem 1rem 0 } .hero-title{ font-size:2.9rem; line-height:1.2; margin-bottom:1rem } .hero-subtitle{ font-size:1.29rem; line-height:1.5; margin-bottom:1.5rem } .hero-buttons{ flex-direction:column; gap:1.75rem; margin-bottom:2rem } .btn-large{ width:100%; font-size:.9375rem; padding:.625rem 1.25rem } }
-    </style>
 
     <!-- CSS Principal -->
     <link rel="stylesheet" href="style.css?v=20260302">
