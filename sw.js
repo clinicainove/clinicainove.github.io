@@ -1,7 +1,7 @@
 // Clínica Inove - Service Worker
-// Versão: 1.0.1
+// Versão: 3
 
-const CACHE_NAME = 'clinica-inove-v2'; // ← Incrementa versão
+const CACHE_NAME = 'clinica-inove-v3'; // ← Incrementa versão
 const urlsToCache = [
   '/',
   '/index.html',
