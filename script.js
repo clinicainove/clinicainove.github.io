@@ -1,6 +1,193 @@
 /* SCROLL SUAVE PARA LINKS ÂNCORA */
 /* global document, window, navigator, console, confirm */
 // Cacheia altura da navbar (evita reflow repetido)
-/* global document, window, navigator, console, confirm */
 
-let cachedWindowWidth,cachedNavbarHeight=null;function getNavbarHeight(){if(null===cachedNavbarHeight){let e=document.querySelector(".navbar");cachedNavbarHeight=e?e.offsetHeight:60}return cachedNavbarHeight}let resizeTimeout;window.addEventListener("resize",()=>{clearTimeout(resizeTimeout),resizeTimeout=setTimeout(()=>{cachedWindowWidth=window.innerWidth,cachedNavbarHeight=null},250)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();let i=e.getAttribute("href");if("#"===i)return;let s=document.querySelector(i);if(s){let r=getNavbarHeight(),a=s.getBoundingClientRect().top+window.pageYOffset-r-20;window.scrollTo({top:a,behavior:"smooth"});let o=document.querySelector(".navbar-desktop-nav");cachedWindowWidth<768&&o&&(o.style.display="none")}})});const mobileMenuButton=document.querySelector(".navbar-mobile-menu-button"),mobileNav=document.querySelector(".navbar-desktop-nav");mobileMenuButton&&mobileNav&&mobileMenuButton.addEventListener("click",function(){mobileNav.style.display="flex"===mobileNav.style.display?"none":"flex"});class TestimonialsCarousel{constructor(){this.grid=document.querySelector(".depoimentos-grid"),this.cards=document.querySelectorAll(".card-testimonial"),this.dotsContainer=document.querySelector(".carousel-dots"),this.prevBtn=document.querySelector(".carousel-arrow-prev"),this.nextBtn=document.querySelector(".carousel-arrow-next"),this.isMobile=cachedWindowWidth<768,this.currentPage=0,this.cardsPerPage=this.getCardsPerPage(),this.totalPages=Math.ceil(this.cards.length/this.cardsPerPage),this.cardWidth=this.cards.length>0?this.cards[0].offsetWidth:0,this.init()}getCardsPerPage(){return cachedWindowWidth>=768?2:1}init(){if(this.createDots(),this.updateCarousel(),this.addEventListeners(),this.isMobile&&!document.querySelector(".drag-hint")){let e=document.createElement("p");e.className="drag-hint",e.innerText="Arraste para o lado para ver mais depoimentos →",this.grid.parentNode.insertBefore(e,this.dotsContainer)}}createDots(){if(!this.dotsContainer)return;this.dotsContainer.innerHTML="";let e=this.isMobile?this.cards.length:this.totalPages;for(let t=0;t<e;t++){let i=document.createElement("button");i.classList.add("carousel-dot"),i.setAttribute("aria-label",`Ir para depoimento ${t+1}`),i.addEventListener("click",()=>this.goToPage(t)),this.dotsContainer.appendChild(i)}this.updateDots()}updateCarousel(){if(this.isMobile)this.syncDotsWithScroll();else{this.cards.forEach(e=>e.classList.remove("active"));let e=this.currentPage*this.cardsPerPage,t=e+this.cardsPerPage;for(let i=e;i<t&&i<this.cards.length;i++)this.cards[i].classList.add("active");this.updateDots(),this.updateArrows()}}updateDots(){if(!this.dotsContainer)return;let e=this.dotsContainer.querySelectorAll(".carousel-dot");e.forEach((e,t)=>{e.classList.toggle("active",t===this.currentPage)})}updateArrows(){this.prevBtn&&this.nextBtn&&(this.prevBtn.classList.toggle("disabled",0===this.currentPage),this.nextBtn.classList.toggle("disabled",this.currentPage===this.totalPages-1))}goToPage(e){this.currentPage=e,this.isMobile?this.grid.scrollTo({left:e*this.cardWidth,behavior:"smooth"}):this.updateCarousel()}syncDotsWithScroll(){if(!this.isMobile||!this.grid)return;let e;this.grid.addEventListener("scroll",()=>{e||(e=setTimeout(()=>{let t=this.grid.scrollLeft,i=Math.round(t/this.cardWidth);i!==this.currentPage&&(this.currentPage=i,this.updateDots()),e=null},80))},{passive:!0})}addEventListeners(){this.prevBtn&&this.prevBtn.addEventListener("click",()=>{this.currentPage>0&&this.goToPage(this.currentPage-1)}),this.nextBtn&&this.nextBtn.addEventListener("click",()=>{this.currentPage<(this.isMobile?this.cards.length-1:this.totalPages-1)&&this.goToPage(this.currentPage+1)});let e;window.addEventListener("resize",()=>{clearTimeout(e),e=setTimeout(()=>{let e=this.isMobile;this.isMobile=cachedWindowWidth<768;let t=this.getCardsPerPage();(t!==this.cardsPerPage||e!==this.isMobile)&&(this.cardsPerPage=t,this.totalPages=Math.ceil(this.cards.length/this.cardsPerPage),this.currentPage=0,this.cardWidth=this.cards.length>0?this.cards[0].offsetWidth:0,this.createDots(),this.updateCarousel())},250)})}}if(document.addEventListener("DOMContentLoaded",()=>{cachedWindowWidth=window.innerWidth,new TestimonialsCarousel}),"serviceWorker"in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("/sw.js").then(e=>{console.log("✅ Service Worker registrado:",e.scope),e.addEventListener("updatefound",()=>{let t=e.installing;t.addEventListener("statechange",()=>{"installed"===t.state&&navigator.serviceWorker.controller&&(console.log("\uD83D\uDD04 Nova vers\xe3o dispon\xedvel! Recarregue a p\xe1gina."),confirm("Nova vers\xe3o dispon\xedvel! Deseja atualizar?")&&(t.postMessage({type:"SKIP_WAITING"}),window.location.reload()))})})}).catch(e=>{console.error("❌ Erro ao registrar Service Worker:",e)})});let e=!1;navigator.serviceWorker.addEventListener("controllerchange",()=>{e||(e=!0,window.location.reload())})}
+let cachedWindowWidth,
+    cachedNavbarHeight = null;
+function getNavbarHeight() {
+    if (null === cachedNavbarHeight) {
+        let e = document.querySelector(".navbar");
+        cachedNavbarHeight = e ? e.offsetHeight : 60;
+    }
+    return cachedNavbarHeight;
+}
+let resizeTimeout;
+(window.addEventListener("resize", () => {
+    (clearTimeout(resizeTimeout),
+        (resizeTimeout = setTimeout(() => {
+            ((cachedWindowWidth = window.innerWidth), (cachedNavbarHeight = null));
+        }, 250)));
+}),
+    document.querySelectorAll('a[href^="#"]').forEach((e) => {
+        e.addEventListener("click", function (t) {
+            t.preventDefault();
+            let i = e.getAttribute("href");
+            if ("#" === i) return;
+            let s = document.querySelector(i);
+            if (s) {
+                let r = getNavbarHeight(),
+                    a = s.getBoundingClientRect().top + window.pageYOffset - r - 20;
+                window.scrollTo({ top: a, behavior: "smooth" });
+                let o = document.querySelector(".navbar-desktop-nav");
+                cachedWindowWidth < 768 && o && (o.style.display = "none");
+            }
+        });
+    }));
+const mobileMenuButton = document.querySelector(".navbar-mobile-menu-button"),
+    mobileNav = document.querySelector(".navbar-desktop-nav");
+mobileMenuButton &&
+    mobileNav &&
+    mobileMenuButton.addEventListener("click", function () {
+        mobileNav.style.display = "flex" === mobileNav.style.display ? "none" : "flex";
+    });
+
+class TestimonialsCarousel {
+    constructor() {
+        ((this.grid = document.querySelector(".depoimentos-grid")),
+            (this.cards = document.querySelectorAll(".card-testimonial")),
+            (this.dotsContainer = document.querySelector(".carousel-dots")),
+            (this.prevBtn = document.querySelector(".carousel-arrow-prev")),
+            (this.nextBtn = document.querySelector(".carousel-arrow-next")),
+            (this.isMobile = cachedWindowWidth < 768),
+            (this.currentPage = 0),
+            (this.cardsPerPage = this.getCardsPerPage()),
+            (this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage)),
+            (this.cardWidth = this.cards.length > 0 ? this.cards[0].offsetWidth : 0),
+            this.init());
+    }
+    getCardsPerPage() {
+        return cachedWindowWidth >= 768 ? 2 : 1;
+    }
+    init() {
+        if (
+            (this.createDots(),
+                this.updateCarousel(),
+                this.addEventListeners(),
+                this.isMobile && !document.querySelector(".drag-hint"))
+        ) {
+            let e = document.createElement("p");
+            ((e.className = "drag-hint"),
+                (e.innerText = "Arraste para o lado para ver mais depoimentos →"),
+                this.grid.parentNode.insertBefore(e, this.dotsContainer));
+        }
+    }
+    createDots() {
+        if (!this.dotsContainer) return;
+        this.dotsContainer.innerHTML = "";
+        let e = this.isMobile ? this.cards.length : this.totalPages;
+        for (let t = 0; t < e; t++) {
+            let i = document.createElement("button");
+            (i.classList.add("carousel-dot"),
+                i.setAttribute("aria-label", `Ir para depoimento ${t + 1}`),
+                i.addEventListener("click", () => this.goToPage(t)),
+                this.dotsContainer.appendChild(i));
+        }
+        this.updateDots();
+    }
+    updateCarousel() {
+        if (this.isMobile) this.syncDotsWithScroll();
+        else {
+            this.cards.forEach((e) => e.classList.remove("active"));
+            let e = this.currentPage * this.cardsPerPage,
+                t = e + this.cardsPerPage;
+            for (let i = e; i < t && i < this.cards.length; i++) this.cards[i].classList.add("active");
+            (this.updateDots(), this.updateArrows());
+        }
+    }
+    updateDots() {
+        if (!this.dotsContainer) return;
+        let e = this.dotsContainer.querySelectorAll(".carousel-dot");
+        e.forEach((e, t) => {
+            e.classList.toggle("active", t === this.currentPage);
+        });
+    }
+    updateArrows() {
+        this.prevBtn &&
+            this.nextBtn &&
+            (this.prevBtn.classList.toggle("disabled", 0 === this.currentPage),
+                this.nextBtn.classList.toggle("disabled", this.currentPage === this.totalPages - 1));
+    }
+    goToPage(e) {
+        ((this.currentPage = e),
+            this.isMobile ? this.grid.scrollTo({ left: e * this.cardWidth, behavior: "smooth" }) : this.updateCarousel());
+    }
+    syncDotsWithScroll() {
+        if (!this.isMobile || !this.grid) return;
+        let e;
+        this.grid.addEventListener(
+            "scroll",
+            () => {
+                e ||
+                    (e = setTimeout(() => {
+                        let t = this.grid.scrollLeft,
+                            i = Math.round(t / this.cardWidth);
+                        (i !== this.currentPage && ((this.currentPage = i), this.updateDots()), (e = null));
+                    }, 80));
+            },
+            { passive: !0 },
+        );
+    }
+    addEventListeners() {
+        (this.prevBtn &&
+            this.prevBtn.addEventListener("click", () => {
+                this.currentPage > 0 && this.goToPage(this.currentPage - 1);
+            }),
+            this.nextBtn &&
+            this.nextBtn.addEventListener("click", () => {
+                this.currentPage < (this.isMobile ? this.cards.length - 1 : this.totalPages - 1) &&
+                    this.goToPage(this.currentPage + 1);
+            }));
+        let e;
+        window.addEventListener("resize", () => {
+            (clearTimeout(e),
+                (e = setTimeout(() => {
+                    let e = this.isMobile;
+                    this.isMobile = cachedWindowWidth < 768;
+                    let t = this.getCardsPerPage();
+                    (t !== this.cardsPerPage || e !== this.isMobile) &&
+                        ((this.cardsPerPage = t),
+                            (this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage)),
+                            (this.currentPage = 0),
+                            (this.cardWidth = this.cards.length > 0 ? this.cards[0].offsetWidth : 0),
+                            this.createDots(),
+                            this.updateCarousel());
+                }, 250)));
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    ((cachedWindowWidth = window.innerWidth), new TestimonialsCarousel());
+});
+
+/* ==========================================================================
+   REGISTRO DO SERVICE WORKER (CORRIGIDO E BLINDADO CONTRA CACHE)
+   ========================================================================== */
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker
+            // O SEGREDO: updateViaCache: 'none' força o GitHub Pages a sempre buscar o sw.js atualizado na rede
+            .register("/sw.js", { updateViaCache: "none" })
+            .then((reg) => {
+                console.log("✅ Service Worker registrado:", reg.scope);
+
+                // Verifica atualizações silenciosamente de tempos em tempos
+                if (typeof reg.update === "function") {
+                    reg.update();
+                }
+            })
+            .catch((err) => {
+                console.error("❌ Erro ao registrar Service Worker:", err);
+            });
+    });
+
+    // Escuta a troca de comando. Quando o 'v4' assumir o lugar do 'v3', limpa o cache e atualiza a tela da cliente
+    let isRefreshing = false;
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (!isRefreshing) {
+            isRefreshing = true;
+            console.log("🔄 Nova versão do SW ativa! Recarregando a página para aplicar as alterações...");
+            window.location.reload();
+        }
+    });
+}
