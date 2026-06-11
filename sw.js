@@ -1,13 +1,13 @@
 // Clínica Inove - Service Worker
-// Versão: 3
+// Versão: 4
 
-const CACHE_NAME = 'clinica-inove-v3'; // ← Incrementa versão
+const CACHE_NAME = 'clinica-inove-v4'; // ← Incrementa versão
 const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
   '/script.js',
-  
+
   // ✅ IMAGENS CORRIGIDAS (remove /image/ duplicado)
   '/image/clinica-inove-logotipo-hero.webp',
   '/image/Pilates-hero.webp',
@@ -16,43 +16,43 @@ const urlsToCache = [
   '/image/clinica-inove-estudio.webp',
   '/image/background.webp',
   '/image/logotipo-footer.webp',
-  
+
   // ✅ FONTE LOCAL
   '/fonts/Marginal.woff2'
-  
+
   // ❌ REMOVI GOOGLE FONTS (cache dinâmico vai pegar)
 ];
 
 // Instalação do Service Worker
 self.addEventListener('install', event => {
-  console.log('[SW] Instalando Service Worker v2...');
-  
+  console.log('[SW] Instalando Service Worker v4...');
+
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
         console.log('[SW] Cache aberto');
-        
+
         // ✅ Cache individual com fallback
         const cachePromises = urlsToCache.map(url => {
           return cache.add(url).catch(err => {
             console.warn(`[SW] Falha ao cachear ${url}:`, err);
           });
         });
-        
+
         return Promise.allSettled(cachePromises);
       })
       .catch(err => {
         console.error('[SW] Erro ao abrir cache:', err);
       })
   );
-  
+
   self.skipWaiting();
 });
 
 // Ativação do Service Worker
 self.addEventListener('activate', event => {
   console.log('[SW] Ativando Service Worker...');
-  
+
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
@@ -65,7 +65,7 @@ self.addEventListener('activate', event => {
       );
     })
   );
-  
+
   return self.clients.claim();
 });
 
@@ -77,29 +77,29 @@ self.addEventListener('fetch', event => {
         if (response) {
           return response;
         }
-        
+
         return fetch(event.request)
           .then(response => {
             // ✅ Não cacheia se não for sucesso
             if (!response || response.status !== 200) {
               return response;
             }
-            
+
             // ✅ Só cacheia recursos locais ou CORS-enabled
             if (response.type === 'basic' || response.type === 'cors') {
               const responseToCache = response.clone();
-              
+
               caches.open(CACHE_NAME)
                 .then(cache => {
                   cache.put(event.request, responseToCache);
                 });
             }
-            
+
             return response;
           })
           .catch(err => {
             console.error('[SW] Erro ao buscar:', err);
-            
+
             // ✅ Fallback offline
             if (event.request.destination === 'document') {
               return caches.match('/');
