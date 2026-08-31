@@ -4,6 +4,7 @@
 
 let cachedWindowWidth,
     cachedNavbarHeight = null;
+
 function getNavbarHeight() {
     if (null === cachedNavbarHeight) {
         let e = document.querySelector(".navbar");
@@ -11,30 +12,35 @@ function getNavbarHeight() {
     }
     return cachedNavbarHeight;
 }
+
 let resizeTimeout;
-(window.addEventListener("resize", () => {
-    (clearTimeout(resizeTimeout),
-        (resizeTimeout = setTimeout(() => {
-            ((cachedWindowWidth = window.innerWidth), (cachedNavbarHeight = null));
-        }, 250)));
-}),
-    document.querySelectorAll('a[href^="#"]').forEach((e) => {
-        e.addEventListener("click", function (t) {
-            t.preventDefault();
-            let i = e.getAttribute("href");
-            if ("#" === i) return;
-            let s = document.querySelector(i);
-            if (s) {
-                let r = getNavbarHeight(),
-                    a = s.getBoundingClientRect().top + window.pageYOffset - r - 20;
-                window.scrollTo({ top: a, behavior: "smooth" });
-                let o = document.querySelector(".navbar-desktop-nav");
-                cachedWindowWidth < 768 && o && (o.style.display = "none");
-            }
-        });
-    }));
+window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        cachedWindowWidth = window.innerWidth;
+        cachedNavbarHeight = null;
+    }, 250);
+});
+
+document.querySelectorAll('a[href^="#"]').forEach((e) => {
+    e.addEventListener("click", function (t) {
+        t.preventDefault();
+        let i = e.getAttribute("href");
+        if ("#" === i) return;
+        let s = document.querySelector(i);
+        if (s) {
+            let r = getNavbarHeight(),
+                a = s.getBoundingClientRect().top + window.pageYOffset - r - 20;
+            window.scrollTo({ top: a, behavior: "smooth" });
+            let o = document.querySelector(".navbar-desktop-nav");
+            cachedWindowWidth < 768 && o && (o.style.display = "none");
+        }
+    });
+});
+
 const mobileMenuButton = document.querySelector(".navbar-mobile-menu-button"),
     mobileNav = document.querySelector(".navbar-desktop-nav");
+
 mobileMenuButton &&
     mobileNav &&
     mobileMenuButton.addEventListener("click", function () {
@@ -43,57 +49,71 @@ mobileMenuButton &&
 
 class TestimonialsCarousel {
     constructor() {
-        ((this.grid = document.querySelector(".depoimentos-grid")),
-            (this.cards = document.querySelectorAll(".card-testimonial")),
-            (this.dotsContainer = document.querySelector(".carousel-dots")),
-            (this.prevBtn = document.querySelector(".carousel-arrow-prev")),
-            (this.nextBtn = document.querySelector(".carousel-arrow-next")),
-            (this.isMobile = cachedWindowWidth < 768),
-            (this.currentPage = 0),
-            (this.cardsPerPage = this.getCardsPerPage()),
-            (this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage)),
-            (this.cardWidth = this.cards.length > 0 ? this.cards[0].offsetWidth : 0),
-            this.init());
+        this.grid = document.querySelector(".depoimentos-grid");
+        this.cards = document.querySelectorAll(".card-testimonial");
+        this.dotsContainer = document.querySelector(".carousel-dots");
+        this.prevBtn = document.querySelector(".carousel-arrow-prev");
+        this.nextBtn = document.querySelector(".carousel-arrow-next");
+        this.isMobile = cachedWindowWidth < 768;
+        this.currentPage = 0;
+        this.cardsPerPage = this.getCardsPerPage();
+        this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+        this.cardWidth = 0; // será medido depois do layout estar pronto
+        this.init();
     }
+
     getCardsPerPage() {
         return cachedWindowWidth >= 768 ? 2 : 1;
     }
+
     init() {
-        if (
-            (this.createDots(),
-                this.updateCarousel(),
-                this.addEventListeners(),
-                this.isMobile && !document.querySelector(".drag-hint"))
-        ) {
+        this.createDots();
+        this.updateCarousel();
+
+        // Mede a largura só depois de aplicar as classes .active (evita offsetWidth = 0)
+        if (this.cards.length > 0) {
+            this.cardWidth = this.cards[0].offsetWidth;
+        }
+
+        this.addEventListeners();
+
+        if (this.isMobile && !document.querySelector(".drag-hint")) {
             let e = document.createElement("p");
-            ((e.className = "drag-hint"),
-                (e.innerText = "Arraste para o lado para ver mais depoimentos →"),
-                this.grid.parentNode.insertBefore(e, this.dotsContainer));
+            e.className = "drag-hint";
+            e.innerText = "Arraste para o lado para ver mais depoimentos →";
+            this.grid.parentNode.insertBefore(e, this.dotsContainer);
         }
     }
+
     createDots() {
         if (!this.dotsContainer) return;
         this.dotsContainer.innerHTML = "";
         let e = this.isMobile ? this.cards.length : this.totalPages;
         for (let t = 0; t < e; t++) {
             let i = document.createElement("button");
-            (i.classList.add("carousel-dot"),
-                i.setAttribute("aria-label", `Ir para depoimento ${t + 1}`),
-                i.addEventListener("click", () => this.goToPage(t)),
-                this.dotsContainer.appendChild(i));
+            i.classList.add("carousel-dot");
+            i.setAttribute("aria-label", `Ir para depoimento ${t + 1}`);
+            i.addEventListener("click", () => this.goToPage(t));
+            this.dotsContainer.appendChild(i);
         }
         this.updateDots();
     }
+
     updateCarousel() {
-        if (this.isMobile) this.syncDotsWithScroll();
-        else {
+        if (this.isMobile) {
+            this.syncDotsWithScroll();
+        } else {
             this.cards.forEach((e) => e.classList.remove("active"));
             let e = this.currentPage * this.cardsPerPage,
                 t = e + this.cardsPerPage;
-            for (let i = e; i < t && i < this.cards.length; i++) this.cards[i].classList.add("active");
-            (this.updateDots(), this.updateArrows());
+            for (let i = e; i < t && i < this.cards.length; i++) {
+                this.cards[i].classList.add("active");
+            }
+            this.updateDots();
+            this.updateArrows();
         }
     }
+
     updateDots() {
         if (!this.dotsContainer) return;
         let e = this.dotsContainer.querySelectorAll(".carousel-dot");
@@ -101,16 +121,23 @@ class TestimonialsCarousel {
             e.classList.toggle("active", t === this.currentPage);
         });
     }
+
     updateArrows() {
         this.prevBtn &&
             this.nextBtn &&
             (this.prevBtn.classList.toggle("disabled", 0 === this.currentPage),
                 this.nextBtn.classList.toggle("disabled", this.currentPage === this.totalPages - 1));
     }
+
     goToPage(e) {
-        ((this.currentPage = e),
-            this.isMobile ? this.grid.scrollTo({ left: e * this.cardWidth, behavior: "smooth" }) : this.updateCarousel());
+        this.currentPage = e;
+        if (this.isMobile) {
+            this.grid.scrollTo({ left: e * this.cardWidth, behavior: "smooth" });
+        } else {
+            this.updateCarousel();
+        }
     }
+
     syncDotsWithScroll() {
         if (!this.isMobile || !this.grid) return;
         let e;
@@ -121,43 +148,58 @@ class TestimonialsCarousel {
                     (e = setTimeout(() => {
                         let t = this.grid.scrollLeft,
                             i = Math.round(t / this.cardWidth);
-                        (i !== this.currentPage && ((this.currentPage = i), this.updateDots()), (e = null));
+                        if (i !== this.currentPage) {
+                            this.currentPage = i;
+                            this.updateDots();
+                        }
+                        e = null;
                     }, 80));
             },
-            { passive: !0 },
+            { passive: true },
         );
     }
+
     addEventListeners() {
-        (this.prevBtn &&
+        this.prevBtn &&
             this.prevBtn.addEventListener("click", () => {
                 this.currentPage > 0 && this.goToPage(this.currentPage - 1);
-            }),
-            this.nextBtn &&
+            });
+
+        this.nextBtn &&
             this.nextBtn.addEventListener("click", () => {
                 this.currentPage < (this.isMobile ? this.cards.length - 1 : this.totalPages - 1) &&
                     this.goToPage(this.currentPage + 1);
-            }));
+            });
+
         let e;
         window.addEventListener("resize", () => {
-            (clearTimeout(e),
-                (e = setTimeout(() => {
-                    let e = this.isMobile;
-                    this.isMobile = cachedWindowWidth < 768;
-                    let t = this.getCardsPerPage();
-                    (t !== this.cardsPerPage || e !== this.isMobile) &&
-                        ((this.cardsPerPage = t),
-                            (this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage)),
-                            (this.currentPage = 0),
-                            (this.cardWidth = this.cards.length > 0 ? this.cards[0].offsetWidth : 0),
-                            this.createDots(),
-                            this.updateCarousel());
-                }, 250)));
+            clearTimeout(e);
+            e = setTimeout(() => {
+                let e = this.isMobile;
+                this.isMobile = cachedWindowWidth < 768;
+                let t = this.getCardsPerPage();
+                if (t !== this.cardsPerPage || e !== this.isMobile) {
+                    this.cardsPerPage = t;
+                    this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
+                    this.currentPage = 0;
+                    this.cardWidth = this.cards.length > 0 ? this.cards[0].offsetWidth : 0;
+                    this.createDots();
+                    this.updateCarousel();
+                }
+            }, 250);
         });
     }
 }
 
+// ===== CORREÇÃO DO REFLOW FORÇADO =====
 document.addEventListener("DOMContentLoaded", () => {
-    ((cachedWindowWidth = window.innerWidth), new TestimonialsCarousel());
+    cachedWindowWidth = window.innerWidth;
+
+    // Adia a inicialização para depois do primeiro paint
+    // Isso elimina o forced reflow reportado pelo PageSpeed
+    requestAnimationFrame(() => {
+        new TestimonialsCarousel();
+    });
 });
 
 /* ==========================================================================
