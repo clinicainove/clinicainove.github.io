@@ -1,6 +1,7 @@
 /* BLACK FRIDAY — override do style.css. Para desativar: remova este arquivo e os trechos [BF] do index.html */
 :root {
     --primary: #000;
+    --primary2: #703293;
     --primary-hover: #111;
     --primary-light: #17130a;
     --primary-lighter: #241c08;
@@ -68,7 +69,7 @@ body {
     flex: none;
     background: currentColor;
     -webkit-mask: var(--bolt) center/contain no-repeat;
-    mask: var(--bolt) center/contain no-repeat
+    mask: var(--bolt) center/contain no-repeat;
 }
 
 .bf-bolt {
@@ -90,8 +91,6 @@ body {
 .card-subtitle,
 .card-plan-subtitle-p2,
 .sobre-card-number,
-.logo-text,
-.text-highlight,
 .feature-suggestion {
     background: var(--bf-grad);
     -webkit-background-clip: text;
@@ -99,11 +98,35 @@ body {
     -webkit-text-fill-color: transparent
 }
 
+.text-highlight {
+    background: var(--primary2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.logo-text {
+    color: #fff;
+}
+
 .hero-title,
 .section-title,
-.sobre-section-title,
 .servicos-section-title {
     color: #fff
+}
+
+.sobre-section-title {
+    font-family: Marginal, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--primary) !important;
+    margin-bottom: 1rem
+}
+
+.sobre-description {
+    color: var(--primary);
+    line-height: 1.625;
+    margin-bottom: 1.5rem
 }
 
 .text-highlight {
@@ -125,8 +148,8 @@ body {
 .badge-small,
 .badge-featured,
 .bf-off {
-    background: var(--bf-grad);
-    color: #000;
+    background: var(--primary2);
+    color: #fff;
     font-weight: 800
 }
 
@@ -137,8 +160,8 @@ body {
 
 .btn-primary:hover,
 .btn-white:hover {
-    filter: brightness(1.08);
-    box-shadow: 0 8px 20px rgba(255, 140, 0, .4)
+    filter: brightness(1.01);
+    box-shadow: 0 8px 20px rgba(247, 247, 244, 0.4)
 }
 
 .btn-outline {
@@ -205,10 +228,14 @@ body {
 
 /* Fundos, marcas d'água e raios 3D neon */
 .hero,
-.sobre,
 .servicos,
 .depoimentos {
     background: transparent
+}
+
+.sobre {
+    padding: 5rem 0;
+    background-color: var(--text-dark);
 }
 
 .planos {
@@ -234,7 +261,7 @@ body {
 }
 
 .hero-shape,
-.sobre::after,
+/* .sobre::after, */
 .servicos::before,
 .planos::before,
 .planos::after,
@@ -413,10 +440,22 @@ body {
     color: #000
 }
 
-.feature-text,
+
 .feature-text-p2,
 .testimonial-text {
     color: #e9e4d8
+}
+
+.feature-text-sobre-nos {
+    color: var(--primary);
+    font-size: .995rem;
+    font-weight: 500
+}
+
+.feature-text-planos {
+    color: var(--text-dark);
+    font-size: .995rem;
+    font-weight: 500
 }
 
 .icon-accessibility,
