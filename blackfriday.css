@@ -106,7 +106,7 @@ body {
 }
 
 .logo-text {
-    color: #fff;
+    color: #000;
 }
 
 .hero-title,
@@ -521,6 +521,12 @@ body {
 .navbar,
 .navbar-desktop-nav {
     background: #000
+}
+
+.navbar-brand {
+    background: #fff;
+    border-radius: 99px;
+    padding-right: 20px;
 }
 
 .navbar {
