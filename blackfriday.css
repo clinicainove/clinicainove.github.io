@@ -1,0 +1,550 @@
+/* BLACK FRIDAY — override do style.css. Para desativar: remova este arquivo e os trechos [BF] do index.html */
+:root {
+    --primary: #000;
+    --primary-hover: #111;
+    --primary-light: #17130a;
+    --primary-lighter: #241c08;
+    --text-dark: #fff;
+    --text-muted: #cfc9bb;
+    --text-gray: #8d877a;
+    --bg-white: #000;
+    --bg-light: #000;
+    --border-light: #2b2412;
+    --border-gray: #2b2412;
+    --bf-y: #ffd60a;
+    --bf-o: #ff7a00;
+    --bf-grad: linear-gradient(95deg, #ffe600 0%, #ffb300 45%, #ff6a00 100%);
+    --bolt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 108 168'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f5e1ff'/%3E%3Cstop offset='.5' stop-color='%23c084fc'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M62 0 12 92h30L28 160 90 62H58z' fill='url(%23g)' stroke='%23f3e8ff' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --wm: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='320'%3E%3Ctext transform='translate(70 190) rotate(-18)' font-family='Arial Black,Impact,sans-serif' font-size='40' font-weight='900' fill='none' stroke='%23ffb300' stroke-opacity='.14' stroke-width='1.2'%3EBLACK FRIDAY%3C/text%3E%3Cpath d='M450 40 428 90h16l-7 32 30-52h-17z' fill='%23a855f7' fill-opacity='.16'/%3E%3Cpath d='M60 20 40 62h14l-6 26 26-44H60z' fill='%23ffb300' fill-opacity='.1'/%3E%3C/svg%3E");
+    --neon: drop-shadow(2px 3px 0 #3b0a7a) drop-shadow(5px 7px 0 #240a52) drop-shadow(0 0 8px #c084fc) drop-shadow(0 0 26px #7c3aed)
+}
+
+body {
+    background: #000 var(--wm);
+    color: #e9e4d8
+}
+
+:focus-visible {
+    outline: 3px solid var(--bf-y);
+    outline-offset: 3px
+}
+
+/* Tarja rolando */
+.bf-ticker {
+    background: #000;
+    overflow: hidden;
+    border-bottom: 2px solid;
+    border-image: var(--bf-grad) 1
+}
+
+.bf-track {
+    display: flex;
+    width: max-content;
+    animation: bfScroll 45s linear infinite
+}
+
+.bf-ticker:hover .bf-track {
+    animation-play-state: paused
+}
+
+.bf-group {
+    display: flex
+}
+
+.bf-item {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: .65rem 2.4rem;
+    white-space: nowrap;
+    font-weight: 800;
+    font-size: .95rem
+}
+
+.bf-bolt,
+.bf-off::before,
+.bf-hero-tag::before {
+    content: "";
+    flex: none;
+    background: currentColor;
+    -webkit-mask: var(--bolt) center/contain no-repeat;
+    mask: var(--bolt) center/contain no-repeat
+}
+
+.bf-bolt {
+    width: .8rem;
+    height: 1.2rem;
+    color: var(--bf-y);
+    filter: drop-shadow(0 0 6px #ff9d00)
+}
+
+.bf-off::before,
+.bf-hero-tag::before {
+    width: .7em;
+    height: 1.05em
+}
+
+/* Letras em gradiente amarelo→laranja (exceto títulos principais) */
+.bf-txt,
+.card-content-plan .card-title,
+.card-subtitle,
+.card-plan-subtitle-p2,
+.sobre-card-number,
+.logo-text,
+.text-highlight,
+.feature-suggestion {
+    background: var(--bf-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.hero-title,
+.section-title,
+.sobre-section-title,
+.servicos-section-title {
+    color: #fff
+}
+
+.text-highlight {
+    padding-right: .1em
+}
+
+.card-plan-description-p2 {
+    color: var(--text-muted)
+}
+
+.navbar-nav-link:hover {
+    color: var(--bf-y)
+}
+
+/* Botões e selos */
+.btn-primary,
+.btn-white,
+.badge,
+.badge-small,
+.badge-featured,
+.bf-off {
+    background: var(--bf-grad);
+    color: #000;
+    font-weight: 800
+}
+
+.btn-primary,
+.btn-white {
+    box-shadow: 0 4px 12px rgba(255, 140, 0, .3)
+}
+
+.btn-primary:hover,
+.btn-white:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, .4)
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--bf-y);
+    color: var(--bf-y)
+}
+
+.btn-outline:hover {
+    background: rgba(255, 200, 0, .12);
+    border-color: var(--bf-o);
+    box-shadow: 0 0 22px rgba(255, 170, 0, .5)
+}
+
+.badge-plan-3,
+.badge-featured-plan-3 {
+    background: #000;
+    color: var(--bf-y)
+}
+
+.bf-off {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    margin-bottom: 1rem;
+    padding: .35rem .85rem;
+    border-radius: 999px;
+    font-size: .85rem;
+    line-height: 1;
+    box-shadow: none
+}
+
+.card-image-container .bf-off {
+    position: absolute;
+    top: .9rem;
+    left: .9rem;
+    z-index: 3;
+    margin: 0;
+    font-size: .95rem;
+    padding: .4rem .9rem;
+    transform: rotate(-4deg)
+}
+
+.card-plan-p3 .bf-off {
+    background: #000;
+    color: var(--bf-y)
+}
+
+.bf-hero-tag {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding: .45rem 1rem;
+    border: none;
+    border-radius: 999px;
+    background: #000;
+    color: var(--bf-y);
+    font-weight: 800;
+    font-size: .85rem;
+    box-shadow: none
+}
+
+/* Fundos, marcas d'água e raios 3D neon */
+.hero,
+.sobre,
+.servicos,
+.depoimentos {
+    background: transparent
+}
+
+.planos {
+    background: #000
+}
+
+.hero,
+.sobre,
+.servicos,
+.planos,
+.depoimentos {
+    position: relative;
+    overflow: hidden
+}
+
+.hero>*,
+.sobre>*,
+.servicos>*,
+.planos>*,
+.depoimentos>* {
+    position: relative;
+    z-index: 1
+}
+
+.hero-shape,
+.sobre::after,
+.servicos::before,
+.planos::before,
+.planos::after,
+.depoimentos::after {
+    background: var(--bolt) center/contain no-repeat;
+    filter: var(--neon);
+    animation: bfFloat 7s ease-in-out infinite, bfFlicker 5s infinite
+}
+
+.sobre::after,
+.servicos::before,
+.planos::before,
+.planos::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    width: clamp(70px, 8vw, 130px);
+    aspect-ratio: 108/168;
+    opacity: .35
+}
+
+.sobre::after {
+    right: 4%;
+    top: 15%;
+    --r: 14deg
+}
+
+.servicos::before {
+    left: 3%;
+    top: 12%;
+    --r: -16deg
+}
+
+.planos::before {
+    left: 2%;
+    top: 35%;
+    --r: -12deg;
+    animation-delay: -2s
+}
+
+.planos::after {
+    right: 2%;
+    bottom: 10%;
+    --r: 16deg;
+    animation-delay: -4s
+}
+
+.hero-shape {
+    border-radius: 0;
+    opacity: 1
+}
+
+.hero-shape-1 {
+    width: 7rem;
+    height: 10.9rem;
+    right: -1rem;
+    top: -2rem;
+    --r: 14deg
+}
+
+.hero-shape-2 {
+    width: 5rem;
+    height: 7.8rem;
+    left: -1.5rem;
+    bottom: -1rem;
+    --r: -18deg
+}
+
+.hero-image-container {
+    filter: drop-shadow(0 0 22px rgba(255, 140, 0, .4))
+}
+
+.hero-image-overlay {
+    background: linear-gradient(to left, transparent, rgba(0, 0, 0, .35))
+}
+
+@keyframes bfScroll {
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+@keyframes bfFloat {
+
+    0%,
+    100% {
+        transform: perspective(800px) rotateY(-22deg) rotateX(10deg) rotateZ(var(--r, 12deg))
+    }
+
+    50% {
+        transform: perspective(800px) rotateY(18deg) rotateX(-6deg) rotateZ(var(--r, 12deg)) translateY(-16px)
+    }
+}
+
+@keyframes bfFlicker {
+
+    0%,
+    44%,
+    50%,
+    56%,
+    100% {
+        opacity: 1
+    }
+
+    47% {
+        opacity: .45
+    }
+
+    53% {
+        opacity: .65
+    }
+}
+
+/* Planos: cartões pretos com borda neon; Premium em gradiente */
+.card-plan-equilibrio,
+.card-plan-essencial,
+.card-plan,
+.card-featured {
+    background: #000;
+    border: 1px solid rgba(255, 170, 0, .4);
+    box-shadow: none
+}
+
+.card-full-width {
+    background: linear-gradient(rgba(0, 0, 0, .84), rgba(0, 0, 0, .84)), url("image/clinica-inove-estudio-tablet.webp") center/cover no-repeat;
+    background-blend-mode: normal
+}
+
+.card-plan-equilibrio:hover,
+.card-plan-essencial:hover,
+.card-plan:hover,
+.card-plan-p3:hover {
+    box-shadow: 0 8px 24px rgba(255, 140, 0, .25)
+}
+
+.card-plan-p3 {
+    background: var(--bf-grad);
+    border: none;
+    box-shadow: 0 8px 24px rgba(255, 140, 0, .25)
+}
+
+.card-title-plan-3,
+.card-subtitle-plan-3,
+.card-description-plan-3,
+.feature-text-white {
+    color: #000
+}
+
+.card-plan-p3 .btn {
+    background: #000;
+    color: var(--bf-y);
+    box-shadow: none
+}
+
+.card-plan-p3 .text-black {
+    color: var(--bf-y)
+}
+
+.card-plan-p3 .feature-icon {
+    background: #000
+}
+
+.card-plan-p3 .feature-icon svg {
+    color: var(--bf-y)
+}
+
+/* Ícones, textos e cartões do restante do site */
+.feature-icon,
+.sobre .feature-icon {
+    background: var(--bf-grad)
+}
+
+.feature-icon svg,
+.sobre .feature-icon svg {
+    color: #000
+}
+
+.feature-text,
+.feature-text-p2,
+.testimonial-text {
+    color: #e9e4d8
+}
+
+.icon-accessibility,
+.sobre-accessibility-info svg,
+.footer-contact-item svg {
+    color: var(--bf-y)
+}
+
+.sobre-accessibility-info {
+    background: #000;
+    border: 1px solid rgba(255, 170, 0, .35)
+}
+
+.sobre-image-container {
+    border: 1px solid rgba(255, 170, 0, .6);
+    box-shadow: 0 0 44px rgba(255, 120, 0, .3)
+}
+
+.sobre-floating-card {
+    box-shadow: 0 0 28px rgba(255, 140, 0, .35)
+}
+
+.card-image {
+    box-shadow: 0 0 0 1px rgba(255, 170, 0, .4), 0 12px 28px rgba(0, 0, 0, .7)
+}
+
+.card-image:hover {
+    box-shadow: 0 0 0 1px var(--bf-o), 0 0 34px rgba(255, 140, 0, .5)
+}
+
+.card-depo {
+    background: #000;
+    border: 1px solid rgba(255, 170, 0, .35)
+}
+
+.card-testimonial:hover {
+    border: 2px solid var(--bf-o)
+}
+
+.testimonial-quote {
+    color: rgba(255, 170, 0, .18)
+}
+
+.carousel-arrow {
+    background: var(--bf-grad);
+    border: 2px solid #000
+}
+
+.carousel-arrow svg,
+.carousel-arrow:hover svg {
+    color: #000
+}
+
+.carousel-dot.active {
+    background: var(--bf-grad)
+}
+
+.carousel-dot:hover {
+    background: var(--bf-o)
+}
+
+/* Navbar, Sobre-mim e rodapé */
+.navbar,
+.navbar-desktop-nav {
+    background: #000
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(255, 170, 0, .3);
+    box-shadow: 0 4px 24px rgba(255, 120, 0, .18)
+}
+
+.navbar-nav-link {
+    color: #e9e4d8
+}
+
+.navbar-nav-link::after {
+    background: var(--bf-grad)
+}
+
+.sobre-mim {
+    background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("image/background.webp") center/cover no-repeat
+}
+
+.sobre-mim-img img {
+    box-shadow: 0 0 36px rgba(255, 140, 0, .45)
+}
+
+.footer {
+    background: #000;
+    border-top: 2px solid;
+    border-image: var(--bf-grad) 1
+}
+
+@media(max-width:767px) {
+    .hero-image-container::after {
+        background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, .55) 45%, #000 100%)
+    }
+
+    .sobre-image-container::after {
+        background: linear-gradient(to bottom, transparent, #000)
+    }
+
+    .sobre::after,
+    .servicos::before,
+    .planos::before,
+    .planos::after,
+    .depoimentos::after {
+        width: 64px;
+        opacity: .55;
+        animation: none
+    }
+
+    .bf-item {
+        font-size: .8rem;
+        padding: .55rem 1.4rem
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .bf-track,
+    .hero-shape,
+    .sobre::after,
+    .servicos::before,
+    .planos::before,
+    .planos::after,
+    .depoimentos::after {
+        animation: none !important
+    }
+}

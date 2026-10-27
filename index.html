@@ -37,6 +37,8 @@
 
     <!-- CSS Principal -->
     <link rel="stylesheet" href="style.css?v=20260611" />
+    <link rel="stylesheet" href="blackfriday.css?v=1" />
+    <!-- [BF] -->
 
     <!-- Google Fonts (Lazy Load) -->
     <link
@@ -46,12 +48,9 @@
       onload="this.media = 'all'" />
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
-      rel="preload"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      " />
+      rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'" />
 
     <!-- Fallback -->
     <noscript>
@@ -65,10 +64,10 @@
 
     <!-- PWA -->
     <link rel="apple-touch-icon" sizes="180x180" href="/image/icon-180.webp" />
-    <link rel="icon" type="image/webp" href="image/clinica-inove-logotipo-hero.webp" />
+    <link rel="icon" type="image/png" sizes="48x48" href="image/clinica-inove-logotipo-hero.png" />
 
     <!-- Theme -->
-    <meta name="theme-color" content="#703293" />
+    <meta name="theme-color" content="#000000" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Clínica Inove" />
@@ -79,7 +78,7 @@
       content="Clínica Inove em Ribeirão Preto: aulas personalizadas de Pilates, fisioterapia, drenagem linfática e massagem relaxante. Cuide do seu bem-estar com profissionais dedicados." />
     <meta
       name="keywords"
-      content="pilates ribeirão preto, fisioterapia, massagem relaxante, liberação miofascial, drenagem linfática, bem-estar" />
+      content="pilates ribeirão preto, fisioterapia, massagem relaxante, liberação miofascial, drenagem linfática, clínica inove, inove pilates, inove ribeirão preto" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://clinicainove.github.io/" />
 
@@ -164,6 +163,66 @@
         style="display: none; visibility: hidden"></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <!-- [BF] Tarja Black Friday -->
+    <div class="bf-ticker" role="region" aria-label="Promoção Black Friday">
+      <div class="bf-track">
+        <div class="bf-group">
+          <span class="bf-item"
+            ><i class="bf-bolt"></i
+            ><span class="bf-txt"
+              >Black Friday para todos os serviços da Clínica Inove, de <b data-bf="inicio">XX/XX</b> até
+              <b data-bf="fim">XX/XX</b>, consulte nossas regras</span
+            ></span
+          ><span class="bf-item"
+            ><i class="bf-bolt"></i
+            ><span class="bf-txt"
+              >Black Friday para todos os serviços da Clínica Inove, de <b data-bf="inicio">XX/XX</b> até
+              <b data-bf="fim">XX/XX</b>, consulte nossas regras</span
+            ></span
+          ><span class="bf-item"
+            ><i class="bf-bolt"></i
+            ><span class="bf-txt"
+              >Black Friday para todos os serviços da Clínica Inove, de <b data-bf="inicio">XX/XX</b> até
+              <b data-bf="fim">XX/XX</b>, consulte nossas regras</span
+            ></span
+          ><span class="bf-item"
+            ><i class="bf-bolt"></i
+            ><span class="bf-txt"
+              >Black Friday para todos os serviços da Clínica Inove, de <b data-bf="inicio">XX/XX</b> até
+              <b data-bf="fim">XX/XX</b>, consulte nossas regras</span
+            ></span
+          >
+        </div>
+        <div class="bf-group" aria-hidden="true">
+          <span class="bf-item"
+            ><i class="bf-bolt"></i
+            ><span class="bf-txt"
+              >Black Friday para todos os serviços da Clínica Inove, de <b data-bf="inicio">XX/XX</b> até
+              <b data-bf="fim">XX/XX</b>, consulte nossas regras</span
+            ></span
+          ><span class="bf-item"
+            ><i class="bf-bolt"></i
+            ><span class="bf-txt"
+              >Black Friday para todos os serviços da Clínica Inove, de <b data-bf="inicio">XX/XX</b> até
+              <b data-bf="fim">XX/XX</b>, consulte nossas regras</span
+            ></span
+          ><span class="bf-item"
+            ><i class="bf-bolt"></i
+            ><span class="bf-txt"
+              >Black Friday para todos os serviços da Clínica Inove, de <b data-bf="inicio">XX/XX</b> até
+              <b data-bf="fim">XX/XX</b>, consulte nossas regras</span
+            ></span
+          ><span class="bf-item"
+            ><i class="bf-bolt"></i
+            ><span class="bf-txt"
+              >Black Friday para todos os serviços da Clínica Inove, de <b data-bf="inicio">XX/XX</b> até
+              <b data-bf="fim">XX/XX</b>, consulte nossas regras</span
+            ></span
+          >
+        </div>
+      </div>
+    </div>
+
     <!-- NAVBAR / HEADER -->
     <header class="navbar">
       <div class="navbar-container">
@@ -222,6 +281,8 @@
           <div class="hero-grid">
             <!-- Conteúdo da esquerda -->
             <div class="hero-content">
+              <div class="bf-hero-tag">Black Friday de <b data-bf="inicio">XX/XX</b> a <b data-bf="fim">XX/XX</b></div>
+              <!-- [BF] -->
               <div class="badge">Pilates Personalizado</div>
 
               <h1 class="hero-title">
@@ -543,6 +604,8 @@
             <!-- Card 1: Pilates -->
             <div class="card card-image card-large">
               <div class="card-image-container">
+                <span class="bf-off" data-bf-off="pilates">X% OFF</span>
+                <!-- [BF] -->
                 <img
                   src="image/Pilates-serviços-desktop.webp"
                   alt="Pilates Personalizado"
@@ -563,6 +626,8 @@
             <!-- Card 2: Liberação Miofascial -->
             <div class="card card-image">
               <div class="card-image-container">
+                <span class="bf-off" data-bf-off="miofascial">X% OFF</span>
+                <!-- [BF] -->
                 <img
                   src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Liberação Miofascial"
@@ -580,6 +645,8 @@
             <!-- Card 3: Drenagem Linfática -->
             <div class="card card-image">
               <div class="card-image-container">
+                <span class="bf-off" data-bf-off="drenagem">X% OFF</span>
+                <!-- [BF] -->
                 <img
                   src="https://img.freepik.com/fotos-gratis/maos-massageando-o-abdomen-feminino-therapista-aplicando-pressao-sobre-a-barriga_1139-1124.jpg?t=st=1771297639~exp=1771301239~hmac=23d4c05f12d35a2799ee04c460f673532ada33775c758c840ece62371c825c8f&w=740"
                   alt="Drenagem Linfática"
@@ -598,6 +665,8 @@
             <!-- Card 4: Massagem relaxante -->
             <div class="card card-image">
               <div class="card-image-container">
+                <span class="bf-off" data-bf-off="massagem">X% OFF</span>
+                <!-- [BF] -->
                 <img
                   src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600"
                   alt="Massagem Relaxante"
@@ -617,6 +686,8 @@
             <!-- Card 5: Fisioterapia -->
             <div class="card card-image">
               <div class="card-image-container">
+                <span class="bf-off" data-bf-off="fisio">X% OFF</span>
+                <!-- [BF] -->
                 <img
                   src="https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Fisioterapia"
@@ -652,6 +723,8 @@
             <!-- Plano 1: -->
             <div class="card card-plan-essencial">
               <div class="card-content-plan">
+                <span class="bf-off" data-bf-off="essencial">X% OFF</span>
+                <!-- [BF] -->
                 <h3 class="card-title">Plano Cuidado Essencial</h3>
                 <p class="card-subtitle">4 aulas por mês</p>
                 <p class="card-description">Ideal para quem está começando.</p>
@@ -727,6 +800,8 @@
             <!-- Plano 2:  -->
             <div class="card card-plan-equilibrio">
               <div class="card-content-plan">
+                <span class="bf-off" data-bf-off="equilibrio">X% OFF</span>
+                <!-- [BF] -->
                 <div class="badge badge-featured"></div>
                 <h3 class="card-title card-plan-title-p2">Plano Equilíbrio</h3>
                 <p class="card-plan-subtitle-p2">8 aulas por mês</p>
@@ -859,6 +934,8 @@
             <div class="card-plan-p3">
               <div class="badge-plan-3 badge-featured-plan-3">O mais vendido</div>
               <div class="card-content-plan">
+                <span class="bf-off" data-bf-off="premium">X% OFF</span>
+                <!-- [BF] -->
                 <h3 class="card-title-plan-3">Pacote Premium</h3>
                 <p class="card-subtitle-plan-3">12 aulas por mês</p>
                 <p class="card-description-plan-3">Resultados mais rápidos.</p>
@@ -989,6 +1066,8 @@
             <div class="card card-plan card-featured">
               <div class="badge badge-featured">Economia grantida</div>
               <div class="card-content-plan">
+                <span class="bf-off" data-bf-off="trimestral">X% OFF</span>
+                <!-- [BF] -->
                 <h3 class="card-title">Plano Trimestral</h3>
                 <p class="card-subtitle">1, 2 ou 3 aulas por semana</p>
                 <p class="card-description">Você compra 3 meses de aulas e economiza.</p>
@@ -1101,6 +1180,8 @@
             <div class="card card-plan card-featured">
               <div class="badge badge-featured"></div>
               <div class="card-content-plan">
+                <span class="bf-off" data-bf-off="terapias">X% OFF</span>
+                <!-- [BF] -->
                 <h3 class="card-title">Terapias Manuais</h3>
                 <p class="card-subtitle">Você merece todo esse cuidado</p>
                 <p class="card-description">Alívio de tensões musculares e dores crônicas</p>
@@ -1198,6 +1279,8 @@
             <div class="card card-plan card-featured">
               <div class="badge badge-featured"></div>
               <div class="card-content-plan">
+                <span class="bf-off" data-bf-off="consulta">X% OFF</span>
+                <!-- [BF] -->
                 <h3 class="card-title">Consulta de Fisioterapia</h3>
                 <p class="card-subtitle">Atendimento diretamente na Clínica Inove ou Home care em casos especiais</p>
                 <p class="card-description">Com profissional qualificada e experiente.</p>
@@ -1292,6 +1375,8 @@
             <div class="card card-plan card-featured card-full-width card-pilates">
               <div class="badge badge-featured"></div>
               <div class="card-content-plan">
+                <span class="bf-off" data-bf-off="aulas">X% OFF</span>
+                <!-- [BF] -->
                 <h3 class="card-title">Aulas de Pilates</h3>
                 <p class="card-subtitle"></p>
                 <p class="card-description">Agende sua vaga</p>
@@ -1999,6 +2084,8 @@
       </div>
     </footer>
     <script src="script.js?v=20260611" defer></script>
+    <script src="blackfriday.js?v=1" defer></script>
+    <!-- [BF] -->
     <script>
       window.addEventListener("load", function () {
         const link = document.createElement("link");
