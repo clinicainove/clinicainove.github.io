@@ -1,15 +1,13 @@
 // Clínica Inove - Service Worker
-// Versão: 6
+// Versão: 7.1
 
-const CACHE_NAME = 'clinica-inove-v7-bf';
+const CACHE_NAME = 'clinica-inove-v7.1-bf';
 
 const urlsToCache = [
   '/',
   '/index.html',
-  '/style.css',
-  '/script.js',
-  '/blackfriday.css',
-  '/blackfriday.js',
+  '/blackfriday.css?v=7.1',
+  '/blackfriday.js?v=7.1',
 
   // Imagens
   '/image/clinica-inove-logotipo-hero.webp',
@@ -26,7 +24,7 @@ const urlsToCache = [
 
 // Instalação do Service Worker
 self.addEventListener('install', event => {
-  console.log('[SW] Instalando Service Worker v6...');
+  console.log('[SW] Instalando Service Worker v7.1...');
 
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -51,7 +49,7 @@ self.addEventListener('install', event => {
 
 // Ativação do Service Worker
 self.addEventListener('activate', event => {
-  console.log('[SW] Ativando Service Worker v6...');
+  console.log('[SW] Ativando Service Worker v7.1...');
 
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -79,7 +77,7 @@ self.addEventListener('fetch', event => {
   }
 
   event.respondWith(
-    caches.match(event.request, { ignoreSearch: true })
+    caches.match(event.request)
       .then(response => {
         if (response) {
           return response;
