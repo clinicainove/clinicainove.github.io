@@ -1,9 +1,10 @@
 // Clínica Inove - Service Worker
-// Versão: 9
-// HTML, CSS e JS: rede primeiro. Cache só se estiver offline.
-// Imagens e fonte: cache primeiro.
+// Versão: 10
+// HTML, CSS e JS sempre vêm da rede.
+// O cache local só entra se a pessoa estiver offline.
+// Imagens e fonte continuam em cache.
 
-const CACHE_NAME = 'clinica-inove-v9-bf';
+const CACHE_NAME = 'clinica-inove-v10-bf';
 
 const urlsToCache = [
   '/image/clinica-inove-logotipo-hero.webp',
@@ -31,11 +32,11 @@ function isAppCode(request, url) {
 }
 
 function networkFirst(request) {
-  return fetch(request)
+  return fetch(request.url, { cache: 'reload', credentials: 'same-origin' })
     .then(response => {
       if (response && response.status === 200 && (response.type === 'basic' || response.type === 'cors')) {
         const copy = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+        caches.open(CACHE_NAME).then(cache => cache.put(request.url, copy));
       }
       return response;
     })
