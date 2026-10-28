@@ -1,7 +1,7 @@
 // Clínica Inove - Service Worker
 // Versão: 6
 
-const CACHE_NAME = 'clinica-inove-v7-bf';
+const CACHE_NAME = 'clinica-inove-v8-bf';
 
 const urlsToCache = [
   '/',
