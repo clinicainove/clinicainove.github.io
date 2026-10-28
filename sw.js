@@ -1,17 +1,11 @@
 // Clínica Inove - Service Worker
-// Versão: 6
+// Versão: 9
+// HTML, CSS e JS: rede primeiro. Cache só se estiver offline.
+// Imagens e fonte: cache primeiro.
 
-const CACHE_NAME = 'clinica-inove-v8-bf';
+const CACHE_NAME = 'clinica-inove-v9-bf';
 
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/blackfriday.css',
-  '/blackfriday.js',
-
-  // Imagens
   '/image/clinica-inove-logotipo-hero.webp',
   '/image/Pilates-hero.webp',
   '/image/dra-emlyn-fisioterapeuta-e-instrutora-de-pilates.webp',
@@ -19,106 +13,86 @@ const urlsToCache = [
   '/image/clinica-inove-estudio.webp',
   '/image/background.webp',
   '/image/logotipo-footer.webp',
-
-  // Fonte local
   '/fonts/Marginal.woff2'
 ];
 
-// Instalação do Service Worker
-self.addEventListener('install', event => {
-  console.log('[SW] Instalando Service Worker v6...');
-
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('[SW] Cache aberto');
-
-        const cachePromises = urlsToCache.map(url => {
-          return cache.add(url).catch(err => {
-            console.warn(`[SW] Falha ao cachear ${url}:`, err);
-          });
-        });
-
-        return Promise.allSettled(cachePromises);
-      })
-      .catch(err => {
-        console.error('[SW] Erro ao abrir cache:', err);
-      })
+function isAppCode(request, url) {
+  if (url.origin !== self.location.origin) return false;
+  return (
+    request.mode === 'navigate' ||
+    request.destination === 'document' ||
+    request.destination === 'script' ||
+    request.destination === 'style' ||
+    url.pathname === '/' ||
+    url.pathname.endsWith('.html') ||
+    url.pathname.endsWith('.css') ||
+    url.pathname.endsWith('.js')
   );
+}
 
-  self.skipWaiting();
-});
+function networkFirst(request) {
+  return fetch(request)
+    .then(response => {
+      if (response && response.status === 200 && (response.type === 'basic' || response.type === 'cors')) {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+      }
+      return response;
+    })
+    .catch(() =>
+      caches.match(request, { ignoreSearch: true }).then(cached => cached || caches.match('/'))
+    );
+}
 
-// Ativação do Service Worker
-self.addEventListener('activate', event => {
-  console.log('[SW] Ativando Service Worker v6...');
-
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('[SW] Removendo cache antigo:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
+    caches.open(CACHE_NAME).then(cache => {
+      return Promise.allSettled(
+        urlsToCache.map(url =>
+          cache.add(url).catch(err => console.warn(`[SW] Falha ao cachear ${url}:`, err))
+        )
       );
     })
   );
-
-  return self.clients.claim();
+  self.skipWaiting();
 });
 
-// Interceptação de requisições (Fetch)
-self.addEventListener('fetch', event => {
-  const url = new URL(event.request.url);
-
-  // Não interfere com Google Fonts (evita o "cross-world service worker resource mismatch")
-  if (url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com') {
-    return; // deixa o navegador buscar normalmente
-  }
-
-  event.respondWith(
-    caches.match(event.request, { ignoreSearch: true })
-      .then(response => {
-        if (response) {
-          return response;
-        }
-
-        return fetch(event.request)
-          .then(response => {
-            // Não cacheia se não for sucesso
-            if (!response || response.status !== 200) {
-              return response;
-            }
-
-            // Só cacheia recursos locais (basic) ou CORS-enabled
-            if (response.type === 'basic' || response.type === 'cors') {
-              const responseToCache = response.clone();
-
-              caches.open(CACHE_NAME)
-                .then(cache => {
-                  cache.put(event.request, responseToCache);
-                });
-            }
-
-            return response;
-          })
-          .catch(err => {
-            console.error('[SW] Erro ao buscar:', err);
-
-            // Fallback offline
-            if (event.request.destination === 'document') {
-              return caches.match('/');
-            }
-          });
-      })
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys()
+      .then(names =>
+        Promise.all(names.map(name => (name !== CACHE_NAME ? caches.delete(name) : null)))
+      )
+      .then(() => self.clients.claim())
   );
 });
 
-// Skip waiting message
-self.addEventListener('message', event => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
+self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') return;
+
+  const url = new URL(event.request.url);
+  if (url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com') return;
+
+  if (isAppCode(event.request, url)) {
+    event.respondWith(networkFirst(event.request));
+    return;
   }
+
+  event.respondWith(
+    caches.match(event.request, { ignoreSearch: true }).then(cached => {
+      if (cached) return cached;
+      return fetch(event.request).then(response => {
+        if (!response || response.status !== 200) return response;
+        if (response.type === 'basic' || response.type === 'cors') {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+        }
+        return response;
+      });
+    })
+  );
+});
+
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting();
 });
