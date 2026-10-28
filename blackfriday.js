@@ -4,8 +4,8 @@
     inicio: "01/11",
     fim: "30/11",
     off: {
-      pilates: "30", miofascial: "30", drenagem: "30", massagem: "30", fisio: "30",
-      essencial: "30", equilibrio: "30", premium: "30", trimestral: "30", terapias: "30", consulta: "30", aulas: "30"
+      pilates: "20", miofascial: "20", drenagem: "20", massagem: "20", fisio: "20",
+      essencial: "20", equilibrio: "20", premium: "20", trimestral: "20", terapias: "20", consulta: "20", aulas: "20"
     }
   };
   function fill() {
