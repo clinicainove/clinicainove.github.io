@@ -1,15 +1,14 @@
 // Clínica Inove - Service Worker
-// Versão: 7.1
+// Versão: 4
 
-const CACHE_NAME = 'clinica-inove-v7.1-bf';
-
+const CACHE_NAME = 'clinica-inove-v4'; // ← Incrementa versão
 const urlsToCache = [
   '/',
   '/index.html',
-  '/blackfriday.css?v=7.1',
-  '/blackfriday.js?v=7.1',
+  '/style.css',
+  '/script.js',
 
-  // Imagens
+  // ✅ IMAGENS CORRIGIDAS (remove /image/ duplicado)
   '/image/clinica-inove-logotipo-hero.webp',
   '/image/Pilates-hero.webp',
   '/image/dra-emlyn-fisioterapeuta-e-instrutora-de-pilates.webp',
@@ -18,19 +17,22 @@ const urlsToCache = [
   '/image/background.webp',
   '/image/logotipo-footer.webp',
 
-  // Fonte local
+  // ✅ FONTE LOCAL
   '/fonts/Marginal.woff2'
+
+  // ❌ REMOVI GOOGLE FONTS (cache dinâmico vai pegar)
 ];
 
 // Instalação do Service Worker
 self.addEventListener('install', event => {
-  console.log('[SW] Instalando Service Worker v7.1...');
+  console.log('[SW] Instalando Service Worker v4...');
 
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
         console.log('[SW] Cache aberto');
 
+        // ✅ Cache individual com fallback
         const cachePromises = urlsToCache.map(url => {
           return cache.add(url).catch(err => {
             console.warn(`[SW] Falha ao cachear ${url}:`, err);
@@ -49,7 +51,7 @@ self.addEventListener('install', event => {
 
 // Ativação do Service Worker
 self.addEventListener('activate', event => {
-  console.log('[SW] Ativando Service Worker v7.1...');
+  console.log('[SW] Ativando Service Worker...');
 
   event.waitUntil(
     caches.keys().then(cacheNames => {
@@ -69,15 +71,8 @@ self.addEventListener('activate', event => {
 
 // Interceptação de requisições (Fetch)
 self.addEventListener('fetch', event => {
-  const url = new URL(event.request.url);
-
-  // Não interfere com Google Fonts (evita o "cross-world service worker resource mismatch")
-  if (url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com') {
-    return; // deixa o navegador buscar normalmente
-  }
-
   event.respondWith(
-    caches.match(event.request)
+    caches.match(event.request, { ignoreSearch: true })
       .then(response => {
         if (response) {
           return response;
@@ -85,12 +80,12 @@ self.addEventListener('fetch', event => {
 
         return fetch(event.request)
           .then(response => {
-            // Não cacheia se não for sucesso
+            // ✅ Não cacheia se não for sucesso
             if (!response || response.status !== 200) {
               return response;
             }
 
-            // Só cacheia recursos locais (basic) ou CORS-enabled
+            // ✅ Só cacheia recursos locais ou CORS-enabled
             if (response.type === 'basic' || response.type === 'cors') {
               const responseToCache = response.clone();
 
@@ -105,7 +100,7 @@ self.addEventListener('fetch', event => {
           .catch(err => {
             console.error('[SW] Erro ao buscar:', err);
 
-            // Fallback offline
+            // ✅ Fallback offline
             if (event.request.destination === 'document') {
               return caches.match('/');
             }
@@ -114,7 +109,7 @@ self.addEventListener('fetch', event => {
   );
 });
 
-// Skip waiting message
+// ✅ Skip waiting message
 self.addEventListener('message', event => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();

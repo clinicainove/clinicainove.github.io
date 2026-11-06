@@ -1,16 +1,30 @@
-/* Black Friday — edite aqui as datas e os % de desconto (deixe "X" até definir) */
+/* Black Friday — edite aqui as datas e os % de desconto (deixe "" para esconder o selo) */
 (function () {
   var BF = {
-    inicio: "XX/XX",
-    fim: "XX/XX",
+    inicio: "20/11",
+    fim: "30/11",
     off: {
-      pilates: "X", miofascial: "X", drenagem: "X", massagem: "X", fisio: "X",
-      essencial: "X", equilibrio: "X", premium: "X", trimestral: "X", terapias: "X", consulta: "X", aulas: "X"
+      pilates: "", miofascial: "10", drenagem: "10", massagem: "10", fisio: "",
+      essencial: "", equilibrio: "", premium: "", trimestral: "", terapias: "10", consulta: "", aulas: ""
     }
   };
+
   function fill() {
-    document.querySelectorAll("[data-bf]").forEach(function (el) { el.textContent = BF[el.dataset.bf]; });
-    document.querySelectorAll("[data-bf-off]").forEach(function (el) { el.textContent = BF.off[el.dataset.bfOff] + "% OFF"; });
+    document.querySelectorAll("[data-bf]").forEach(function (el) {
+      el.textContent = BF[el.dataset.bf];
+    });
+
+    document.querySelectorAll("[data-bf-off]").forEach(function (el) {
+      var v = BF.off[el.dataset.bfOff];
+      if (!v) {
+        el.style.display = "none";
+        return;
+      }
+      el.style.display = "";
+      el.textContent = v + "% OFF";
+    });
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fill); else fill();
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fill);
+  else fill();
 })();
