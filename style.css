@@ -1728,9 +1728,17 @@ section {
         height: 250px
     }
 
-    .card-title,
+    .card-title {
+        font-size: 1.25rem;
+        padding-top: 1rem;
+    }
+
+    .card-title-plan-3 {
+        padding-top: 1rem;
+    }
+
     .servicos-card-title {
-        font-size: 1.125rem
+        font-size: 1.125rem;
     }
 
     .card-description,
