@@ -1,7 +1,7 @@
 // Clínica Inove - Service Worker
-// Versão: 4
+// Versão: 7
 
-const CACHE_NAME = 'clinica-inove-v4'; // ← Incrementa versão
+const CACHE_NAME = 'clinica-inove-v7'; // ← Incrementa versão
 const urlsToCache = [
   '/',
   '/index.html',
@@ -25,7 +25,7 @@ const urlsToCache = [
 
 // Instalação do Service Worker
 self.addEventListener('install', event => {
-  console.log('[SW] Instalando Service Worker v4...');
+  console.log('[SW] Instalando Service Worker v7...');
 
   event.waitUntil(
     caches.open(CACHE_NAME)
