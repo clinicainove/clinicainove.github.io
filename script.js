@@ -166,8 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
         navigator.serviceWorker
-            // O SEGREDO: updateViaCache: 'none' força o GitHub Pages a sempre buscar o sw.js atualizado na rede
-            .register("/sw.js", { updateViaCache: "none" })
+            // O SEGREDO: updateViaCache: 'none' força o GitHub Pages a sempre buscar o swblackfriday.js atualizado na rede
+            .register("/swblackfriday.js", { updateViaCache: "none" })
             .then((reg) => {
                 console.log("✅ Service Worker registrado:", reg.scope);
 
