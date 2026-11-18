@@ -1443,6 +1443,116 @@ section {
     font-weight: 700
 }
 
+/* ============================================================
+   SEÇÃO FAQ — Perguntas Frequentes
+   ============================================================ */
+.faq {
+    padding: 5rem 0;
+    background-color: var(--bg-white)
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 3.5rem
+}
+
+.faq-title {
+    font-family: Marginal, serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: .75rem;
+    line-height: 1.15
+}
+
+.faq-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 520px;
+    margin: 0 auto
+}
+
+/* Subseções (mantido para uso futuro) */
+.faq-group {
+    margin-bottom: 0
+}
+
+/* Item accordion */
+.faq-item {
+    border-bottom: 1px solid #e5e5e5;
+    list-style: none
+}
+
+.faq-item:first-of-type {
+    border-top: 1px solid #e5e5e5
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: color .2s
+}
+
+.faq-question::-webkit-details-marker {
+    display: none
+}
+
+.faq-question::after {
+    content: "+";
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--primary);
+    flex-shrink: 0;
+    transition: transform .3s cubic-bezier(.4, 0, .2, 1), color .2s;
+    display: inline-block
+}
+
+.faq-item[open]>.faq-question {
+    color: var(--primary)
+}
+
+.faq-item[open]>.faq-question::after {
+    transform: rotate(45deg)
+}
+
+.faq-answer {
+    padding: 0 0 1.25rem;
+    color: var(--text-muted);
+    font-size: .9375rem;
+    line-height: 1.7;
+    margin: 0;
+    animation: faqFadeIn .28s ease
+}
+
+@keyframes faqFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
 /* MOBILE (0 - 767px)*/
 @media (max-width:767px) {
 

@@ -161,6 +161,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================================
+   FAQ — Fecha os outros itens ao abrir um (acordeão exclusivo)
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.faq-item').forEach(function (item) {
+        item.addEventListener('toggle', function () {
+            if (item.open) {
+                document.querySelectorAll('.faq-item[open]').forEach(function (other) {
+                    if (other !== item) other.removeAttribute('open');
+                });
+            }
+        });
+    });
+});
+
+/* ==========================================================================
    REGISTRO DO SERVICE WORKER (CORRIGIDO E BLINDADO CONTRA CACHE)
    ========================================================================== */
 if ("serviceWorker" in navigator) {

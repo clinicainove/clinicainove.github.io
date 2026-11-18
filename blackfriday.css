@@ -593,3 +593,46 @@ body {
         animation: none !important
     }
 }
+
+
+/* ============================================================
+   FAQ — overrides Black Friday
+   Mantém fundo branco e texto escuro independente do tema BF.
+   ============================================================ */
+.faq {
+    background: #fff;
+    position: relative;
+    overflow: hidden
+}
+
+.faq-title {
+    color: #1c1917
+}
+
+.faq-subtitle {
+    color: #57534e
+}
+
+.faq-question {
+    color: #1c1917
+}
+
+.faq-question::after {
+    color: var(--primary2)
+}
+
+.faq-item {
+    border-bottom-color: #e5e5e5
+}
+
+.faq-item:first-of-type {
+    border-top-color: #e5e5e5
+}
+
+.faq-item[open] > .faq-question {
+    color: var(--primary2)
+}
+
+.faq-answer {
+    color: #57534e
+}

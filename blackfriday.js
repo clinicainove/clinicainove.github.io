@@ -1,5 +1,29 @@
 /* Black Friday — edite aqui as datas e os % de desconto (deixe "" para esconder o selo) */
 (function () {
+  /* FAQ: fecha outros itens ao abrir um (caso o script.js já tenha rodado,
+     este bloco não recadastra — usa .dataset para marcar) */
+  function initFaqAccordion() {
+    var items = document.querySelectorAll('.faq-item');
+    if (!items.length) return;
+    items.forEach(function (item) {
+      if (item.dataset.bfFaq) return;
+      item.dataset.bfFaq = '1';
+      item.addEventListener('toggle', function () {
+        if (item.open) {
+          document.querySelectorAll('.faq-item[open]').forEach(function (other) {
+            if (other !== item) other.removeAttribute('open');
+          });
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFaqAccordion);
+  } else {
+    initFaqAccordion();
+  }
+
   var BF = {
     inicio: "20/11",
     fim: "30/11",
